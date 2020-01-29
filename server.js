@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://NameProject.glitch.me/`);
+  http.get(`http://protect-bot-for-philippe.glitch.me/`);
 }, 280000);
  
 // كل البكجات الي ممكن تحتجها في اي بوت
@@ -389,4 +389,4 @@ client.on("guildMemberRemove", async member => {
     }
  
 })
-///Uploaded By L U X Y
+///Uploaded By P H I L I P P E
