@@ -408,7 +408,7 @@ client.on("guildMemberRemove", async member => {
     }
  
 })
-
+let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
    client.on('message', message => {
     if(message.content.startsWith(prefix + "antibots off")) {
           if(!message.channel.guild) return;
@@ -426,4 +426,38 @@ client.on("guildMemberRemove", async member => {
             }
   
           })
-///Uploaded By P H I L I P P E
+
+    client.on('message', message => {
+    if(message.content.startsWith(prefix + "antibots off")) {
+          if(!message.channel.guild) return;
+          if(!message.member.hasPermission('ADMINISTRATOR')) return;
+  antibots[message.guild.id] = {
+  onoff: 'Off',
+  }
+  message.channel.send(`**AntiBots Join Is Off**`)
+            fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
+              if (err) console.error(err)
+              .catch(err => {
+                console.error(err);
+            });
+              });
+            }
+  
+          })
+   client.on("guildMemberAdd", member => {
+    if(!antibots[member.guild.id]) antibots[member.guild.id] = {
+  onoff: 'Off'
+  }
+    if(antibots[member.guild.id].onoff === 'Off') return;
+  if(member.user.bot) return member.kick()
+  })
+  
+  fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
+  if (err) console.error(err)
+  .catch(err => {
+  console.error(err);
+  });
+  
+  })
+  
+///by P A B L O 
