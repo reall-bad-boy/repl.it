@@ -192,7 +192,7 @@ client.on("roleDelete", async channel => {
     if (!anti[channel.guild.id + entry.id]) {
         anti[channel.guild.id + entry.id] = {
             actions: 1
-        }
+        }    
         setTimeout(() => {
             anti[channel.guild.id + entry.id].actions = "0"
         }, config[channel.guild.id].time * 1000)
@@ -408,4 +408,22 @@ client.on("guildMemberRemove", async member => {
     }
  
 })
+
+   client.on('message', message => {
+    if(message.content.startsWith(prefix + "antibots off")) {
+          if(!message.channel.guild) return;
+          if(!message.member.hasPermission('ADMINISTRATOR')) return;
+  antibots[message.guild.id] = {
+  onoff: 'Off',
+  }
+  message.channel.send(`**AntiBots Join Is Off**`)
+            fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
+              if (err) console.error(err)
+              .catch(err => {
+                console.error(err);
+            });
+              });
+            }
+  
+          })
 ///Uploaded By P H I L I P P E

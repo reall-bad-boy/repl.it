@@ -10,7 +10,7 @@
   "747244359325450300": {
     "banLimit": "2",
     "chaDelLimit": "2",
-    "roleDelLimit": 3,
+    "roleDelLimit": "2",
     "kickLimits": 3,
     "roleCrLimits": 3,
     "time": 30
