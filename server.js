@@ -45,6 +45,25 @@ client.on('ready', () => {
   console.log(`Iam Ready My Owner ${client.user.tag}!`);
 });
 /////
+
+client.on("ready", () => {
+  console.log(
+    `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
+  );
+  let statuses = [
+    `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
+    `MADE BY PABLO`,
+     `BRAM TO MAZAY `
+  ];
+  setInterval(function() {
+    let STREAMING = statuses[Math.floor(Math.random() * statuses.length)];
+    client.user.setActivity(STREAMING, {
+      type: "STREAMING",
+      url: "https://www.twitch.tv/faith"
+    });
+  }, 1000);
+});
+
  
 let anti = JSON.parse(fs.readFileSync("./antigreff.json", "UTF8"));
 let config = JSON.parse(fs.readFileSync("./config.json", "UTF8"));
@@ -68,37 +87,37 @@ client.on("message", message => {
  
         if (!message.member.hasPermission('MANAGE_GUILD')) return;
         if (message.content.startsWith(prefix + "settings limitsban")) {
-            if (!num) return message.channel.send("**⇏ | أرسل رقم ! **");
+            if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].banLimit = num;
             message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].banLimit} **`)
         }
         if (message.content.startsWith(prefix + "settings limitskick")) {
-            if (!num) return message.channel.send("**⇏ | أرسل رقم ! **");
+            if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].kickLimits = num;
             message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].kickLimits}**`)
         }
         if (message.content.startsWith(prefix + "settings limitsroleD")) {
-            if (!num) return message.channel.send("**⇏ | أرسل رقم ! **");
+            if (!num) return message.channel.send("**⇏ | ژمارە دانێ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].roleDelLimit = num;
             message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].roleDelLimit}**`)
         }
         if (message.content.startsWith(prefix + "settings limitsroleC")) {
-            if (!num) return message.channel.send("**⇏ | أرسل رقم ! **");
+            if (!num) return message.channel.send("**⇏ | ژمارە دانێ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].roleCrLimits = num;
             message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].roleCrLimits}**`)
         }
         if (message.content.startsWith(prefix + "settings limitschannelD")) {
-            if (!num) return message.channel.send("**⇏ | أرسل رقم ! **");
+            if (!num) return message.channel.send("**⇏ | ژمارە دانێ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].chaDelLimit = num;
             message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].chaDelLimit}**`)
         }
         if (message.content.startsWith(prefix + "settings limitstime")) {
-            if (!num) return message.channel.send("**⇏ | أرسل رقم ! **");
+            if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].time = num;
             message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].time}**`)
