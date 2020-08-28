@@ -53,7 +53,7 @@ client.on("ready", () => {
   let statuses = [
     `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
     `MADE BY PABLO`,
-     `HALAW BABY BABM`
+     `!help`
   ];
   setInterval(function() {
     let STREAMING = statuses[Math.floor(Math.random() * statuses.length)];
@@ -64,6 +64,30 @@ client.on("ready", () => {
   }, 1000);
 });
 
+client.on("message", message => {
+    if (message.author.bot) return;
+    if (message.content === prefix + "1help") {
+      if (message.author.id !== message.guild.owner.user.id) return message.channel.send(`تۆ ناتوانی ئەم کۆماندە بەکار بێنی`);
+      
+      message.channel.send(
+        `| يستا رينمايە كانت بۆ ديت ..`
+      );
+  
+        message.author.sendMessage(`**__BOT SECURYITY**
+  **__فەرمانی پاراستن__**  
+   !settings limitsban • {بۆ دەستنیشان کردنی ژمارەی باند کردن }
+   !settings limitskick •{بۆ دەستنیشان کردنی ژمارەی کیک کردن} 
+   !settings limitsroleD •  {بۆ دەستنیشان کردنی رۆل دروست کردن}  
+   !settings limitsroleC •   {بۆ دەستنیشان کردنی رۆل سڕینەوە} 
+   !settings limitschannelD • {بۆ دەستنیشان کردنی سڕینەوەی ژوور} 
+   !settings limitstime •  { بۆ دەستنیشان کردنی کاتی سزا} 
+   !antibots on • {بۆ راگرتنی هێنانی بۆت}
+    !antibots off • {بۆ کردنەوەی هێنانی بۆت} 
+  
+  EDIT  {By:PABLO}
+  `);
+    }
+  });
  
 let anti = JSON.parse(fs.readFileSync("./antigreff.json", "UTF8"));
 let config = JSON.parse(fs.readFileSync("./config.json", "UTF8"));
@@ -90,7 +114,7 @@ client.on("message", message => {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].banLimit = num;
-            message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].banLimit} **`)
+            message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو: ${config[message.guild.id].banLimit} **`)
         }
         if (message.content.startsWith(prefix + "settings limitskick")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
