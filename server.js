@@ -70,7 +70,7 @@ client.on("message", message => {
       if (message.author.id !== message.guild.owner.user.id) return message.channel.send(`تۆ ناتوانی ئەم کۆماندە بەکار بێنی`);
       
       message.channel.send(
-        `| يستا رينمايە كانت بۆ ديت ..`
+        ` يستا رينمايە كانت بۆ ديت `
       );
   
         message.author.sendMessage(`**__BOT SECURYITY**
