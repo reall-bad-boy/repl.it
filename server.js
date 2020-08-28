@@ -120,31 +120,31 @@ client.on("message", message => {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].kickLimits = num;
-            message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].kickLimits}**`)
+            message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو : ${config[message.guild.id].kickLimits}**`)
         }
         if (message.content.startsWith(prefix + "settings limitsroleD")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].roleDelLimit = num;
-            message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].roleDelLimit}**`)
+            message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو: ${config[message.guild.id].roleDelLimit}**`)
         }
         if (message.content.startsWith(prefix + "settings limitsroleC")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].roleCrLimits = num;
-            message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].roleCrLimits}**`)
+            message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو : ${config[message.guild.id].roleCrLimits}**`)
         }
         if (message.content.startsWith(prefix + "settings limitschannelD")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].chaDelLimit = num;
-            message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].chaDelLimit}**`)
+            message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو : ${config[message.guild.id].chaDelLimit}**`)
         }
         if (message.content.startsWith(prefix + "settings limitstime")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
             config[message.guild.id].time = num;
-            message.channel.send(`**⇏ | تم التغيير اِلي : ${config[message.guild.id].time}**`)
+            message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو: ${config[message.guild.id].time}**`)
         }
         fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
             if (e) throw e;
@@ -484,4 +484,4 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   
   })
   
-///by P A B L O 
+///by P A B L O AND PROFESSOR
