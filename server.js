@@ -52,7 +52,7 @@ client.on("ready", () => {
   );
   let statuses = [
     `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
-    `MADE BY PABLO AND pxPROFESSOR`,
+    `PABLO AND pxPROFESSOR`,
      ` =1help`
   ];
   setInterval(function() {
