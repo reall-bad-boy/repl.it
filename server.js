@@ -53,7 +53,7 @@ client.on("ready", () => {
   let statuses = [
     `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
     `MADE BY PABLO`,
-     `HA`
+     `HALAW BABY BABM`
   ];
   setInterval(function() {
     let STREAMING = statuses[Math.floor(Math.random() * statuses.length)];
@@ -416,7 +416,7 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   antibots[message.guild.id] = {
   onoff: 'On',
   }
-  message.channel.send(`**AntiBots Join Is Off**`)
+  message.channel.send(`**AntiBots Join Is On**`)
             fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
               if (err) console.error(err)
               .catch(err => {
