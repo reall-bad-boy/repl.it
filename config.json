@@ -8,9 +8,9 @@
     "time": 30
   },
   "747244359325450300": {
-    "banLimit": "2",
+    "banLimit": "1",
     "chaDelLimit": "2",
-    "roleDelLimit": "1",
+    "roleDelLimit": "2",
     "kickLimits": "2",
     "roleCrLimits": "2",
     "time": 30
