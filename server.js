@@ -80,7 +80,7 @@ client.on("message", message => {
    =settings limitsroleC •   {بۆ دەستنیشان کردنی رۆل سڕینەوە} 
    =settings limitschannelD • {بۆ دەستنیشان کردنی سڕینەوەی ژوور} 
    =settings limitstime •  { بۆ دەستنیشان کردنی کاتی سزا} 
-   =antibots on • {بۆ راگرتنی هێنانی بۆت}
+   =antibots on  • {بۆ راگرتنی هێنانی بۆت}
    =antibots off • {بۆ کردنەوەی هێنانی بۆت} 
   
   EDIT  {By:PABLO}
