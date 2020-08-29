@@ -67,7 +67,7 @@ client.on("ready", () => {
 client.on("message", message => {
     if (message.author.bot) return;
     if (message.content === prefix + "help") {
-      if (message.author.id !== message.guild.owner.user.id) return message.channel.send(`تۆ ناتوانی ئەم کۆماندە بەکار بێنی`);
+      if (message.author.id !== message.guild.owner.user.id) return message.channel.send(`ببورە تۆ ناتوانی ئەم کۆماندە بەکار بێنی`);
       
       message.channel.send(
         ` لە چاتی تایبەت ناردم`
