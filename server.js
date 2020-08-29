@@ -440,7 +440,7 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   antibots[message.guild.id] = {
   onoff: 'On',
   }
-  message.channel.send(`**AntiBots Join Is On**`)
+  message.channel.send(`**Anti bot is on**`)
             fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
               if (err) console.error(err)
               .catch(err => {
@@ -458,7 +458,7 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   antibots[message.guild.id] = {
   onoff: 'Off',
   }
-  message.channel.send(`**AntiBots Join Is Off**`)
+  message.channel.send(`**Anti b`)
             fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
               if (err) console.error(err)
               .catch(err => {
