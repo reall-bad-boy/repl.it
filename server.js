@@ -45,7 +45,6 @@ client.on('ready', () => {
   console.log(`Iam Ready My Owner ${client.user.tag}!`);
 });
 /////
-
 client.on("ready", () => {
   console.log(
     `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
@@ -181,7 +180,7 @@ client.on("channelDelete", async channel => {
             anti[channel.guild.id + entry.id].actions = "0"
         }, config[channel.guild.id].time * 1000)
         if (anti[channel.guild.id + entry.id].actions >= config[channel.guild.id].chaDelLimit) {
-            channel.guild.members.get(entry.id).ban().catch(e => channel.guild.owner.send(`**⇏ | ${entry.username} قام بمسح الكثير من الرومات **`))
+            channel.guild.members.get(entry.id).ban().catch(e => channel.guild.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەرەکان ژور رەش دەکاتەوە`))
             anti[channel.guild.id + entry.id].actions = "0"
             fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                 if (e) throw e;
@@ -319,7 +318,7 @@ client.on("guildBanAdd", async (guild, user) => {
             anti[guild.id + entry.id].actions = "0"
         }, config[guild.id].time * 1000)
         if (anti[guild.id + entry.id].actions >= config[guild.id].banLimit) {
-            channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} حاول حظر جميع الأعضاء **`))
+            channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} یەک لە رۆلددەرەکان میمبەر باند دەکا**`))
             anti[guild.id + entry.id].actions = "0"
             fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                 if (e) throw e;
@@ -365,7 +364,7 @@ client.on("guildKickAdd", async (guild, user) => {
             anti[guild.id + entry.id].actions = "0"
         }, config[guild.id].time * 1000)
         if (anti[guild.id + entry.id].actions >= config[guild.id].banLimit) {
-            channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} حاول حظر جميع الأعضاء **`))
+            channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەرەکان میمبەر کیک دەکا`))
             anti[guild.id + entry.id].actions = "0"
             fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                 if (e) throw e;
@@ -412,7 +411,7 @@ client.on("guildMemberRemove", async member => {
                 anti[member.guild.id + entry.id].actions = "0"
             }, config[member.guild.id].time * 1000)
             if (anti[member.guild.id + entry.id].actions >= config[member.guild.id].kickLimits) {
-                member.members.get(entry.id).ban().catch(e => member.owner.send(`**⇏ | ${entry.username} حاول حظر جميع الأعضاء **`))
+                member.members.get(entry.id).ban().catch(e => member.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەراەکان میمبەر کیک دەکا**`))
                 anti[member.guild.id + entry.id].actions = "0"
                 fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                     if (e) throw e;
