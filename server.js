@@ -45,6 +45,18 @@ client.on('ready', () => {
   console.log(`Iam Ready My Owner ${client.user.tag}!`);
 });
 /////
+client.on("message", async message => {
+if (message.content.startsWith(``)) {
+const fetch = require("node-fetch");
+function Bot() {
+fetch("");
+console.log("pong");
+}
+setInterval(Bot, 60000);
+}
+
+});
+
 client.on("ready", () => {
   console.log(
     `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
