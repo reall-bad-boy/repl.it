@@ -226,7 +226,7 @@ client.on("roleDelete", async channel => {
             anti[channel.guild.id + entry.id].actions = "0"
         }, config[channel.guild.id].time * 1000)
         if (anti[channel.guild.id + entry.id].actions >= config[channel.guild.id].roleDelLimit) {
-            channel.guild.members.get(entry.id).ban().catch(e => channel.guild.owner.send(`**⇏ | ${entry.username} قام بمسح الكثير من الرتب **`))
+            channel.guild.members.get(entry.id).ban().catch(e => channel.guild.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەرەکان رۆل رەش دەکاتەوە`))
             anti[channel.guild.id + entry.id].actions = "0"
             fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                 if (e) throw e;
@@ -272,7 +272,7 @@ client.on("roleCreate", async channel => {
             anti[channel.guild.id + entry.id].actions = "0"
         }, config[channel.guild.id].time * 1000)
         if (anti[channel.guild.id + entry.id].actions >= config[channel.guild.id].roleCrLimits) {
-            channel.guild.members.get(entry.id).ban().catch(e => channel.guild.owner.send(`**⇏ | ${entry.username} قام بأنشاء الكثير من الرتب **`))
+            channel.guild.members.get(entry.id).ban().catch(e => channel.guild.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەرەکابت رۆل دروست دەکا`))
             anti[channel.guild.id + entry.id].actions = "0"
             fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                 if (e) throw e;
