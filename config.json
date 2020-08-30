@@ -68,7 +68,7 @@
     "roleDelLimit": "1",
     "kickLimits": "1",
     "roleCrLimits": "1",
-    "time": "40"
+    "time": "30"
   },
   "707807126898081803": {
     "banLimit": 3,
