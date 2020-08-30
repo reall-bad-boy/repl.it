@@ -45,6 +45,7 @@ client.on('ready', () => {
   console.log(`Iam Ready My Owner ${client.user.tag}!`);
 });
 /////
+
 client.on("message", async message => {
 if (message.content.startsWith(``)) {
 const fetch = require("node-fetch");
