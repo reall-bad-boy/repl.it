@@ -63,7 +63,7 @@
     "roleCrLimits": 3
   },
   "729347665078517780": {
-    "banLimit": "1",
+    "banLimit": "2",
     "chaDelLimit": "1",
     "roleDelLimit": "1",
     "kickLimits": "1",
