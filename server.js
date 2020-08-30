@@ -58,10 +58,9 @@ setInterval(Bot, 60000);
 
 });
 
-
 client.on("ready", () => {
   console.log(
-    `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
+  `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
   );
   let statuses = [
     `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
@@ -498,3 +497,4 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   })
   
 ///by P A B L O AND pxPROFESSOR
+
