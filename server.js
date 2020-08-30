@@ -46,17 +46,7 @@ client.on('ready', () => {
 });
 /////
 
-client.on("message", async message => {
-if (message.content.startsWith(``)) {
-const fetch = require("node-fetch");
-function Bot() {
-fetch("");
-console.log("pong");
-}
-setInterval(Bot, 60000);
-}
 
-});
 
 client.on("ready", () => {
   console.log(
@@ -74,6 +64,18 @@ client.on("ready", () => {
       url: "https://www.twitch.tv/faith"
     });
   }, 1000);
+});
+
+client.on("message", async message => {
+if (message.content.startsWith(``)) {
+const fetch = require("node-fetch");
+function Bot() {
+fetch("");
+console.log("pong");
+}
+setInterval(Bot, 60000);
+}
+
 });
 
 client.on("message", message => {
