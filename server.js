@@ -58,6 +58,7 @@ setInterval(Bot, 60000);
 
 });
 
+
 client.on("ready", () => {
   console.log(
     `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
