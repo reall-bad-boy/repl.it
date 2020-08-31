@@ -47,6 +47,35 @@ client.on('ready', () => {
 /////
 
 
+////
+client.on('message', message => {
+ 
+if(message.content.includes("@everyone")){
+if(!message.member.hasPermission('KICK_MEMBERS')){
+message.delete(); 
+message.reply("تۆ ناتوانیت ئێڤریوەن لێبدەیت")
+}
+ 
+}
+ 
+});
+ 
+ 
+client.on('message', message => {
+ 
+if(message.content.includes("@everyone@everyone")){
+if(!message.member.hasPermission('KICK_MEMBERS')){
+message.delete(); 
+message.reply("تۆ ناتوانیت ئێڤریوەن لێبدەیت")
+}
+ 
+}
+ 
+});
+
+
+////
+
 
 client.on("ready", () => {
   console.log(
