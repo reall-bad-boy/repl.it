@@ -45,6 +45,23 @@ client.on('ready', () => {
   console.log(`Iam Ready My Owner ${client.user.tag}!`);
 });
 /////
+client.on('message', message => {
+  if (!message.guild) return;
+  if (message.content === prefix + 'join') {
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
+        .then(connection => {
+          message.reply('**kra. ..**!');
+        })
+        .catch(console.log);
+    } else {
+      message.reply('**- bcho zhwrekawa !**');
+    }
+  }
+});
+
+
+////
 
 client.on('typingStart', (ch, user) => {
       if(user.presence.status === 'offline') {
