@@ -46,6 +46,15 @@ client.on('ready', () => {
 });
 /////
 
+client.on('typingStart', (ch, user) => {
+      if(user.presence.status === 'offline') {
+ 
+          ch.send(`${user}(:    دەستەکەو کەشف بوو ئەوە خۆت ۆفلاین ئەکەی خێرا خۆت ۆنلاین کە`)    //lera chiw pe xosha bele
+          .then(msg => {
+              msg.delete(10000)
+          })
+      }
+  })
 
 ////
 client.on('message', message => {
