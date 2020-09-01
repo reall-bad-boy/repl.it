@@ -51,7 +51,7 @@ client.on('message', message => {
 if(message.content.includes("discord.gg")){
 if(!message.member.hasPermission('ADMINISTRATOR')){
 message.delete(); 
-message.reply("‎!تكایه‌ ڕیكلام مه‌كه‌")
+message.reply("سێرڤەر دامەنێ")
 }
 //PABLO
 }
@@ -115,7 +115,34 @@ message.reply("تۆ ناتوانیت ئێڤریوەن لێبدەیت")
 
 
 ////
+client.on('message', message => {
+ 
+if(message.content.includes("@here")){
+if(!message.member.hasPermission('KICK_MEMBERS')){
+message.delete(); 
+message.reply("تۆ ناتوانیت ھێر لێبدەی")
+}
+ 
+}
+ 
+});
+ 
+ 
+client.on('message', message => {
+ 
+if(message.content.includes("@here@here")){
+if(!message.member.hasPermission('KICK_MEMBERS')){
+message.delete(); 
+message.reply("تۆ ناتوانیت ھێر لێبدەی")
+}
+ 
+}
+ 
+});
 
+
+
+////
 
 client.on("ready", () => {
   console.log(
