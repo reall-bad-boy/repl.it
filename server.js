@@ -502,6 +502,10 @@ client.on("guildMemberRemove", async member => {
  
 })
 
+
+
+
+
 let antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
 client.on('message', message => { 
     if(message.content.startsWith(prefix + "antihack")) { 
