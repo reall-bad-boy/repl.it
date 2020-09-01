@@ -150,7 +150,7 @@ client.on("ready", () => {
   );
   let statuses = [
     `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
-    `PABLO AND pxPROFESSOR`,
+    `PABLO AND PROFESSOR`,
      ` =help`
   ];
   setInterval(function() {
@@ -177,7 +177,6 @@ setInterval(Bot, 60000);
 client.on("message", message => {
     if (message.author.bot) return;
     if (message.content === prefix + "help") {
-      if (message.author.id !== message.guild.owner.user.id) return message.channel.send(`ببورە تۆ ناتوانی ئەم کۆماندە بەکار بێنی`);
       
       message.channel.send(
         ` لە چاتی تایبەت ناردم`
@@ -567,7 +566,26 @@ client.on('message', message => {
  
         })
 
-
+  client.on("message", zaid => {
+  if (zaid.content === prefix + "bot") {
+    const bot = new Discord.RichEmbed()
+      .setAuthor(client.user.username, client.user.avatarURL)
+      .setColor("#00000")
+      .addField(
+        "✽ **Bot Ping** : ",
+        `» ${Date.now() - zaid.createdTimestamp}` + " ms",
+        true
+      )
+      .addField("**Servers** :  ", `» ${client.guilds.size}`, true)
+      .addField("**Channels** : ", `» ${client.channels.size} `, true)
+      .addField("**Users** : ", `» ${client.users.size} `, true)
+      .addField("**Bot Name** :  ", `» ${client.user.tag} `, true)
+      .addField("**Bot Owner** :  ", `»  <@!732274766022443019>  <@619039917615480832> `, true) // تعديل مهم عدل هذا الرقم لايدي حسابك
+    .setImage(
+        ""
+      );
+  };
+ })
 
 let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
    client.on('message', message => {
