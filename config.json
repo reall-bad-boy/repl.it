@@ -56,7 +56,7 @@
     "time": 30
   },
   "744927257398607915": {
-    "banLimit": 3,
+    "banLimit": "1",
     "chaDelLimit": 3,
     "roleDelLimit": 3,
     "kickLimits": 3,
