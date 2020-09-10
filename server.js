@@ -242,6 +242,21 @@ client.on("message", message => {
   `);
     }
   });
+client.on("message", message => {
+    if (message.author.bot) return;
+    if (message.content === prefix + "1help") {
+      message.channel.send(`  **__Premium Bot v1__**> 
+  ** Help Menu**
+  ----------------------------
+  > =help ** بۆتي سكويريتي  **
+
+  .**EDIT** **BY:PABLO**
+
+   **__Done__** 
+----------------------------
+     `);
+    }
+  });
  
 let anti = JSON.parse(fs.readFileSync("./antigreff.json", "UTF8"));
 let config = JSON.parse(fs.readFileSync("./config.json", "UTF8"));
