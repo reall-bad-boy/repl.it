@@ -44,6 +44,30 @@ const Discord = require('discord.js');
 client.on('ready', () => {
   console.log(`Iam Ready My Owner ${client.user.tag}!`);
 });
+//private krdni channel
+client.on("message", fantic => {
+  if (fantic.content === "Zhwraka qfl bda") {
+    if (!fantic.member.hasPermission("ADMINISTRATOR"))
+      return fantic.react("❌");
+    fantic.channel.overwritePermissions(fantic.guild.id, {
+      VIEW_CHANNEL: false
+    });
+    fantic.react("🔒");
+  }
+});
+
+//public krdni channel
+client.on("message", fantic => {
+  if (fantic.content === "Zhwraka bkawa") {
+    if (!fantic.member.hasPermission("ADMINISTRATOR"))
+      return fantic.react("❌");
+    fantic.channel.overwritePermissions(fantic.guild.id, {
+      VIEW_CHANNEL: true
+    });
+    fantic.react("🔓");
+  }
+});
+
 /////
 client.on('message', message => {
 //ARBELE
