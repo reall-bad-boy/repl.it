@@ -57,6 +57,37 @@ message.reply("‎!تكایه‌ ڕیكلام مه‌كه‌")
 //ARBELE
 });
 
+client.on("message", message => {
+let ToOFaN
+if (message.content === "1") {
+if (!message.channel.guild)
+return message.reply("ئەم فرمانە تایبەتە بە سێرڤەر");
+if (!message.member.hasPermission("MANAGE_MESSAGES"))
+return message.reply("||ببورە تۆ ئەم ڕۆڵەو پێ نیە|| ```MANAGE MESSAGES```");
+message.channel
+.overwritePermissions(message.guild.id, {
+SEND_MESSAGES: false
+})
+.then(() => {
+message.reply("**THE CHANNEL HAS BEN LOCKED🔒**");
+});
+}
+ 
+if (message.content === "2") {
+if (!message.channel.guild)
+return message.reply("** This command only for servers**");
+if (!message.member.hasPermission("MANAGE_MESSAGES"))
+return message.reply("**__توانات نیە بیکەیتەوە چونکە ڕۆڵەکەی تۆ ```MANAGE_MESSAGES``پێ نیە**");
+message.channel
+.overwritePermissions(message.guild.id, {
+SEND_MESSAGES: true
+})
+.then(() => {
+message.reply("**THE CHANNEL HAS BEN UNLOCKED🔓**");
+});
+}
+});
+
 
 
 
