@@ -46,7 +46,7 @@ client.on('ready', () => {
 });
 //private krdni channel
 client.on("message", fantic => {
-  if (fantic.content === "Zhwraka qfl bda") {
+  if (fantic.content === "Qfl bda") {
     if (!fantic.member.hasPermission("ADMINISTRATOR"))
       return fantic.react("❌");
     fantic.channel.overwritePermissions(fantic.guild.id, {
@@ -58,7 +58,7 @@ client.on("message", fantic => {
 
 //public krdni channel
 client.on("message", fantic => {
-  if (fantic.content === "Zhwraka bkawa") {
+  if (fantic.content === "Bkawa") {
     if (!fantic.member.hasPermission("ADMINISTRATOR"))
       return fantic.react("❌");
     fantic.channel.overwritePermissions(fantic.guild.id, {
