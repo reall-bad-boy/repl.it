@@ -93,7 +93,7 @@ message.channel
 SEND_MESSAGES: false
 })
 .then(() => {
-message.reply("**THE CHANNEL HAS BEN LOCKED🔒**");
+message.reply("**LOCKED 🔒**");
 });
 }
  
@@ -107,7 +107,7 @@ message.channel
 SEND_MESSAGES: true
 })
 .then(() => {
-message.reply("**THE CHANNEL HAS BEN UNLOCKED🔓**");
+message.reply("**UNLOCKED 🔓**");
 });
 }
 });
