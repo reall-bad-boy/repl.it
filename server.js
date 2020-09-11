@@ -253,13 +253,21 @@ client.on("message", message => {
   
         message.author.sendMessage(`**__BOT SECURYITY**
   **__فەرمانی پاراستن__**  
+
    =settings limitsban • {بۆ دەستنیشان کردنی ژمارەی باند کردن }
+
    =settings limitskick •{بۆ دەستنیشان کردنی ژمارەی کیک کردن} 
+
    =settings limitsroleD •  {بۆ دەستنیشان کردنی رۆل دروست کردن}  
+
    =settings limitsroleC •   {بۆ دەستنیشان کردنی رۆل سڕینەوە} 
+
    =settings limitschannelD • {بۆ دەستنیشان کردنی سڕینەوەی ژوور} 
+
    =settings limitstime •  { بۆ دەستنیشان کردنی کاتی سزا} 
+
    =antibots on  • {بۆ راگرتنی هێنانی بۆت}
+
    =antibots off • {بۆ کردنەوەی هێنانی بۆت} 
   
   EDIT  {By:PABLO}
@@ -268,7 +276,7 @@ client.on("message", message => {
   });
 client.on("message", message => {
     if (message.author.bot) return;
-    if (message.content === prefix + "1help") {
+    if (message.content === prefix + "bot") {
       message.channel.send(`  **__Premium Bot v1__**> 
   ** Help Menu**
   ----------------------------
@@ -512,7 +520,7 @@ client.on("guildBanAdd", async (guild, user) => {
             anti[guild.id + entry.id].actions = "0"
         }, config[guild.id].time * 1000)
         if (anti[guild.id + entry.id].actions >= config[guild.id].banLimit) {
-            channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} یەک لە رۆلددەرەکان میمبەر باند دەکا**`))
+           channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} یەک لە رۆلددەرەکان میمبەر باند دەکا`))
             anti[guild.id + entry.id].actions = "0"
             fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                 if (e) throw e;
@@ -558,7 +566,7 @@ client.on("guildKickAdd", async (guild, user) => {
             anti[guild.id + entry.id].actions = "0"
         }, config[guild.id].time * 1000)
         if (anti[guild.id + entry.id].actions >= config[guild.id].banLimit) {
-            channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەرەکان میمبەر کیک دەکا`))
+            channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} `))
             anti[guild.id + entry.id].actions = "0"
             fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                 if (e) throw e;
