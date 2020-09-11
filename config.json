@@ -44,7 +44,7 @@
     "chaDelLimit": "1",
     "roleDelLimit": 3,
     "kickLimits": 3,
-    "roleCrLimits": 3,
+    "roleCrLimits": "1",
     "time": "40"
   },
   "703309121474003047": {
