@@ -252,23 +252,34 @@ client.on("message", message => {
       );
   
         message.author.sendMessage(`**__BOT SECURYITY**
-  **__فەرمانی پاراستن__**  
+  **__فەرمانی پاراستن__** 
+
+
 
    =settings limitsban • {بۆ دەستنیشان کردنی ژمارەی باند کردن }
 
+
    =settings limitskick •{بۆ دەستنیشان کردنی ژمارەی کیک کردن} 
+
 
    =settings limitsroleD •  {بۆ دەستنیشان کردنی رۆل دروست کردن}  
 
+
    =settings limitsroleC •   {بۆ دەستنیشان کردنی رۆل سڕینەوە} 
+
 
    =settings limitschannelD • {بۆ دەستنیشان کردنی سڕینەوەی ژوور} 
 
+
    =settings limitstime •  { بۆ دەستنیشان کردنی کاتی سزا} 
+
 
    =antibots on  • {بۆ راگرتنی هێنانی بۆت}
 
+
    =antibots off • {بۆ کردنەوەی هێنانی بۆت} 
+
+
   
   EDIT  {By:PABLO}
   `);
@@ -282,7 +293,9 @@ client.on("message", message => {
   ----------------------------
   > =help ** بۆتي سكويريتي  **
 
+
   .**EDIT** **BY:PABLO**
+
 
    **__Done__** 
 ----------------------------
@@ -313,37 +326,37 @@ client.on("message", message => {
         if (!message.member.hasPermission('MANAGE_GUILD')) return;
         if (message.content.startsWith(prefix + "settings limitsban")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
-            if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
+            if (isNaN(num)) return message.channel.send("**⇏ | تەنھا ژمارە! **");
             config[message.guild.id].banLimit = num;
             message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو: ${config[message.guild.id].banLimit} **`)
         }
         if (message.content.startsWith(prefix + "settings limitskick")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
-            if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
+            if (isNaN(num)) return message.channel.send("**⇏ | تەنھا ژمارە ! **");
             config[message.guild.id].kickLimits = num;
             message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو : ${config[message.guild.id].kickLimits}**`)
         }
         if (message.content.startsWith(prefix + "settings limitsroleD")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ! **");
-            if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
+            if (isNaN(num)) return message.channel.send("**⇏ | تەنھا ژمارە ! **");
             config[message.guild.id].roleDelLimit = num;
             message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو: ${config[message.guild.id].roleDelLimit}**`)
         }
         if (message.content.startsWith(prefix + "settings limitsroleC")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ! **");
-            if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
+            if (isNaN(num)) return message.channel.send("**⇏ | تەنھا ژمارە ! **");
             config[message.guild.id].roleCrLimits = num;
             message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو : ${config[message.guild.id].roleCrLimits}**`)
         }
         if (message.content.startsWith(prefix + "settings limitschannelD")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ! **");
-            if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
+            if (isNaN(num)) return message.channel.send("**⇏ | تەنھا ژمارە ! **");
             config[message.guild.id].chaDelLimit = num;
             message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو : ${config[message.guild.id].chaDelLimit}**`)
         }
         if (message.content.startsWith(prefix + "settings limitstime")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
-            if (isNaN(num)) return message.channel.send("**⇏ | أرقام فقط ! **");
+            if (isNaN(num)) return message.channel.send("**⇏ | تەنھا ژمارە! **");
             config[message.guild.id].time = num;
             message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو: ${config[message.guild.id].time}**`)
         }
