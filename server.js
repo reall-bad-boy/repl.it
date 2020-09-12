@@ -255,30 +255,32 @@ client.on("message", message => {
   **__فەرمانی پاراستن__** 
 
 
-
-   =settings limitsban • {بۆ دەستنیشان کردنی ژمارەی باند کردن }
-
-
-   =settings limitskick •{بۆ دەستنیشان کردنی ژمارەی کیک کردن} 
+> __ =settings limitsban__ 
 
 
-   =settings limitsroleD •  {بۆ دەستنیشان کردنی رۆل دروست کردن}  
+ > __  =settings limitskick__
 
 
-   =settings limitsroleC •   {بۆ دەستنیشان کردنی رۆل سڕینەوە} 
+ > __=settings limitsroleD__  
 
 
-   =settings limitschannelD • {بۆ دەستنیشان کردنی سڕینەوەی ژوور} 
+ > __ =settings limitsroleC__ 
 
 
-   =settings limitstime •  { بۆ دەستنیشان کردنی کاتی سزا} 
+ > __=settings limitschannelD__
 
 
-   =antibots on  • {بۆ راگرتنی هێنانی بۆت}
+> __ =settings limitstime__
 
 
-   =antibots off • {بۆ کردنەوەی هێنانی بۆت} 
+  > __=antibots on__
 
+ > __ =antibots off __
+
+ > __ =antihack on __
+
+  > __=antihack off __
+   
 
   
   EDIT  {By:PABLO}
