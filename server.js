@@ -231,17 +231,6 @@ client.on("ready", () => {
   }, 1000);
 });
 
-client.on("message", async message => {
-if (message.content.startsWith(``)) {
-const fetch = require("node-fetch");
-function Bot() {
-fetch("");
-console.log("pong");
-}
-setInterval(Bot, 60000);
-}
-
-});
 
 client.on("message", message => {
     if (message.author.bot) return;
@@ -510,7 +499,7 @@ client.on("roleCreate", async channel => {
 });
  
 client.on("guildBanAdd", async (guild, user) => {
-    const entry1 = await channel.guild.fetchAuditLogs({
+    const entry1 = await user.guild.fetchAuditLogs({
         type: 'MEMBER_BAN_ADD'
     }).then(audit => audit.entries.first())
     console.log(entry1.executor.username)
@@ -536,7 +525,7 @@ client.on("guildBanAdd", async (guild, user) => {
             anti[guild.id + entry.id].actions = "0"
         }, config[guild.id].time * 1000)
         if (anti[guild.id + entry.id].actions >= config[guild.id].banLimit) {
-           channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} یەک لە رۆلددەرەکان میمبەر باند دەکا`))
+           user.members.get(entry.id).ban().catch(e => user.owner.send(`**⇏ | ${entry.username} یەک لە رۆلددەرەکان میمبەر باند دەکا`))
             anti[guild.id + entry.id].actions = "0"
             fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                 if (e) throw e;
@@ -556,7 +545,7 @@ client.on("guildBanAdd", async (guild, user) => {
 });
  
 client.on("guildKickAdd", async (guild, user) => {
-    const entry1 = await channel.fetchAuditLogs({
+    const entry1 = await user.fetchAuditLogs({
         type: 'MEMBER_KICK'
     }).then(audit => audit.entries.first())
     console.log(entry1.executor.username)
@@ -582,7 +571,7 @@ client.on("guildKickAdd", async (guild, user) => {
             anti[guild.id + entry.id].actions = "0"
         }, config[guild.id].time * 1000)
         if (anti[guild.id + entry.id].actions >= config[guild.id].banLimit) {
-            channel.members.get(entry.id).ban().catch(e => channel.owner.send(`**⇏ | ${entry.username} `))
+            user.members.get(entry.id).ban().catch(e => user.owner.send(`**⇏ | ${entry.username} `))
             anti[guild.id + entry.id].actions = "0"
             fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
                 if (e) throw e;
