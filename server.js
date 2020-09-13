@@ -255,31 +255,31 @@ client.on("message", message => {
   **__فەرمانی پاراستن__** 
 
 
-> __ =settings limitsban__ 
+> **__ =settings limitsban__ **
 
 
- > __  =settings limitskick__
+ > **__  =settings limitskick__**
 
 
- > __=settings limitsroleD__  
+ > ** __=settings limitsroleD__**  
 
 
- > __ =settings limitsroleC__ 
+ > ** __ =settings limitsroleC__ **
 
 
- > __=settings limitschannelD__
+ > **__=settings limitschannelD__**
 
 
-> __ =settings limitstime__
+> **__ =settings limitstime__**
 
 
-  > __=antibots on__
+  > **__=antibots on__**
 
- > __ =antibots off __
+ > **__ =antibots off __**
 
- > __ =antihack on __
+ > **__ =antihack on __**
 
-  > __=antihack off __
+  > **__=antihack off __**
    
 
   
