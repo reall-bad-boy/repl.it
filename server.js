@@ -70,15 +70,15 @@ client.on("message", fantic => {
 
 /////
 client.on('message', message => {
-//ARBELE
+//
 if(message.content.includes("discord.gg")){
 if(!message.member.hasPermission('ADMINISTRATOR')){
 message.delete(); 
 message.reply("‎!تكایه‌ ڕیكلام مه‌كه‌")
 }
-//ARBELE
+//
 }
-//ARBELE
+//
 });
 
 client.on("message", message => {
