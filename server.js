@@ -69,17 +69,7 @@ client.on("message", fantic => {
 });
 
 /////
-client.on('message', message => {
-//
-if(message.content.includes("discord.gg")){
-if(!message.member.hasPermission('ADMINISTRATOR')){
-message.delete(); 
-message.reply("‎!تكایه‌ ڕیكلام مه‌كه‌")
-}
-//
-}
-//
-});
+
 
 client.on("message", message => {
 let ToOFaN
