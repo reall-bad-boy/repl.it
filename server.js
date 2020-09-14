@@ -106,19 +106,6 @@ message.reply("**UNLOCKED 🔓**");
 
 
 client.on('message', message => {
-//PABLO
-if(message.content.includes("discord.gg")){
-if(!message.member.hasPermission('ADMINISTRATOR')){
-message.delete(); 
-message.reply("سێرڤەر دامەنێ")
-}
-//PABLO
-}
-//PABLO
-});
-
-
-client.on('message', message => {
   if (!message.guild) return;
   if (message.content === prefix + 'join') {
     if (message.member.voiceChannel) {
