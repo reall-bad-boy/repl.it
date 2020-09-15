@@ -712,6 +712,24 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   });
   
   })
+
+client
+.on("message", async message => {
+  if (message.content.startsWith(prefix + "=invit")) {
+    let invite = new Discord.RichEmbed()
+      .setColor("RANDOM")
+      .setAuthor(message.author.username, message.author.displayAvatarURL)
+      .setThumbnail(message.author.avatarURL)
+      .setTitle(
+        "کلیک لێرە بکە بۆ ئەوەی بۆت ئەکە ئینڤاتی سێرڤەری خۆت بکەیsparkling_heart"
+      )
+      .setURL(
+        `https://discord.com/api/oauth2/authorize?client_id=748637415106936927&permissions=8&scope=bot`
+      );
+    message.channel.sendEmbed(invite);
+  }
+});
+
   
 ///by P A B L O AND pxPROFESSOR
 
