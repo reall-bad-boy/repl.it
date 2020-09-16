@@ -196,7 +196,7 @@ client.on("ready", () => {
   );
   let statuses = [
     `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
-    `PABLO AND PROFESSOR`,
+    `MADE BY MR JACK`,
      ` =help`
   ];
   setInterval(function() {
@@ -223,21 +223,15 @@ client.on("message", message => {
 
 > **__ =settings limitsban__ **
 
-
  > **__  =settings limitskick__**
-
 
  > ** __=settings limitsroleD__**  
 
-
  > ** __ =settings limitsroleC__ **
-
 
  > **__=settings limitschannelD__**
 
-
 > **__ =settings limitstime__**
-
 
   > **__=antibots on__**
 
