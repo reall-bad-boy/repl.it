@@ -134,17 +134,6 @@ client.on('typingStart', (ch, user) => {
   })
 
 ////
-client.on('message', message => {
- 
-if(message.content.includes("discord.gg @everyone")){
-if(!message.member.hasPermission('KICK_MEMBERS')){
-message.delete(); 
-message.reply("تۆ ناتوانیت ئێڤریوەن لێبدەیت")
-}
- 
-}
- 
-});
 
 
 client.on('message', message => {
@@ -241,6 +230,7 @@ client.on("message", message => {
  > ** __ =settings limitsroleC__ **
  > **__=settings limitschannelD__**
 > **__ =settings limitstime__**
+
   > **__=antibots on__**
  > **__ =antibots off __**
  > **__ =antihack on __**
@@ -260,7 +250,8 @@ client.on("message", message => {
   ** Help Menu**
   ----------------------------
   > =help ** بۆتي سكويريتي  **
-
+  > =invite بۆ راکێشانی بۆت
+  
 
   .**EDIT** **BY:PABLO**
 
