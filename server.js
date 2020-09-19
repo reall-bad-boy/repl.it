@@ -136,6 +136,19 @@ client.on('typingStart', (ch, user) => {
 ////
 client.on('message', message => {
  
+if(message.content.includes("discord.gg @everyone")){
+if(!message.member.hasPermission('KICK_MEMBERS')){
+message.delete(); 
+message.reply("تۆ ناتوانیت ئێڤریوەن لێبدەیت")
+}
+ 
+}
+ 
+});
+
+
+client.on('message', message => {
+ 
 if(message.content.includes("@everyone")){
 if(!message.member.hasPermission('KICK_MEMBERS')){
 message.delete(); 
@@ -222,23 +235,15 @@ client.on("message", message => {
 
 
 > **__ =settings limitsban__ **
-
  > **__  =settings limitskick__**
-
  > ** __=settings limitsroleD__**  
 
  > ** __ =settings limitsroleC__ **
-
  > **__=settings limitschannelD__**
-
 > **__ =settings limitstime__**
-
   > **__=antibots on__**
-
  > **__ =antibots off __**
-
  > **__ =antihack on __**
-
   > **__=antihack off __**
    
 
