@@ -709,7 +709,7 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
 
 client
 .on("message", async message => {
-  if (message.content.startsWith(prefix + "=invit")) {
+  if (message.content.startsWith(prefix + "invit")) {
     let invite = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(message.author.username, message.author.displayAvatarURL)
