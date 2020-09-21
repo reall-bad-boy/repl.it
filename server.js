@@ -103,7 +103,7 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "moveall")) {
+  if (message.content.startsWith(prefix + "move all")) {
     if (!message.member.hasPermission("MOVE_MEMBERS"))
       return message.channel.send("**لايوجد لديك صلاحية سحب الأعضاء**");
     if (!message.guild.member(client.user).hasPermission("MOVE_MEMBERS"))
@@ -254,8 +254,10 @@ client.on("message", message => {
  > **__ =antibots off __**
  > **__ =antihack on __**
   > **__=antihack off __**
-  >**
 
+  > **__lock__**
+> **__unlock__**
+> **__move all__**
   
   EDIT  {By:PABLO}
   `);
