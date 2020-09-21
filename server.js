@@ -134,14 +134,12 @@ client.on('typingStart', (ch, user) => {
   })
 
 ////
-
-
 client.on('message', message => {
  
 if(message.content.includes("@everyone")){
 if(!message.member.hasPermission('KICK_MEMBERS')){
 message.delete(); 
-message.reply("تۆ ناتوانیت ئێڤریوەن لێبدەیت")
+message.reply("ئێڤری وەن لێمەدە دڵم")
 }
  
 }
@@ -154,12 +152,13 @@ client.on('message', message => {
 if(message.content.includes("@everyone@everyone")){
 if(!message.member.hasPermission('KICK_MEMBERS')){
 message.delete(); 
-message.reply("تۆ ناتوانیت ئێڤریوەن لێبدەیت")
+message.reply("you can't use everyone")
 }
  
 }
  
-});
+});                          
+
 
 
 ////
@@ -168,7 +167,7 @@ client.on('message', message => {
 if(message.content.includes("@here")){
 if(!message.member.hasPermission('KICK_MEMBERS')){
 message.delete(); 
-message.reply("تۆ ناتوانیت ھێر لێبدەی")
+message.reply("You can't use here")
 }
  
 }
@@ -181,13 +180,12 @@ client.on('message', message => {
 if(message.content.includes("@here@here")){
 if(!message.member.hasPermission('KICK_MEMBERS')){
 message.delete(); 
-message.reply("تۆ ناتوانیت ھێر لێبدەی")
+message.reply("زۆرت ماوە گوڵم")
 }
  
 }
  
-});
-
+});                          
 
 
 ////
