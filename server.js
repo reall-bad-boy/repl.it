@@ -245,7 +245,7 @@ client.on("message", message => {
 
 client.on("message", message => {
     if (message.author.bot) return;
-    if (message.content === prefix + "bot") {
+    if (message.content === prefix + "info") {
       message.channel.send(`  **__Premium Bot v1__**> 
   ** Help Menu**
   ----------------------------
@@ -707,26 +707,35 @@ client.on('message', message => {
  
         })
 
-  client.on("message", zaid => {
-  if (zaid.content ===  "bot") {
-    const bot = new Discord.RichEmbed()
-      .setAuthor(client.user.username, client.user.avatarURL)
-      .setColor("#00000")
-      .addField(
-        "✽ **Bot Ping** : ",
-        `» ${Date.now() - zaid.createdTimestamp}` + " ms",
-        true
-      )
-      .addField("**Servers** :  ", `» ${client.guilds.size}`, true)
-      .addField("**Channels** : ", `» ${client.channels.size} `, true)
-      .addField("**Users** : ", `» ${client.users.size} `, true)
-      .addField("**Bot Name** :  ", `» ${client.user.tag} `, true)
-      .addField("**Bot Owner** :  ", `»  <@!732274766022443019>  <@619039917615480832> `, true) // تعديل مهم عدل هذا الرقم لايدي حسابك
-    .setImage(
-        ""
-      );
-  };
- })
+client.on("message", message => {
+  if (message.content == prefix + "bot") {
+    message.channel.send({
+      embed: new Discord.RichEmbed()
+        .setAuthor(client.user.username, client.user.avatarURL)
+        .setThumbnail(client.user.avatarURL)
+        .setColor("RANDOM")
+        .setTitle("``INFO Bot`` ")
+        .addField(
+          "``My Ping``",
+          [`${Date.now() - message.createdTimestamp}` + "MS"],
+          true
+        )
+        .addField(
+          "``RAM Usage``",
+          `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`,
+          true
+        )
+        .addField("``servers``", [client.guilds.size], true)
+        .addField("``channels``", `[ ${client.channels.size} ]`, true)
+        .addField("``Users``", `[ ${client.users.size} ]`, true)
+        .addField("``My Name``", `[ ${client.user.tag} ]`, true)
+        .addField("``My ID``", `[ ${client.user.id} ]`, true)
+        .addField("``My Prefix``", `[ = ]`, true)
+        .addField("``My Language``", `[ Java Script ]`, true)
+        .setFooter("By FAMILY BLACK JACK")
+    });
+  }
+});
 
 let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
    client.on('message', message => {
