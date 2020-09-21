@@ -102,7 +102,28 @@ client.on("message", message => {
   }
 });
 
-
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "moveall")) {
+    if (!message.member.hasPermission("MOVE_MEMBERS"))
+      return message.channel.send("**لايوجد لديك صلاحية سحب الأعضاء**");
+    if (!message.guild.member(client.user).hasPermission("MOVE_MEMBERS"))
+      return message.reply("**__ببورە رۆڵەکەی تۆ ناتوانێ ێەم کارە بکات__**");
+    if (message.member.voiceChannel == null)
+      return message.channel.send(
+        `**__ تکایە برۆ ڤۆیس ئەک ئینجا کۆماندەکە بنوسە__**`
+      );
+    var author = message.member.voiceChannelID;
+    var m = message.guild.members.filter(m => m.voiceChannel);
+    message.guild.members
+      .filter(m => m.voiceChannel)
+      .forEach(m => {
+        m.setVoiceChannel(author);
+      });
+    message.channel.send(
+      `✅ **بە سەرکەوتوی هەموو ئەوانەی لە ڤۆیس بون  موڤ کرانە لای خۆت **`
+    );
+  }
+});
 
 
 client.on('message', message => {
@@ -233,7 +254,7 @@ client.on("message", message => {
  > **__ =antibots off __**
  > **__ =antihack on __**
   > **__=antihack off __**
-   
+  >**
 
   
   EDIT  {By:PABLO}
