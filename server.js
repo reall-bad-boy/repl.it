@@ -69,6 +69,9 @@ client.on("message", fantic => {
 });
 
 /////
+ //the main function for the anti spam
+
+
 
 client.on("message", message => {
   if (message.content === prefix + "lock") {
