@@ -9,24 +9,6 @@ setInterval(() => {
   http.get(`http://protect-bot-for-philippe.glitch.me/`);
 }, 280000);
  
-const antispam = require("discord-anti-spam"); //the main function for the anti spam
-client.commands = new Discord.Collection();
-antispam(client, {
-    warnThreshold: 2, // Amount of messages sent in a row that will cause a warning.
-    kickThreshold: 4, // Amount of messages sent in a row that will cause a ban.
-    banThreshold: 5, // Amount of messages sent in a row that will cause a ban.
-    maxInterval: 2000, // Amount of time (in milliseconds) in which messages are considered spam.
-    warnMessage: '{@user}, Please stop spamming.', // Message that will be sent in chat upon warning a user.
-    kickMessage: '{user_tag} has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
-    banMessage: '{user_tag} has been banned for spamming.', // Message that will be sent in chat upon banning a user.
-    maxDuplicatesWarning: 2, // Amount of duplicate messages that trigger a warning.
-    maxDuplicatesKick: 2, // Amount of duplicate messages that trigger a warning.
-    maxDuplicatesBan: 2, // Amount of duplicate messages that trigger a warning.
-    exemptPermissions: [ 'ADMINISTRATOR'], // Bypass users with any of these permissions.
-    ignoreBots: true, // Ignore bot messages.
-    verbose: true, // Extended Logs from module.
-   
-});
 
 // كل البكجات الي ممكن تحتجها في اي بوت
 const { Client, RichEmbed } = require("discord.js");
