@@ -12,7 +12,7 @@ dependencies:
   common-tags: 1.8.0
   dateformat: 3.0.3
   delay: 4.3.0
-  discord-anti-spam: 2.3.4
+  discord-anti-spam: 2.4.1
   discord.js: 11.5.1
   enmap: 5.2.4
   express: 4.17.1
@@ -1956,12 +1956,10 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha1-v9N0EHX9f7GlsuE2WMX0vsd3NvM=
-  /discord-anti-spam/2.3.4:
-    dependencies:
-      discord.js: 11.5.1
+  /discord-anti-spam/2.4.1:
     dev: false
     resolution:
-      integrity: sha512-Y9XAIfGegNoSbwpGIIp5p5nIVi9BygISv80N1i92A+URCeqIqCCAFmkOWp8hM8JbyiXDbeiAFT0Jqae+h9Zv9A==
+      integrity: sha512-LuWYmeVYnsIDkLqQH811vod7jWnnYI03o0DAiV+7sY7tAKQjpqC9hYkP8f5PaODA9Jl4zoMNXDAVA4aAwmeuaA==
   /discord.js/11.5.1:
     dependencies:
       long: 4.0.0
@@ -6945,7 +6943,7 @@ specifiers:
   common-tags: ^1.8.0
   dateformat: ^3.0.3
   delay: ^4.1.0
-  discord-anti-spam: ^2.0.0
+  discord-anti-spam: ^2.4.1
   discord.js: ^11.5.1
   enmap: ^5.0.0
   express: ^4.16.4
