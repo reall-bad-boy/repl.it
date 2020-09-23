@@ -69,6 +69,7 @@ client.on("message", fantic => {
   }
 });
 
+
 /////
 client.on("message", message => {
 if (message.content.split(" ")[0].toLowerCase() === prefix + "clear") {
