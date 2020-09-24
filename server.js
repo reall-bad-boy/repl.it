@@ -47,7 +47,7 @@ client.on('ready', () => {
 });
 //private krdni channel
 client.on("message", fantic => {
-  if (fantic.content === "Qfl bda") {
+  if (fantic.content === "lock") {
     if (!fantic.member.hasPermission("ADMINISTRATOR"))
       return fantic.react("❌");
     fantic.channel.overwritePermissions(fantic.guild.id, {
@@ -59,7 +59,7 @@ client.on("message", fantic => {
 
 //public krdni channel
 client.on("message", fantic => {
-  if (fantic.content === "Bkawa") {
+  if (fantic.content === "open") {
     if (!fantic.member.hasPermission("ADMINISTRATOR"))
       return fantic.react("❌");
     fantic.channel.overwritePermissions(fantic.guild.id, {
@@ -256,8 +256,8 @@ client.on("ready", () => {
   );
   let statuses = [
     `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
-    `MADE BY MR JACK`,
-     ` =help`
+    `I'm Here To Secure Your Server`,
+     ` c!help`
   ];
   setInterval(function() {
     let STREAMING = statuses[Math.floor(Math.random() * statuses.length)];
@@ -281,24 +281,24 @@ client.on("message", message => {
   **__فەرمانی پاراستن__** 
 
 
-> **__ =settings limitsban__ **
- > **__  =settings limitskick__**
- > ** __=settings limitsroleD__**  
+> **__ c!settings limitsban__ **
+ > **__  c!settings limitskick__**
+ > ** __c!settings limitsroleD__**  
 
- > ** __ =settings limitsroleC__ **
- > **__=settings limitschannelD__**
-> **__ =settings limitstime__**
+ > ** __ c!settings limitsroleC__ **
+ > **__c!settings limitschannelD__**
+> **__ c!settings limitstime__**
 
-  > **__=antibots on__**
- > **__ =antibots off __**
- > **__ =antihack on __**
-  > **__=antihack off __**
+  > **__c!antibots on__**
+ > **__ c!antibots off __**
+ > **__ c!antihack on __**
+  > **__c!antihack off __**
 
-  > **__lock__**
-> **__unlock__**
-> **__move all__**
+  > **__c!lock__**
+> **__c!unlock__**
+> **__c!move all__**
   
-  EDIT  {By:PABLO}
+
   `);
     }
   });
@@ -309,11 +309,11 @@ client.on("message", message => {
       message.channel.send(`  **__Premium Bot v1__**> 
   ** Help Menu**
   ----------------------------
-  > =help ** بۆتي سكويريتي  **
-  > =invite بۆ راکێشانی بۆت
+  > c!help ** بۆتي سكويريتي  **
+  > c!invite بۆ راکێشانی بۆت
   
 
-  .**EDIT** **BY:PABLO**
+ 
 
 
    **__Done__** 
