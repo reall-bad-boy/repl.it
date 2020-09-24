@@ -260,9 +260,9 @@ client.on("ready", () => {
      ` c!help`
   ];
   setInterval(function() {
-    let STREAMING = statuses[Math.floor(Math.random() * statuses.length)];
-    client.user.setActivity(STREAMING, {
-      type: "STREAMING",
+    let Playing= statuses[Math.floor(Math.random() * statuses.length)];
+    client.user.setActivity(Playing, {
+      type: "Playing",
       url: "https://www.twitch.tv/faith"
     });
   }, 1000);
@@ -857,10 +857,10 @@ client
       .setAuthor(message.author.username, message.author.displayAvatarURL)
       .setThumbnail(message.author.avatarURL)
       .setTitle(
-        "کلیک لێرە بکە بۆ ئەوەی بۆت ئەکە ئینڤاتی سێرڤەری خۆت بکەیsparkling_heart"
+        "کلیک لێرە بکە بۆ ئەوەی بۆت ئەکە ئینڤاتی سێرڤەری خۆت بکەی:sparkling_heart:"
       )
       .setURL(
-        `https://discord.com/api/oauth2/authorize?client_id=748637415106936927&permissions=8&scope=bot`
+        `https://discord.com/api/oauth2/authorize?client_id=758786163523190794&permissions=8&scope=bot`
       );
     message.channel.sendEmbed(invite);
   }
