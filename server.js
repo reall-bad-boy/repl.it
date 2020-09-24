@@ -277,7 +277,7 @@ client.on("message", message => {
         ` لە چاتی تایبەت ناردم`
       );
   
-        message.author.sendMessage(`**__BOT SECURYITY**
+        message.author.sendMessage(`**__BOT SECURITY___**
   **__فەرمانی پاراستن__** 
 
 
@@ -792,7 +792,7 @@ client.on("message", message => {
         .addField("``My ID``", `[ ${client.user.id} ]`, true)
         .addField("``My Prefix``", `[ = ]`, true)
         .addField("``My Language``", `[ Java Script ]`, true)
-        .setFooter("By FAMILY BLACK JACK")
+        .setFooter("BY FAMILY CeZo")
     });
   }
 });
