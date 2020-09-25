@@ -755,8 +755,8 @@ client.on('message', message => {
         if(!antihack[message.guild.id]) antihack[message.guild.id] = { 
           onoff: 'Off'
         } 
-          if(antihack[message.guild.id].onoff === 'Off') return [message.channel.send(`**✅ The AntiHack Is __𝐎𝐍__ !**`), antihack[message.guild.id].onoff = 'On']
-          if(antihack[message.guild.id].onoff === 'On') return [message.channel.send(`**⛔ The AntiHack Is __𝐎𝐅𝐅__ !**`), antihack[message.guild.id].onoff = 'Off']
+          if(antihack[message.guild.id].onoff === 'On') return [message.channel.send(`**✅ The AntiHack Is __𝐎𝐍__ !**`), antihack[message.guild.id].onoff = 'On']
+          if(antihack[message.guild.id].onoff === 'Off') return [message.channel.send(`**⛔ The AntiHack Is __𝐎𝐅𝐅__ !**`), antihack[message.guild.id].onoff = 'Off']
           fs.writeFile("./antihack.json", JSON.stringify(antihack), (err) => {
             if (err) console.error(err)
             .catch(err => {
@@ -790,7 +790,7 @@ client.on("message", message => {
         .addField("``Users``", `[ ${client.users.size} ]`, true)
         .addField("``My Name``", `[ ${client.user.tag} ]`, true)
         .addField("``My ID``", `[ ${client.user.id} ]`, true)
-        .addField("``My Prefix``", `[ = ]`, true)
+        .addField("``My Prefix``", `[ c! ]`, true)
         .addField("``My Language``", `[ Java Script ]`, true)
         .setFooter("BY FAMILY CeZo")
     });
