@@ -266,19 +266,19 @@ client.on("message", message => {
         message.author.sendMessage(`**__BOT SECURITY___**
   **__فەرمانی پاراستن__** 
 
-**__prefix bot=(m!)
+ > **__prefix bot=(m!)
 ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
-> **__ settings limitsban__ **
- > **__  settings limitskick__**
- > ** __settings limitsroleD__**  
- > ** __ settings limitsroleC__ **
- > **__settings limitschannelD__**
-> **__ settings limitstime__**
+> **__ settings limitsban [1 to 3]__ **
+ > **__  settings limitskick [1 to 3]__**
+ > ** __settings limitsroleD 1 to 3]__**  
+ > ** __ settings limitsroleC [1 to 3]__ **
+ > **__settings limitschannelD [1 to 3]__**
+> **__ settings limitstime [1 to 3]__**
   > **__antibots on__**
  > **__ antibots off __**
  ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
-  > **__bot__**
-  > **__lock__**
+> **__bot__**
+> **__lock__**
 > **__unlock__**
 > **__move all__**
 > **__@everyone and @here dlete__**
@@ -728,30 +728,12 @@ client.on("guildMemberRemove", async member => {
     }
  
 })
+///////////
 
 
 
 
-
-let antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
-client.on('message', message => { 
-    if(message.content.startsWith(prefix + "antihack")) { 
-        if(!message.channel.guild) return message.reply('**This Command Only For Servers**'); 
-        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' ); 
-        if(!antihack[message.guild.id]) antihack[message.guild.id] = { 
-          onoff: 'Off'
-        } 
-          if(antihack[message.guild.id].onoff === 'On') return [message.channel.send(`**✅ The AntiHack Is __𝐎𝐍__ !**`), antihack[message.guild.id].onoff = 'On']
-          if(antihack[message.guild.id].onoff === 'Off') return [message.channel.send(`**⛔ The AntiHack Is __𝐎𝐅𝐅__ !**`), antihack[message.guild.id].onoff = 'Off']
-          fs.writeFile("./antihack.json", JSON.stringify(antihack), (err) => {
-            if (err) console.error(err)
-            .catch(err => {
-              console.error(err);
-          });
-            });
-          }
- 
-        })
+////////////////
 
 client.on("message", message => {
   if (message.content == prefix + "bot") {
@@ -791,7 +773,7 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   antibots[message.guild.id] = {
   onoff: 'On',
   }
-  message.channel.send(`**antibots is on✔ٲیستا بۆت ناتوانێ جۆینی سێرڤەر بکات**`)
+  message.channel.send(`**antibots is on✅ٲیستا بۆت ناتوانێ جۆینی سێرڤەر بکات**`)
             fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
               if (err) console.error(err)
               .catch(err => {
@@ -846,7 +828,7 @@ client
         "کلیک لێرە بکە بۆ ئەوەی بۆت ئەکە ئینڤاتی سێرڤەری خۆت بکەی:sparkling_heart:"
       )
       .setURL(
-        `https://discord.com/api/oauth2/authorize?client_id=758786163523190794&permissions=8&scope=bot`
+        `https://discord.com/api/oauth2/authorize?client_id=758789473671577612&permissions=8&scope=bot`
       );
     message.channel.sendEmbed(invite);
   }
