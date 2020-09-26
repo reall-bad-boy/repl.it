@@ -164,24 +164,10 @@ client.on("message", message => {
   }
 });
 
-
-client.on('message', message => {
-  if (!message.guild) return;
-  if (message.content === prefix + 'join') {
-    if (message.member.voiceChannel) {
-      message.member.voiceChannel.join()
-        .then(connection => {
-          message.reply('**kra. ..**!');
-        })
-        .catch(console.log);
-    } else {
-      message.reply('**- bcho zhwrekawa !**');
-    }
-  }
-});
+///////////
 
 
-////
+//////////
 
 client.on('typingStart', (ch, user) => {
       if(user.presence.status === 'offline') {
@@ -256,13 +242,13 @@ client.on("ready", () => {
   );
   let statuses = [
     `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
-    `I'm Here To Secure Your Server`,
-     ` c!help`
+    `m!help/security is here`,
+     
   ];
   setInterval(function() {
-    let Playing= statuses[Math.floor(Math.random() * statuses.length)];
-    client.user.setActivity(Playing, {
-      type: "Playing",
+    let PLAYING = statuses[Math.floor(Math.random() * statuses.length)];
+    client.user.setActivity(PLAYING, {
+      type: "PLAYING",
       url: "https://www.twitch.tv/faith"
     });
   }, 1000);
@@ -280,24 +266,24 @@ client.on("message", message => {
         message.author.sendMessage(`**__BOT SECURITY___**
   **__فەرمانی پاراستن__** 
 
-
-> **__ c!settings limitsban__ **
- > **__  c!settings limitskick__**
- > ** __c!settings limitsroleD__**  
-
- > ** __ c!settings limitsroleC__ **
- > **__c!settings limitschannelD__**
-> **__ c!settings limitstime__**
-
-  > **__c!antibots on__**
- > **__ c!antibots off __**
- > **__ c!antihack on __**
-  > **__c!antihack off __**
-
-  > **__c!lock__**
-> **__c!unlock__**
-> **__c!move all__**
-  
+**__prefix bot=(m!)
+✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
+> **__ settings limitsban__ **
+ > **__  settings limitskick__**
+ > ** __settings limitsroleD__**  
+ > ** __ settings limitsroleC__ **
+ > **__settings limitschannelD__**
+> **__ settings limitstime__**
+  > **__antibots on__**
+ > **__ antibots off __**
+ ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
+  > **__bot__**
+  > **__lock__**
+> **__unlock__**
+> **__move all__**
+> **__@everyone and @here dlete__**
+ ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
+BY MOSO
 
   `);
     }
@@ -309,8 +295,8 @@ client.on("message", message => {
       message.channel.send(`  **__Premium Bot v1__**> 
   ** Help Menu**
   ----------------------------
-  > c!help ** بۆتي سكويريتي  **
-  > c!invite بۆ راکێشانی بۆت
+  > m!help ** بۆتي سكويريتي  **
+   
   
 
  
@@ -790,9 +776,9 @@ client.on("message", message => {
         .addField("``Users``", `[ ${client.users.size} ]`, true)
         .addField("``My Name``", `[ ${client.user.tag} ]`, true)
         .addField("``My ID``", `[ ${client.user.id} ]`, true)
-        .addField("``My Prefix``", `[ c! ]`, true)
-        .addField("``My Language``", `[ Java Script ]`, true)
-        .setFooter("BY FAMILY CeZo")
+        .addField("``FOUNDER``", `[ Robot.Mo ]`, true)
+        .addField("``Co.FOUNDER``", `[ Robot.PABLO ]`, true)
+        .setFooter("")
     });
   }
 });
@@ -805,7 +791,7 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   antibots[message.guild.id] = {
   onoff: 'On',
   }
-  message.channel.send(`**antibots is on🔒**`)
+  message.channel.send(`**antibots is on✔ٲیستا بۆت ناتوانێ جۆینی سێرڤەر بکات**`)
             fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
               if (err) console.error(err)
               .catch(err => {
@@ -823,7 +809,7 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   antibots[message.guild.id] = {
   onoff: 'Off',
   }
-  message.channel.send(`**antibots is off 🔓**`)
+  message.channel.send(`**antibots is off ⛔ٲیستا بۆت دەتوانی جۆینی سێرڤەر بکات**`)
             fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
               if (err) console.error(err)
               .catch(err => {
