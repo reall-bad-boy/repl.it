@@ -281,6 +281,7 @@ client.on("message", message => {
 > **__lock__**
 > **__unlock__**
 > **__move all__**
+> **__invite__**
 > **__@everyone and @here dlete__**
  ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
 BY MOSO
