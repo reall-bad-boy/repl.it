@@ -47,7 +47,7 @@ client.on('ready', () => {
 });
 //private krdni channel
 client.on("message", fantic => {
-  if (fantic.content === "lock") {
+  if (fantic.content === "Qfl bda") {
     if (!fantic.member.hasPermission("ADMINISTRATOR"))
       return fantic.react("❌");
     fantic.channel.overwritePermissions(fantic.guild.id, {
@@ -59,7 +59,7 @@ client.on("message", fantic => {
 
 //public krdni channel
 client.on("message", fantic => {
-  if (fantic.content === "open") {
+  if (fantic.content === "Bkawa") {
     if (!fantic.member.hasPermission("ADMINISTRATOR"))
       return fantic.react("❌");
     fantic.channel.overwritePermissions(fantic.guild.id, {
@@ -110,7 +110,7 @@ return message.channel
 
 
 client.on("message", message => {
-  if (message.content === prefix + "1") {
+  if (message.content === prefix + "lock") {
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
 
@@ -125,7 +125,7 @@ client.on("message", message => {
       });
   }
   //FIRE BOT
-  if (message.content === prefix + "2") {
+  if (message.content === prefix + "unlock") {
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
 
