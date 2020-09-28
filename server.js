@@ -110,7 +110,7 @@ return message.channel
 
 
 client.on("message", message => {
-  if (message.content === prefix + "lock") {
+  if (message.content === prefix + "1") {
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
 
@@ -125,7 +125,7 @@ client.on("message", message => {
       });
   }
   //FIRE BOT
-  if (message.content === prefix + "unlock") {
+  if (message.content === prefix + "2") {
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
 
@@ -242,7 +242,7 @@ client.on("ready", () => {
   );
   let statuses = [
     `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
-    `m!help/security is here`,
+    `=help/security is here`,
      
   ];
   setInterval(function() {
@@ -260,13 +260,13 @@ client.on("message", message => {
     if (message.content === prefix + "help") {
       
       message.channel.send(
-        ` لە چاتی تایبەت ناردم`
+        ` `
       );
   
-        message.author.sendMessage(`**__BOT SECURITY___**
+        message.channel.sendMessage(`**__BOT SECURITY___**
   **__فەرمانی پاراستن__** 
 
- > **__prefix bot=(m!)
+ > **__prefix bot=(=)
 ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
 > **__ settings limitsban [1 to 3]__ **
  > **__  settings limitskick [1 to 3]__**
@@ -284,7 +284,7 @@ client.on("message", message => {
 > **__invite__**
 > **__@everyone and @here dlete__**
  ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
-BY MOSO
+BY BLACK JACK
 
   `);
     }
@@ -296,7 +296,7 @@ client.on("message", message => {
       message.channel.send(`  **__Premium Bot v1__**> 
   ** Help Menu**
   ----------------------------
-  > m!help ** بۆتي سكويريتي  **
+  > =help ** بۆتي سكويريتي  **
    
   
 
