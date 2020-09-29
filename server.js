@@ -766,6 +766,87 @@ client.on("message", message => {
   }
 });
 
+let antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
+ 
+client.on('message', message => {
+    if(message.content.startsWith(prefix + "antijoin on")) {
+        if(!message.channel.guild) return message.reply('**هذا الامر للسيرفرات فقط**');
+        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**يجب ان يكون معك صلاحية*** `MANAGE_GUILD`' );
+antijoin[message.guild.id] = {
+onoff: 'On',
+}
+message.channel.send(`**✅ The AntiJoin Is __𝐎𝐍__ !**`)
+          fs.writeFile("./antijoin.json", JSON.stringify(antijoin), (err) => {
+            if (err) return console.error(err)
+            .catch(err => {
+              console.error(err);
+          });
+            });
+          }
+ 
+        })
+ 
+ 
+ 
+client.on('message', message => {
+    if(message.content.startsWith(prefix + "antijoin off")) {
+        if(!message.channel.guild) return message.reply('**هذا الامر للسيرفرات فقط**');
+        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**يجب ان يكون معك صلاحية** `MANAGE_GUILD`' );
+antijoin[message.guild.id] = {
+onoff: 'Off',
+}
+message.channel.send(`**⛔ The AntiJoin Is __𝐎𝐅𝐅__ !**`)
+          fs.writeFile("./antijoin.json", JSON.stringify(antijoin), (err) => {
+            if (err) return console.error(err)
+            .catch(err => {
+              console.error(err);
+          });
+            });
+          }
+ 
+        })
+         client.on('message', message => {
+          if (!message.channel.guild) return;
+ 
+ 
+   if(message.content.startsWith(prefix + "setJoin")) {
+          let time = message.content.split(" ").slice(1).join(" ");
+       if(!message.channel.guild) return message.reply('**هذا الامر للسيرفرات فقط**');
+       if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**يجب ان يكون معك صلاحية** `MANAGE_GUILD`' );
+if (!time) return message.channel.send('برجاء كتابهة مدة الحساب الممنوع دخولة للسيرفر [Days]');
+let embed = new Discord.RichEmbed()
+.setTitle('**تم خاصية من دخول الحسبات الوهمية**')
+.addField('تريخ عمل الحساب:', `${time}.`)
+.addField('بطلب من :', `${message.author}`)
+.setThumbnail(message.author.avatarURL)
+.setFooter(`${client.user.username}`)
+message.channel.sendEmbed(embed)
+antijoin[message.guild.id] = {
+created: time,
+onoff: 'On',
+}
+fs.writeFile("./antijoin.json", JSON.stringify(antijoin), (err) => {
+if (err) console.error(err)
+})
+   }})
+ 
+client.on("guildMemberAdd", async member => {
+  if(!antijoin[member.guild.id]) antijoin[member.guild.id] = {
+    onoff: 'Off'
+  }
+  if(antijoin[member.guild.id].onoff === 'Off') return;
+  if(!member.user.bot) return;
+    let accounttime = `${antijoin[member.guild.id].created}`
+    let moment2 = require('moment-duration-format'),
+        moment = require("moment"),
+        date = moment.duration(new Date() - member.user.createdAt).format("d");
+ 
+    if(date < accounttime) {
+      member.ban(`يجب ان يكون عمر الحسبات اقل من  ${antijoin[member.guild.id].created} days.`)
+    }
+  });
+
+
 let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
    client.on('message', message => {
     if(message.content.startsWith(prefix + "antibots on")) {
