@@ -722,62 +722,144 @@ client.on("guildBanAdd", async (guild, user) => {
     if (e) throw e;
   });
 });
- 
+
 client.on("guildKickAdd", async (guild, user) => {
-    const entry1 = await user.fetchAuditLogs({
-        type: 'MEMBER_KICK'
-    }).then(audit => audit.entries.first())
-    console.log(entry1.executor.username)
-    const entry = entry1.executor
-    if (!config[guild.id]) config[guild.id] = {
-        banLimit: 3,
-        chaDelLimit: 3,
-        roleDelLimit: 3,
-        kickLimits: 3,
-        roleCrLimits: 3
-    }
-    if (!anti[guild.id + entry.id]) {
-        anti[guild.id + entry.id] = {
-            actions: 1
-        }
-        setTimeout(() => {
-            anti[guild.id + entry.id].actions = "0"
-        }, config[guild.id].time * 1000)
-    } else {
-        anti[guild.id + entry.id].actions = Math.floor(anti[guild.id + entry.id].actions + 1)
-        console.log("TETS");
-        setTimeout(() => {
-            anti[guild.id + entry.id].actions = "0"
-        }, config[guild.id].time * 1000)
-        if (anti[guild.id + entry.id].actions >= config[guild.id].banLimit) {
-            user.members.get(entry.id).ban().catch(e => user.owner.send(`**⇏ | ${entry.username} `))
-            anti[guild.id + entry.id].actions = "0"
-            fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
-                if (e) throw e;
-            });
-            fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
-                if (e) throw e;
-            });
-        }
-    }
- 
-    fs.writeFile("./config.json", JSON.stringify(config, null, 2), function (e) {
+  const entry1 = await guild
+    .fetchAuditLogs({
+      type: "MEMBER_KICK"
+    })
+    .then(audit => audit.entries.first());
+  console.log(entry1.executor.username);
+  const entry = entry1.executor;
+  if (!config[guild.id])
+    config[guild.id] = {
+      banLimit: 3,
+      chaDelLimit: 3,
+      chaCrLimit: 3,
+      roleDelLimit: 3,
+      kickLimits: 3,
+      roleCrLimits: 3,
+      time: 30
+    };
+  if (!anti[guild.id + entry.id]) {
+    anti[guild.id + entry.id] = {
+      actions: 1
+    };
+    setTimeout(() => {
+      anti[guild.id + entry.id].actions = 0;
+    }, config[guild.id].time * 1000);
+  } else {
+    anti[guild.id + entry.id].actions = Math.floor(
+      anti[guild.id + entry.id].actions + 1
+    );
+    console.log("TETS");
+    setTimeout(() => {
+      anti[guild.id + entry.id].actions = 0;
+    }, config[guild.id].time * 1000);
+    if (anti[guild.id + entry.id].actions >= config[guild.id].banLimit) {
+      guild.members
+        .get(entry.id)
+        .ban()
+        .catch(e =>
+          guild.owner.send(`**⇏ | ${entry.username} حاول حظر جميع الأعضاء **`)
+        );
+      anti[guild.id + entry.id].actions = 0;
+      fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(
+        e
+      ) {
         if (e) throw e;
-    });
-    fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function (e) {
+      });
+      fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(
+        e
+      ) {
         if (e) throw e;
-    });
+      });
+    }
+  }
+
+  fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(e) {
+    if (e) throw e;
+  });
+  fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(e) {
+    if (e) throw e;
+  });
 });
+
  
 client.on("guildMemberRemove", async member => {
-    const entry1 = await member.guild.fetchAuditLogs().then(audit => audit.entries.first())
-    if (entry1.action === "MEMBER_KICK") {
-        const entry2 = await member.guild.fetchAuditLogs({
-            type: "MEMBER_KICK"
-        }).then(audit => audit.entries.first())
-        const entry = entry2.executor;
-        if (!config[member.guild.id]) config[guild.id] = {
-            banLimit: 3,
+  const entry1 = await member.guild
+    .fetchAuditLogs()
+    .then(audit => audit.entries.first());
+  if (entry1.action === "MEMBER_KICK") {
+    const entry2 = await member.guild
+      .fetchAuditLogs({
+        type: "MEMBER_KICK"
+      })
+      .then(audit => audit.entries.first());
+    const entry = entry2.executor;
+    if (!config[member.guild.id])
+      config[guild.id] = {
+        banLimit: 3,
+        chaDelLimit: 3,
+        chaCrLimit: 3,
+        roleDelLimit: 3,
+        kickLimits: 3,
+        roleCrLimits: 3,
+        time: 30
+      };
+    if (!anti[member.guild.id + entry.id]) {
+      anti[member.guild.id + entry.id] = {
+        actions: 1
+      };
+      setTimeout(() => {
+        anti[member.guild.id + entry.id].actions = 0;
+      }, config[member.guild.id].time * 1000);
+    } else {
+      anti[member.guild.id + entry.id].actions = Math.floor(
+        anti[member.guild.id + entry.id].actions + 1
+      );
+      console.log("TETS");
+      setTimeout(() => {
+        anti[member.guild.id + entry.id].actions = 0;
+      }, config[member.guild.id].time * 1000 || 30000);
+      if (
+        anti[member.guild.id + entry.id].actions >=
+        config[member.guild.id].kickLimits
+      ) {
+        member.guild.members
+          .get(entry.id)
+          .ban()
+          .catch(e =>
+            member.owner.send(
+              `**⇏ | ${entry.username} حاول حظر جميع الأعضاء **`
+            )
+          );
+        anti[member.guild.id + entry.id].actions = 0;
+        fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(
+          e
+        ) {
+          if (e) throw e;
+        });
+        fs.writeFile(
+          "./antigreff.json",
+          JSON.stringify(anti, null, 2),
+          function(e) {
+            if (e) throw e;
+          }
+        );
+      }
+    }
+
+    fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(e) {
+      if (e) throw e;
+    });
+    fs.writeFile("./antigreff.json", JSON.stringify(anti, null, 2), function(
+      e
+    ) {
+      if (e) throw e;
+    });
+  }
+});
 
             
 
@@ -831,7 +913,7 @@ message.channel.send(`**⛔ The AntiJoin Is __𝐎𝐅𝐅__ !**`)
  
    if(message.content.startsWith(prefix + "setJoin")) {
           let time = message.content.split(" ").slice(1).join(" ");
-       if(!message.channel.guild) I return message.reply('**هذا الامر للسيرفرات فقط**');
+       if(!message.channel.guild) return message.reply('**هذا الامر للسيرفرات فقط**');
        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**يجب ان يكون معك صلاحية** `MANAGE_GUILD`' );
 if (!time) return message.channel.send('برجاء كتابهة مدة الحساب الممنوع دخولة للسيرفر [Days]');
 let embed = new Discord.RichEmbed()
