@@ -413,6 +413,7 @@ client.on("message", message => {
             config[message.guild.id].banLimit = num;
             message.channel.send(`**⇏ | کارەکە سەرکەوتو بوو: ${config[message.guild.id].banLimit} **`)
         }
+      
         if (message.content.startsWith(prefix + "settings limitskick")) {
             if (!num) return message.channel.send("**⇏ | ژمارە دانێ ! **");
             if (isNaN(num)) return message.channel.send("**⇏ | تەنھا ژمارە ! **");
