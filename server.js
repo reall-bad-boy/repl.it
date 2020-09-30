@@ -241,8 +241,8 @@ client.on("ready", () => {
   `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
   );
   let statuses = [
-    `Servers: ${client.guilds.size} | Users: ${client.users.size}`,
-    `=help/security is here`,
+    `=help/security is here Servers: ${client.guilds.size} | Users: ${client.users.size}`,
+    
      
   ];
   setInterval(function() {
@@ -273,6 +273,7 @@ client.on("message", message => {
  > ** __settings limitsroleD 1 to 3]__**  
  > ** __ settings limitsroleC [1 to 3]__ **
  > **__settings limitschannelD [1 to 3]__**
+> **__settings limitschannelD [1 to 3]__**
 > **__ settings limitstime [1 to 3]__**
   > **__antibots on__**
  > **__ antibots off __**
@@ -284,8 +285,8 @@ client.on("message", message => {
 > **__invite__**
 > **__@everyone and @here dlete__**
  ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
-BY BLACK JACK
-
+<@748637415106936927>
+<@748637415106936927>
   `);
     }
   });
@@ -1080,9 +1081,28 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   });
   
   })
+client.on("message", message => {
+  if (message.content === prefix + "bot") {
+    const bot = new Discord.RichEmbed()
+      .setAuthor(client.user.username, client.user.avatarURL)
+      .setColor("#00000")
+      .addField(
+        "✽ **Bot Ping** : ",
+        `» ${Date.now() - client.createdTimestamp}` + " ms",
+        true
+      )
+      .addField("**Servers** :  ", `» ${client.guilds.size}`, true)
+      .addField("**Channels** : ", `» ${client.channels.size} `, true)
+      .addField("**Users** : ", `» ${client.users.size} `, true)
+      .addField("**Bot Name** :  ", `» ${client.user.tag} `, true)
+      .addField("**Bot Owner** :  ", `» <@!670647563627659306> `, true) // تعديل اساسي غير الايدي لايدي حسابك
+      .setImage("")
+      .setFooter(message.author.username, message.client.avatarURL);
+    message.channel.send(bot);
+  }
+});
 
-client
-.on("message", async message => {
+client.on("message", async message => {
   if (message.content.startsWith(prefix + "invit")) {
     let invite = new Discord.RichEmbed()
       .setColor("RANDOM")
