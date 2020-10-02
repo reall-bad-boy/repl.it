@@ -109,6 +109,7 @@ return message.channel
 
 
 
+
 client.on("message", message => {
   if (message.content === prefix + "lock") {
     if (!message.channel.guild)
