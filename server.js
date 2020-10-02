@@ -185,7 +185,7 @@ client.on('message', message => {
 if(message.content.includes("@everyone")){
 if(!message.member.hasPermission('KICK_MEMBERS')){
 message.delete(); 
-message.reply("ئێڤری وەن لێمەدە دڵم")
+message.reply("You can't use everyone")
 }
  
 }
@@ -198,7 +198,7 @@ client.on('message', message => {
 if(message.content.includes("@everyone@everyone")){
 if(!message.member.hasPermission('KICK_MEMBERS')){
 message.delete(); 
-message.reply("you can't use everyone")
+message.reply("You can't use everyone")
 }
  
 }
@@ -226,7 +226,7 @@ client.on('message', message => {
 if(message.content.includes("@here@here")){
 if(!message.member.hasPermission('KICK_MEMBERS')){
 message.delete(); 
-message.reply("زۆرت ماوە گوڵم")
+message.reply("You can't use here")
 }
  
 }
@@ -288,7 +288,7 @@ client.on("message", message => {
 > **__@everyone and @here dlete__**
  ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
 <@670647563627659306>
-<@670647563627659306>
+<@718882264582324364>
   `);
     }
   });
