@@ -520,7 +520,7 @@ client.on("channelDelete", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} ئەم **`
+            `**⇏ | ${entry.username} یەک لە رۆلدەرەکان ژور دەسرێتەوە**`
           )
         );
 
