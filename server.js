@@ -272,11 +272,13 @@ client.on("message", message => {
  > **__  settings limitskick [1 to 3]__**
  > ** __settings limitsroleD 1 to 3]__**  
  > ** __ settings limitsroleC [1 to 3]__ **
- > **__settings limitschannelD [1 to 3]__**
+ > **__settings limitschannelC [1 to 3]__**
 > **__settings limitschannelD [1 to 3]__**
 > **__ settings limitstime [1 to 3]__**
   > **__antibots on__**
  > **__ antibots off __**
+> **__ antijoin on  __**
+>**__ antijoin off  __**
  ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
 > **__bot__**
 > **__lock__**
@@ -285,8 +287,8 @@ client.on("message", message => {
 > **__invite__**
 > **__@everyone and @here dlete__**
  ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
-<@748637415106936927>
-<@748637415106936927>
+<@670647563627659306>
+<@670647563627659306>
   `);
     }
   });
