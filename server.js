@@ -254,47 +254,60 @@ client.on("ready", () => {
     });
   }, 1000);
 });
-
-
 client.on("message", message => {
-    if (message.author.bot) return;
-    if (message.content === prefix + "help") {
-      
-      message.channel.send(
-        ` `
-      );
-  
-        message.channel.sendMessage(`**__BOT SECURITY___**
-  **__فەرمانی پاراستن__** 
+  if (message.content === prefix + "help") {
+    let embed = new Discord.RichEmbed()
+      .setAuthor(message.author.username)
+      .setColor("#000000").setDescription(`>   __  commands SECURITY __
 
- > **__prefix bot=(=)
-✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
-> **__ settings limitsban [1 to 3]__ **
- > **__  settings limitskick [1 to 3]__**
- > ** __settings limitsroleD 1 to 3]__**  
- > ** __ settings limitsroleC [1 to 3]__ **
- > **__settings limitschannelC [1 to 3]__**
-> **__settings limitschannelD [1 to 3]__**
-> **__ settings limitstime [1 to 3]__**
-  > **__antibots on__**
- > **__ antibots off __**
-> **__ antijoin on  __**
-> **__ antijoin off  __**
-> **__ antihack on __**
-> **__ antihack off __**
- ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
-> **__bot__**
-> **__lock__**
-> **__unlock__**
-> **__move all__**
-> **__invite__**
-> **__@everyone and @here dlete__**
- ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
-<@670647563627659306>
-<@718882264582324364>
-  `);
-    }
-  });
+>  ${prefix}settings limitsban  
+
+>  ${prefix}settings limitskick 
+
+>  ${prefix}settings limitsroleD
+
+>  ${prefix}settings limitsroleC 
+
+>  ${prefix}settings limitschannelD 
+
+>  ${prefix}settings limitschannelC  
+
+>  ${prefix}settings limitstime   
+
+>  ${prefix}antibots on 
+
+>  ${prefix}antibots off
+
+>  ${prefix}antijoin on
+
+>  ${prefix}antijoin off
+
+>  ${prefix}antihack on
+
+>  ${prefix}antihack off
+--------------------------
+
+>  ${prefix}lock
+
+>  ${prefix}unlock
+
+>  ${prefix}move all
+
+>  ${prefix}bot
+
+>  ${prefix}invite
+
+@everyone and here delete
+-------------------------
+
+> Created by ==> [<@670647563627659306>] 
+`);
+    message.channel.sendEmbed(embed);
+  }
+});
+
+
+
 
 client.on("message", message => {
     if (message.author.bot) return;
