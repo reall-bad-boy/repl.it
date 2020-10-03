@@ -422,7 +422,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].banLimit = num;
       message.channel.send(
-        `**:lock: | تم التغيير اِلي : ${config[message.guild.id].banLimit} **`
+        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].banLimit} **`
       );
     }
     if (message.content.startsWith(prefix + "settings limitskick")) {
@@ -430,7 +430,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارر! **");
       config[message.guild.id].kickLimits = num;
       message.channel.send(
-        `**:lock: | تم التغيير اِلي : ${config[message.guild.id].kickLimits}**`
+        `**:lock: | کارەکە سەرکەوتو بوو : ${config[message.guild.id].kickLimits}**`
       );
     }
     if (message.content.startsWith(prefix + "settings limitsroleD")) {
@@ -438,7 +438,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].roleDelLimit = num;
       message.channel.send(
-        `**:lock: | تم التغيير اِلي : ${config[message.guild.id].roleDelLimit}**`
+        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].roleDelLimit}**`
       );
 
     }
@@ -447,7 +447,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە ! **");
       config[message.guild.id].roleCrLimits = num;
       message.channel.send(
-        `**:lock: | تم التغيير اِلي : ${config[message.guild.id].roleCrLimits}**`
+        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].roleCrLimits}**`
       );
     }
     if (message.content.startsWith(prefix + "settings limitschannelD")) {
@@ -455,7 +455,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].chaDelLimit = num;
       message.channel.send(
-        `**:lock: | تم التغيير اِلي : ${config[message.guild.id].chaDelLimit}**`
+        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].chaDelLimit}**`
       );
     }
     if (message.content.startsWith(prefix + "settings limitschannelC")) {
@@ -463,7 +463,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].chaCrLimit = num;
       message.channel.send(
-        `**:lock: | تم التغيير اِلي : ${config[message.guild.id].chaCrLimit}**`
+        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].chaCrLimit}**`
       );
     }
     if (message.content.startsWith(prefix + "settings limitstime")) {
@@ -471,7 +471,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].time = num;
       message.channel.send(
-        `**:lock: | تم التغيير اِلي : ${config[message.guild.id].time}**`
+        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].time}**`
       );
     }
   }
@@ -597,7 +597,7 @@ client.on("channelDelete", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} قام بمسح الكثير من الرومات **`
+            `**⇏ | ${entry.username} یەک لە رۆلدەرەکان ژوور دروست دەکات**`
           )
         );
       anti[channel.guild.id + entry.id].actions = "0";
@@ -665,7 +665,7 @@ client.on("roleDelete", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} قام بمسح الكثير من الرتب **`
+            `**⇏ | ${entry.username} یەک لە رۆلدەرەکان رۆل رەشدەکاتەوە **`
           )
         );
       anti[channel.guild.id + entry.id].actions = "0";
@@ -731,7 +731,7 @@ client.on("roleCreate", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} قام بأنشاء الكثير من الرتب **`
+            `**⇏ | ${entry.username} یەک لە رۆلدەرەکان رۆل دروست دەکات**`
           )
         );
       anti[channel.guild.id + entry.id].actions = "0";
@@ -793,7 +793,7 @@ client.on("guildBanAdd", async (guild, user) => {
         .get(entry.id)
         .ban()
         .catch(e =>
-          guild.owner.send(`**⇏ | ${entry.username} حاول حظر جميع الأعضاء **`)
+          guild.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەرەکان میمبەر باند دەکات**`)
         );
       anti[guild.id + entry.id].actions = 0;
       fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(
@@ -854,7 +854,7 @@ client.on("guildKickAdd", async (guild, user) => {
         .get(entry.id)
         .ban()
         .catch(e =>
-          guild.owner.send(`**⇏ | ${entry.username} حاول حظر جميع الأعضاء **`)
+          guild.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەرەکان میمبەر کیک دەکات **`)
         );
       anti[guild.id + entry.id].actions = 0;
       fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(
@@ -923,7 +923,7 @@ client.on("guildMemberRemove", async member => {
           .ban()
           .catch(e =>
             member.owner.send(
-              `**⇏ | ${entry.username} حاول حظر جميع الأعضاء **`
+              `**⇏ | ${entry.username} یەک لە رۆلدەرەکان میمبەر کیک دەکات **`
             )
           );
 anti[member.guild.id + entry.id].actions = 0;
