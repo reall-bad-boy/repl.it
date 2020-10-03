@@ -279,7 +279,9 @@ client.on("message", message => {
   > **__antibots on__**
  > **__ antibots off __**
 > **__ antijoin on  __**
->**__ antijoin off  __**
+> **__ antijoin off  __**
+> **__ antihack on __**
+> **__ antihack off __**
  ✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫✫
 > **__bot__**
 > **__lock__**
@@ -973,6 +975,25 @@ message.channel.send(`**✅ The AntiJoin Is __𝐎𝐍__ !**`)
         })
  
  
+let antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
+client.on('message', message => { 
+    if(message.content.startsWith(prefix + "antihack")) { 
+        if(!message.channel.guild) return message.reply('**This Command Only For Servers**'); 
+        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' ); 
+        if(!antihack[message.guild.id]) antihack[message.guild.id] = { 
+          onoff: 'Off'
+        } 
+          if(antihack[message.guild.id].onoff === 'Off') return [message.channel.send(`**✅ The AntiHack Is __𝐎𝐍__ !**`), antihack[message.guild.id].onoff = 'On']
+          if(antihack[message.guild.id].onoff === 'On') return [message.channel.send(`**⛔ The AntiHack Is __𝐎𝐅𝐅__ !**`), antihack[message.guild.id].onoff = 'Off']
+          fs.writeFile("./antihack.json", JSON.stringify(antihack), (err) => {
+            if (err) console.error(err)
+            .catch(err => {
+              console.error(err);
+          });
+            });
+          }
+ 
+        })
  
 client.on('message', message => {
     if(message.content.startsWith(prefix + "antijoin off")) {
