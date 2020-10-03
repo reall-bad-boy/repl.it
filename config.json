@@ -1,6 +1,6 @@
 {
   "752581330574901339": {
-    "banLimit": 3,
+    "banLimit": "1",
     "chaDelLimit": 3,
     "chaCrLimit": 3,
     "roleDelLimit": 3,

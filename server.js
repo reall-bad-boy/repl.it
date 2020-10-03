@@ -258,15 +258,18 @@ client.on("message", message => {
   if (message.content === prefix + "help") {
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
-      .setColor("#000000").setDescription(`>   __  commands SECURITY __
+      .setColor("#000000").setDescription(`   __  commands SECURITY __
 
   ${prefix}settings limitsban  
+
   ${prefix}settings limitskick 
   ${prefix}settings limitsroleD
   ${prefix}settings limitsroleC 
   ${prefix}settings limitschannelD 
   ${prefix}settings limitschannelC  
+
   ${prefix}settings limitstime   
+
   ${prefix}antibots on 
   ${prefix}antibots off
   ${prefix}antijoin on
@@ -284,7 +287,7 @@ client.on("message", message => {
 @everyone and @here delete
 -------------------------
 
-> Created by ==> [<@670647563627659306>] 
+ Created by ==> [<@670647563627659306>] 
 `);
     message.channel.sendEmbed(embed);
   }
