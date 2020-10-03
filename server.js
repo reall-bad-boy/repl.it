@@ -260,27 +260,26 @@ client.on("message", message => {
       .setAuthor(message.author.username)
       .setColor("#000000").setDescription(`>   __  commands SECURITY __
 
->  ${prefix}settings limitsban  
->  ${prefix}settings limitskick 
->  ${prefix}settings limitsroleD
->  ${prefix}settings limitsroleC 
->  ${prefix}settings limitschannelD 
->  ${prefix}settings limitschannelC  
-
->  ${prefix}settings limitstime   
->  ${prefix}antibots on 
->  ${prefix}antibots off
->  ${prefix}antijoin on
->  ${prefix}antijoin off
->  ${prefix}antihack on
->  ${prefix}antihack off
+  ${prefix}settings limitsban  
+  ${prefix}settings limitskick 
+  ${prefix}settings limitsroleD
+  ${prefix}settings limitsroleC 
+  ${prefix}settings limitschannelD 
+  ${prefix}settings limitschannelC  
+  ${prefix}settings limitstime   
+  ${prefix}antibots on 
+  ${prefix}antibots off
+  ${prefix}antijoin on
+  ${prefix}antijoin off
+  ${prefix}antihack on
+  ${prefix}antihack off
 --------------------------
 
->  ${prefix}lock
->  ${prefix}unlock
->  ${prefix}move all
->  ${prefix}bot
->  ${prefix}invite
+  ${prefix}lock
+  ${prefix}unlock
+  ${prefix}move all
+  ${prefix}bot
+  ${prefix}invite
 
 @everyone and @here delete
 -------------------------
