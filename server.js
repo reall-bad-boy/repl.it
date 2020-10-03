@@ -297,7 +297,7 @@ client.on("message", message => {
 
 >  ${prefix}invite
 
-@everyone and here delete
+@everyone and @here delete
 -------------------------
 
 > Created by ==> [<@670647563627659306>] 
