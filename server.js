@@ -141,7 +141,7 @@ return message.channel
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.author.send('` تۆ میوتکرای بەھۆی دانانی سێرڤەر `');
+     message.author.send('` 🔒تۆ میوتکرای بەھۆی دانانی سێرڤەر `');
  
  
     }
@@ -211,7 +211,7 @@ client.on("message", message => {
 client.on('typingStart', (ch, user) => {
       if(user.presence.status === 'offline') {
  
-          ch.send(`${user}(:    دەستەکەو کەشف بوو ئەوە خۆت ۆفلاین ئەکەی خێرا خۆت ۆنلاین کە`)    //lera chiw pe xosha bele
+          ch.send(`${user}(:    کا خۆت ۆنلاین کەوە با بە ۆونێر نەلێم  hhhhhhh`)    //lera chiw pe xosha bele
           .then(msg => {
               msg.delete(10000)
           })
