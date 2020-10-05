@@ -280,7 +280,7 @@ client.on("ready", () => {
   `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
   );
   let statuses = [
-    `b/help security is here Servers: ${client.guilds.size} | Users: ${client.users.size}`,
+    `b/help security is here `,
     
      
   ];
