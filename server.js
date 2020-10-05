@@ -280,7 +280,7 @@ client.on("ready", () => {
   `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
   );
   let statuses = [
-    `=help/security is here Servers: ${client.guilds.size} | Users: ${client.users.size}`,
+    `b/help security is here Servers: ${client.guilds.size} | Users: ${client.users.size}`,
     
      
   ];
@@ -312,8 +312,6 @@ client.on("message", message => {
   ${prefix}antibots off
   ${prefix}antijoin on
   ${prefix}antijoin off
-  ${prefix}antihack on
-  ${prefix}antihack off
 --------------------------
 
   ${prefix}lock
@@ -1013,25 +1011,7 @@ message.channel.send(`**✅ The AntiJoin Is __𝐎𝐍__ !**`)
         })
  
  
-let antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8'));
-client.on('message', message => { 
-    if(message.content.startsWith(prefix + "antihack")) { 
-        if(!message.channel.guild) return message.reply('**This Command Only For Servers**'); 
-        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('**Sorry But You Dont Have Permission** `MANAGE_GUILD`' ); 
-        if(!antihack[message.guild.id]) antihack[message.guild.id] = { 
-          onoff: 'Off'
-        } 
-          if(antihack[message.guild.id].onoff === 'Off') return [message.channel.send(`**✅ The AntiHack Is __𝐎𝐍__ !**`), antihack[message.guild.id].onoff = 'On']
-          if(antihack[message.guild.id].onoff === 'On') return [message.channel.send(`**⛔ The AntiHack Is __𝐎𝐅𝐅__ !**`), antihack[message.guild.id].onoff = 'Off']
-          fs.writeFile("./antihack.json", JSON.stringify(antihack), (err) => {
-            if (err) console.error(err)
-            .catch(err => {
-              console.error(err);
-          });
-            });
-          }
- 
-        })
+
  
 client.on('message', message => {
     if(message.content.startsWith(prefix + "antijoin off")) {
