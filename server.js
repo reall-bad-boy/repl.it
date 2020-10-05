@@ -296,8 +296,9 @@ client.on("message", message => {
   if (message.content === prefix + "help") {
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
+       .setThumbnail("https://images-ext-1.discordapp.net/external/T84PFUARosfzux4dTEUQN2ScJ-G94H19g01-sJmySrE/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/761486131715506187/d358f879103dcca3152889634b66fe3e.png")
       .setColor("#000000").setDescription(`   __  commands SECURITY __
-
+      
   ${prefix}settings limitsban  
 
   ${prefix}settings limitskick 
