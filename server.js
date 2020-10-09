@@ -321,7 +321,7 @@ client.on("message", message => {
   ${prefix}about
   ${prefix}invite
 
-@everyone and @here delete
+@everyone and @here delete Link=mute
 -------------------------
 
 
