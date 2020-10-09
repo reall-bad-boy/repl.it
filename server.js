@@ -107,6 +107,8 @@ return message.channel
 
  //the main function for the anti spam
 
+
+
   client.on('message', async message => {
             if(message.content.includes('discord.gg')){
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
