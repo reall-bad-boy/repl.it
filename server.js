@@ -293,10 +293,10 @@ client.on("ready", () => {
   }, 1000);
 });
 client.on("message", message => {
-  if (message.content === prefix + "help") {
+  if (message.content === prefix + "help") { 
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
-       .setThumbnail("sfzux4dTEUQN2ScJ-G94H19g01-sJmySrE/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/761486131715506187/d358f879103dcca3152889634b66fe3e.png")
+       .setThumbnail()
       .setColor("#000000").setDescription(`   __  commands SECURITY __
       
   ${prefix}anti ban  
@@ -323,6 +323,7 @@ client.on("message", message => {
 
 @everyone and @here delete
 -------------------------
+
 
  Created by ==> [<@670647563627659306>] 
 `);
