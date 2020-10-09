@@ -296,18 +296,18 @@ client.on("message", message => {
   if (message.content === prefix + "help") {
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
-       .setThumbnail("https://images-ext-1.discordapp.net/external/T84PFUARosfzux4dTEUQN2ScJ-G94H19g01-sJmySrE/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/761486131715506187/d358f879103dcca3152889634b66fe3e.png")
+       .setThumbnail("sfzux4dTEUQN2ScJ-G94H19g01-sJmySrE/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/761486131715506187/d358f879103dcca3152889634b66fe3e.png")
       .setColor("#000000").setDescription(`   __  commands SECURITY __
       
-  ${prefix}settings limitsban  
+  ${prefix}anti ban  
 
-  ${prefix}settings limitskick 
-  ${prefix}settings limitsroleD
-  ${prefix}settings limitsroleC 
-  ${prefix}settings limitschannelD 
-  ${prefix}settings limitschannelC  
+  ${prefix}anti kick 
+  ${prefix}anti roleD
+  ${prefix}anti roleC 
+  ${prefix}anti channelD 
+  ${prefix}anti channelC  
 
-  ${prefix}settings limitstime   
+  ${prefix}anti time   
 
   ${prefix}antibots on 
   ${prefix}antibots off
@@ -318,7 +318,7 @@ client.on("message", message => {
   ${prefix}lock
   ${prefix}unlock
   ${prefix}move all
-  ${prefix}bot
+  ${prefix}about
   ${prefix}invite
 
 @everyone and @here delete
@@ -449,12 +449,12 @@ client.on("message", message => {
       roleCrLimits: 3,
       time: 30
     };
-  if (message.content.startsWith(prefix + "settings")) {
+  if (message.content.startsWith(prefix + "anti")) {
     if (message.author.id !== message.guild.owner.user.id)
       return message.channel.send(
         "**:closed_lock_with_key: SORRY YOU DONT HAVE PERMISSION**"
       );
-    if (message.content.startsWith(prefix + "settings limitsban")) {
+    if (message.content.startsWith(prefix + "anti ban")) {
       if (!num) return message.channel.send("**:1234: | ژمارە دانێ! **");
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].banLimit = num;
@@ -462,7 +462,7 @@ client.on("message", message => {
         `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].banLimit} **`
       );
     }
-    if (message.content.startsWith(prefix + "settings limitskick")) {
+    if (message.content.startsWith(prefix + "anti kick")) {
       if (!num) return message.channel.send("**:1234: | ژمارە دانێ  ! **");
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارر! **");
       config[message.guild.id].kickLimits = num;
@@ -470,7 +470,7 @@ client.on("message", message => {
         `**:lock: | کارەکە سەرکەوتو بوو : ${config[message.guild.id].kickLimits}**`
       );
     }
-    if (message.content.startsWith(prefix + "settings limitsroleD")) {
+    if (message.content.startsWith(prefix + "anti roleD")) {
       if (!num) return message.channel.send("**:1234: | ژمارە دانێ ! **");
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].roleDelLimit = num;
@@ -479,7 +479,7 @@ client.on("message", message => {
       );
 
     }
-    if (message.content.startsWith(prefix + "settings limitsroleC")) {
+    if (message.content.startsWith(prefix + "anti roleC")) {
       if (!num) return message.channel.send("**:1234: | ژمارە دانێ ! **");
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە ! **");
       config[message.guild.id].roleCrLimits = num;
@@ -487,7 +487,7 @@ client.on("message", message => {
         `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].roleCrLimits}**`
       );
     }
-    if (message.content.startsWith(prefix + "settings limitschannelD")) {
+    if (message.content.startsWith(prefix + "anti channelD")) {
       if (!num) return message.channel.send("**:1234: | ژمارە دانێ ! **");
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].chaDelLimit = num;
@@ -495,7 +495,7 @@ client.on("message", message => {
         `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].chaDelLimit}**`
       );
     }
-    if (message.content.startsWith(prefix + "settings limitschannelC")) {
+    if (message.content.startsWith(prefix + "anti channelC")) {
       if (!num) return message.channel.send("**:1234: | ژمارە دانێ ! **");
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].chaCrLimit = num;
@@ -503,7 +503,7 @@ client.on("message", message => {
         `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].chaCrLimit}**`
       );
     }
-    if (message.content.startsWith(prefix + "settings limitstime")) {
+    if (message.content.startsWith(prefix + "anti time")) {
       if (!num) return message.channel.send("**:1234: | ژمارە دانێ! **");
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].time = num;
@@ -1125,7 +1125,7 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
   
   })
 client.on("message", message => {
-  if (message.content === prefix + "bot") {
+  if (message.content === prefix + "about") {
     const bot = new Discord.RichEmbed()
       .setAuthor(client.user.username, client.user.avatarURL)
       .setColor("#00000")
