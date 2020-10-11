@@ -334,13 +334,13 @@ client.on("message", message => {
   ${prefix}move all
   ${prefix}about
   ${prefix}invite
-  ${prefix}1botinfo
+  1botinfo
 
 @everyone and @here delete Link=mute
 -------------------------
 
 
- Created by ==> [<@670647563627659306>] 
+ Created by ==> [BLACK JACK] 
 `);
     message.channel.sendEmbed(embed);
   }
