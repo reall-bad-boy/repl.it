@@ -106,7 +106,19 @@ return message.channel
 });
 
  //the main function for the anti spam
-
+////////2
+client.on('message', message => {
+  if (message.content.startsWith("1botinfo")) {
+  message.channel.send({
+  embed: new Discord.RichEmbed()
+  
+     .setColor('BLACK')
+     .addField('``Servers``', [client.guilds.size], true)
+     .addField('``Users``' ,`[ ${client.users.size} ]` , true)
+           
+  })
+  }
+  });
 
 
   client.on('message', async message => {
@@ -322,6 +334,7 @@ client.on("message", message => {
   ${prefix}move all
   ${prefix}about
   ${prefix}invite
+  ${prefix}1botinfo
 
 @everyone and @here delete Link=mute
 -------------------------
