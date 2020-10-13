@@ -334,6 +334,8 @@ client.on("message", message => {
   ${prefix}move all
   ${prefix}about
   ${prefix}invite
+  ${prefix}ban
+  ${prefix}unban
   1botinfo
 
 @everyone and @here delete Link=mute
@@ -1177,6 +1179,53 @@ client.on("message", async message => {
   }
 });
 
+client.on('message', message => {
+if (message.author.x5bz) return;
+if (!message.content.startsWith(prefix)) return;
+ 
+let command = message.content.split(" ")[0];
+command = command.slice(prefix.length);
+ 
+let args = message.content.split(" ").slice(1);
+ 
+if (command == "ban") {
+             if(!message.channel.guild) return message.reply('** هذا الأمر شغال فقط في السيرفرات**');
+       
+if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return 
+if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("** `BAN_MEMBERS` البوت لا يملك خاصية**");
+let user = message.mentions.users.first();
+let reason = message.content.split(" ").slice(2).join(" ");
+if (message.mentions.users.size < 1) return message.channel.send(":rolling_eyes: - **I can't find this member**");
+if (!message.guild.member(user)
+.bannable) return message.reply("**رتبه العضو اعلي من البوت لا يمكن طرده**");
+message.channel.send(' :white_check_mark: **' + `${user.tag}` + ' banned from the server! :airplane:** ').catch(WoW => {});
+message.guild.member(user).ban(7, user);
+ 
+let embed = new Discord.RichEmbed()
+      .setDescription("**NEW BAN**")
+      .setColor("BLACK")
+.addField("**BANNED**",  '**[ ' + `${user.tag}` + ' ]**')
+.addField("**BY:**", '**[ ' + `${message.author.tag}` + ' ]**')
+.addField("**REASON:**", '**[ ' + `${reason}` + ' ]**')
+     .setTimestamp()
+      let channel = message.guild.channels
+          .find("name", "ban-log")
+        channel.send(embed)
+};
+});
+
+client.on('message', message =>{
+  let command = message.content.split(" ")[0];
+  if (command == prefix + "unban") {
+  if(!message.member.hasPermission('BAN_MEMBERS')) return;
+  let args = message.content.split(" ").slice(1).join(" ");
+  if(args == 'all') {message.guild.fetchBans().then(zg => {
+  zg.forEach(NoNo => {message.guild.unban(NoNo);})});
+  return message.channel.send('**✅ Unbanned all members **')}
+  if(!args) return message.channel.send('**Please Type the member ID / all**');
+  message.guild.unban(args).then(m =>{message.channel.send(`**✅ Unbanned ${m.username}**`);
+  }).catch(stry =>{message.channel.send(`**🙄 - I can't find \`${args}\` in the ban list**`)});
+  }});
   
 ///by BLACK JACK
 
