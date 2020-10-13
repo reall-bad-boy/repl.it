@@ -351,24 +351,7 @@ client.on("message", message => {
 
 
 
-client.on("message", message => {
-    if (message.author.bot) return;
-    if (message.content === prefix + "info") {
-      message.channel.send(`  **__Premium Bot v1__**> 
-  ** Help Menu**
-  ----------------------------
-  > =help ** بۆتي سكويريتي  **
-   
-  
 
- 
-
-
-   **__Done__** 
-----------------------------
-     `);
-    }
-  });
 
 let vojson = JSON.parse(fs.readFileSync("vojson.json", "utf8")); 
  
