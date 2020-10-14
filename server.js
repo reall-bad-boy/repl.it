@@ -68,6 +68,49 @@ client.on("message", fantic => {
     fantic.react("🔓");
   }
 });
+//////
+client.on('message', function(message){
+    if(message.content.toLowerCase().includes("Maza")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("Ker")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("qwz")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("Gawad")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("Qwndar")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("Qndar")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("daykt bgem")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("xwshkt bgem")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+});
 
 
 /////
