@@ -382,10 +382,9 @@ client.on("message", message => {
   ${prefix}invite
   ${prefix}ban
   ${prefix}unban
-  ${prefix}create log
   1botinfo
 
-@everyone and @here delete Link=mute
+@everyone and @here delete Link server=mute
 -------------------------
 
 
