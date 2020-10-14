@@ -111,6 +111,24 @@ client.on('message', function(message){
     }
  
 });
+client.on("message", (message) => {
+  if (message.content.startsWith(prefix + "create logs")) {
+    if (message.author.id !== message.guild.owner.user.id)
+      return message.channel.send(
+        "OwnerShip Only~"
+      );
+      message.guild.id.createChannel("Logs.", "category").then(catg =>{
+      message.guild.id.createChannel("log-pic", "text").then(chat => { chat.setParent(catg.id) })
+      message.guild.id.createChannel("log-message", "text").then(chat => { chat.setParent(catg.id) })
+      message.guild.id.createChannel("log-ban", "text").then(chat => { chat.setParent(catg.id) })
+      message.guild.id.createChannel("log-join", "text").then(chat => { chat.setParent(catg.id) })
+      message.guild.id.createChannel("log-leave", "text").then(chat => { chat.setParent(catg.id) })
+  message.channel.sendMessage(':white_check_mark: **Done Create.**')
+      })
+  }
+  });
+
+
 
 
 /////
@@ -379,6 +397,7 @@ client.on("message", message => {
   ${prefix}invite
   ${prefix}ban
   ${prefix}unban
+  ${prefix}
   1botinfo
 
 @everyone and @here delete Link=mute
