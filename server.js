@@ -72,18 +72,21 @@ client.on("message", fantic => {
 client.on('message', message => {
  
  
-let blacklisted = ['Qwndar', 'Gawad', 'r', 'nibb'];
+let blacklisted = ['Qwndar', 'Gawad', 'La qwzy dakt bm', 'xwshkt bgem','Ker','Qwz','Qn','Qwn','nankt','Maza'];
  
 let foundInText = false;
 for (var i in blacklisted) {
       if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
 }
+  
+  
  
 if (foundInText) {
 		message.delete();
  
 }
- 
+  
+  
  
  
 	let args = message.content.slice(prefix.length).trim().split('');
@@ -107,51 +110,47 @@ if (foundInText) {
  
 })
 
+client.on('message', async message => {
+            if(message.content.includes('Maza','Qn','')){
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
+        if(!message.channel.guild) return;
+        message.delete()
+          var command = message.content.split(" ")[0];
+    let muterole = message.guild.roles.find(`name`, "Muted");
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "Muted",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("Muted Ads")
+            .addField(`**  You Have Been Muted **` , `**Reason : Sharing Another Discord Link**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+        .setFooter(`${message.guild.name} `)
+     message.channel.send(embed500)
+     message.author.send('` 🔒تۆ میوتکرای بەھۆی دانانی سێرڤەر `');
+ 
+ 
+    }
+})
 
 
-
-client.on('message', function(message){
-    if(message.content.toLowerCase().includes("Maza")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("Ker")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("qwz")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("Gawad")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("Qwndar")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("Qndar")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("daykt bgem")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("xwshkt bgem")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-});
 
 
 
