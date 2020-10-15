@@ -1,5 +1,5 @@
 module.exports = {
-    TOKEN: 'NzYxNDg2MTMxNzE1NTA2MTg3.X3bTOQ.exGZ4GA-PfoqQA_gpuBnecApcbE',///تۆکین دانی
+    TOKEN: 'NzYxNDg2MTMxNzE1NTA2MTg3.X3bTOQ.ChAir_J2qysGSdvr0X1Z6hF2_vQ',///تۆکین دانی
     YT_API_KEY: 'AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4',
     prefix: 'b/',///کۆماند دانێ
     devs: ['670647563627659306']
