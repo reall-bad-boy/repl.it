@@ -71,7 +71,7 @@ client.on("message", fantic => {
 //////
 
 client.on('message', async message => {
-            if(message.content.includes('Maza','Qn','Qwn','Qwndar','dakt bgem','xwshkt bgem','nankt','xwshkt','Babt')){
+            if(message.content.includes('Maza','Qn','Qwn','Qwndar','dakt bgem','xwshkt bgem','nankt','xwshkt','Babt','maza')){
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
         message.delete()
@@ -104,7 +104,7 @@ client.on('message', async message => {
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.author.send('` 🔒تۆ میوت کرای بەھۆی جوێندان...ھەیبە برام رێزی خۆت بگرە خوشکو داکت ھەیە `');
+     message.author.send('` 🔒تۆ میوت کرای بەھۆی جوێندان...حەیبە برام رێزی خۆت بگرە خوشکو داکت ھەیە `');
  
  
     }
