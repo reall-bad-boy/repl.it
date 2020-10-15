@@ -413,7 +413,7 @@ client.on("message", message => {
   ${prefix}unban
   1botinfo
 
-@everyone and @here delete Link server=mute
+@everyone and @here and Link server=mute
 -------------------------
 
 
