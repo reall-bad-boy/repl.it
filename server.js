@@ -69,6 +69,47 @@ client.on("message", fantic => {
   }
 });
 //////
+client.on('message', message => {
+ 
+ 
+let blacklisted = ['Qwndar', 'Gawad', 'r', 'nibb'];
+ 
+let foundInText = false;
+for (var i in blacklisted) {
+      if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
+}
+ 
+if (foundInText) {
+		message.delete();
+ 
+}
+ 
+ 
+ 
+	let args = message.content.slice(prefix.length).trim().split('');
+	console.log(args)
+  let cmd = args.shift();
+ 
+ 
+	if(message.author.bot) return;
+	if(!message.content.startsWith(prefix)) return;
+ 
+	try{
+ 
+    delete require.cache[require.resolve(`./commands/${cmd}.js`)];
+ 
+		let commandFile = require(`./commands/${cmd}.js`);
+		commandFile.run(client, message , args);
+ 
+	}catch (e){
+		 console.log(e.stack);
+	}
+ 
+})
+
+
+
+
 client.on('message', function(message){
     if(message.content.toLowerCase().includes("Maza")) {
         message.delete();
