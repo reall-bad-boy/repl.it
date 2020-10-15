@@ -72,7 +72,7 @@ client.on("message", fantic => {
 
 client.on('message', async message => {
             if(message.content.includes('Maza','Qn','Qwn','Qwndar','dakt bgem','xwshkt bgem','nankt','xwshkt','Babt','maza','gawad','Gawad','Ker','cher')){
-                if(message.member.hasPermission("ADMINSTRATOR")) return;
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
         message.delete()
           var command = message.content.split(" ")[0];
@@ -109,8 +109,83 @@ client.on('message', async message => {
  
     }
 })
-
-
+client.on('message', async message => {
+            if(message.content.includes('@everyone')){
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
+        if(!message.channel.guild) return;
+        message.delete()
+          var command = message.content.split(" ")[0];
+    let muterole = message.guild.roles.find(`name`, "Muted");
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "Muted",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("Muted Ads")
+            .addField(`**  You Have Been Muted **` , `**Reason : Type everyone**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+        .setFooter(`${message.guild.name} `)
+     message.channel.send(embed500)
+     message.author.send('` تۆ میوتکرای بەھۆی لێدانی ئێڤریوەن`');
+ 
+ 
+    }
+})
+client.on('message', async message => {
+            if(message.content.includes('@here')){
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
+        if(!message.channel.guild) return;
+        message.delete()
+          var command = message.content.split(" ")[0];
+    let muterole = message.guild.roles.find(`name`, "Muted");
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "Muted",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("Muted Ads")
+            .addField(`**  You Have Been Muted **` , `**Reason : Types here**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+        .setFooter(`${message.guild.name} `)
+     message.channel.send(embed500)
+     message.author.send('`here تۆ میوت کرای بەھۆی لێدانی  `')
+ 
+    }
+})
 
 
 
@@ -279,58 +354,12 @@ client.on('typingStart', (ch, user) => {
   })
 
 ////
-client.on('message', message => {
- 
-if(message.content.includes("@everyone")){
-if(!message.member.hasPermission('KICK_MEMBERS')){
-message.delete(); 
-message.reply("You can't use everyone")
-}
- 
-}
- 
-});
- 
- 
-client.on('message', message => {
- 
-if(message.content.includes("@everyone@everyone")){
-if(!message.member.hasPermission('KICK_MEMBERS')){
-message.delete(); 
-message.reply("You can't use everyone")
-}
- 
-}
- 
-});                          
+         
 
 
 
 ////
-client.on('message', message => {
- 
-if(message.content.includes("@here")){
-if(!message.member.hasPermission('KICK_MEMBERS')){
-message.delete(); 
-message.reply("You can't use here")
-}
- 
-}
- 
-});
- 
- 
-client.on('message', message => {
- 
-if(message.content.includes("@here@here")){
-if(!message.member.hasPermission('KICK_MEMBERS')){
-message.delete(); 
-message.reply("You can't use here")
-}
- 
-}
- 
-});                          
+                         
 
 
 ////
