@@ -69,49 +69,9 @@ client.on("message", fantic => {
   }
 });
 //////
-client.on('message', message => {
- 
- 
-let blacklisted = ['Qwndar', 'Gawad', 'La qwzy dakt bm', 'xwshkt bgem','Ker','Qwz','Qn','Qwn','nankt','Maza'];
- 
-let foundInText = false;
-for (var i in blacklisted) {
-      if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
-}
-  
-  
- 
-if (foundInText) {
-		message.delete();
- 
-}
-  
-  
- 
- 
-	let args = message.content.slice(prefix.length).trim().split('');
-	console.log(args)
-  let cmd = args.shift();
- 
- 
-	if(message.author.bot) return;
-	if(!message.content.startsWith(prefix)) return;
- 
-	try{
- 
-    delete require.cache[require.resolve(`./commands/${cmd}.js`)];
- 
-		let commandFile = require(`./commands/${cmd}.js`);
-		commandFile.run(client, message , args);
- 
-	}catch (e){
-		 console.log(e.stack);
-	}
- 
-})
 
 client.on('message', async message => {
-            if(message.content.includes('Maza','Qn','')){
+            if(message.content.includes('Maza','Qn','Qwn','Qwndar','dakt bgem','xwshkt bgem','nankt','xwshkt','Babt')){
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
         message.delete()
@@ -138,13 +98,13 @@ client.on('message', async message => {
      message.member.addRole(muterole);
     const embed500 = new Discord.RichEmbed()
       .setTitle("Muted Ads")
-            .addField(`**  You Have Been Muted **` , `**Reason : Sharing Another Discord Link**`)
+            .addField(`**  You Have Been Muted **` , `**Reason : Insult**`)
             .setColor("c91616")
             .setThumbnail(`${message.author.avatarURL}`)
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.author.send('` 🔒تۆ میوتکرای بەھۆی دانانی سێرڤەر `');
+     message.author.send('` 🔒تۆ میوت کرای بەھۆی جوێندان...ھەیبە برام رێزی خۆت بگرە خوشکو داکت ھەیە `');
  
  
     }
