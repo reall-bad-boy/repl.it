@@ -71,8 +71,8 @@ client.on("message", fantic => {
 //////
 
 client.on('message', async message => {
-            if(message.content.includes('Maza','Qn','Qwn','Qwndar','dakt bgem','xwshkt bgem','nankt','xwshkt','Babt','maza')){
-                if(message.member.hasPermission("MANAGE_GUILD")) return;
+            if(message.content.includes('Maza','Qn','Qwn','Qwndar','dakt bgem','xwshkt bgem','nankt','xwshkt','Babt','maza','gawad','Gawad','Ker','cher')){
+                if(message.member.hasPermission("ADMINSTRATOR")) return;
         if(!message.channel.guild) return;
         message.delete()
           var command = message.content.split(" ")[0];
