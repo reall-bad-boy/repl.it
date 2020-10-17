@@ -69,6 +69,49 @@ client.on("message", fantic => {
   }
 });
 //////
+client.on('message', function(message){
+    if(message.content.toLowerCase().includes("faggot")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("nigger")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("niger")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("fat")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("fuck you")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("ddos")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("fag")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+    if(message.content.toLowerCase().includes("idiot")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
+});
+
 
 client.on('message', async message => {
             if(message.content.includes('Maza','Qn','Qwn','Qwndar','dakt bgem','xwshkt bgem','nankt','xwshkt','Babt','maza','gawad','Gawad','Ker','cher')){
