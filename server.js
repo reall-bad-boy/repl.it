@@ -70,42 +70,47 @@ client.on("message", fantic => {
 });
 //////
 client.on('message', function(message){
-    if(message.content.toLowerCase().includes("faggot")) {
+    if(message.content.toLowerCase().includes("gawad")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
  
-    if(message.content.toLowerCase().includes("nigger")) {
+    if(message.content.toLowerCase().includes("hiz")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+  
+   if(message.content.toLowerCase().includes("Maza")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
  
-    if(message.content.toLowerCase().includes("niger")) {
+    if(message.content.toLowerCase().includes("qwz")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
  
-    if(message.content.toLowerCase().includes("fat")) {
+    if(message.content.toLowerCase().includes("ker")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
  
-    if(message.content.toLowerCase().includes("fuck you")) {
+    if(message.content.toLowerCase().includes("qn")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
  
-    if(message.content.toLowerCase().includes("ddos")) {
+    if(message.content.toLowerCase().includes("Qwn")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
  
-    if(message.content.toLowerCase().includes("fag")) {
+    if(message.content.toLowerCase().includes("qa7pa")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
  
-    if(message.content.toLowerCase().includes("idiot")) {
+    if(message.content.toLowerCase().includes("kerm")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
@@ -113,45 +118,7 @@ client.on('message', function(message){
 });
 
 
-client.on('message', async message => {
-            if(message.content.includes('Maza','Qn','Qwn','Qwndar','dakt bgem','xwshkt bgem','nankt','xwshkt','Babt','maza','gawad','Gawad','Ker','cher')){
-                if(message.member.hasPermission("MANAGE_GUILD")) return;
-        if(!message.channel.guild) return;
-        message.delete()
-          var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "Muted");
-    if(!muterole){
-      try{
-        muterole = await message.guild.createRole({
-          name: "Muted",
-          color: "#000000",
-          permissions:[]
-        })
-        message.guild.channels.forEach(async (channel, id) => {
-          await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
-            ADD_REACTIONS: false
-          });
-        });
-      }catch(e){
-        console.log(e.stack);
-      }
-    }
-           if(!message.channel.guild) return message.reply('** This command only for servers**');
-     message.member.addRole(muterole);
-    const embed500 = new Discord.RichEmbed()
-      .setTitle("Muted Ads")
-            .addField(`**  You Have Been Muted **` , `**Reason : Insult**`)
-            .setColor("c91616")
-            .setThumbnail(`${message.author.avatarURL}`)
-            .setAuthor(message.author.username, message.author.avatarURL)
-        .setFooter(`${message.guild.name} `)
-     message.channel.send(embed500)
-     message.author.send('` 🔒تۆ میوت کرای بەھۆی جوێندان...حەیبە برام رێزی خۆت بگرە خوشکو داکت ھەیە `');
- 
- 
-    }
-})
+
 client.on('message', async message => {
             if(message.content.includes('@everyone')){
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
