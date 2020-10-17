@@ -381,6 +381,7 @@ client.on("ready", () => {
     });
   }, 1000);
 });
+
 client.on("message", message => {
   if (message.content === prefix + "help") { 
     let embed = new Discord.RichEmbed()
@@ -412,9 +413,9 @@ client.on("message", message => {
   ${prefix}ban
   ${prefix}unban
   1botinfo
-
+---------------------
 @everyone and @here and Link server=mute
--------------------------
+
 
 
  Created by ==> [BLACK JACK] 
