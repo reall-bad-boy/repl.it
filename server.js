@@ -126,13 +126,13 @@ client.on("message", message => {
     const days = millis / 1000 / 60 / 60 / 24;
     var embed = new Discord.RichEmbed()
       .setAuthor(message.guild.name, message.guild.iconURL)
-      .addField(":id:✽** Server ID:**", `» ${message.guild.id} `, true)
+      .addField(":id:✽** ئایدی سێرڤەر:**", `» ${message.guild.id} `, true)
       .addField(
-        ":calendar:✽** Created On**",
+        ":calendar:✽** کاتی دروستکراو**",
         `» ${message.guild.createdAt.toLocaleString()}`,
         true
       )
-      .addField(":crown: ✽**Server Owner**", `**${message.guild.owner}**`, true)
+      .addField(":crown: ✽**خاوەنی سێرڤەر**", `**${message.guild.owner}**`, true)
       .addField(
         `✽** Members ** [${message.guild.members.size}]`,
         `**${
@@ -142,13 +142,13 @@ client.on("message", message => {
         true
       )
       .addField(
-        ":speech_balloon:✽** Channels **",
+        ":speech_balloon:✽** چەنالەکان**",
         `» **${message.guild.channels.filter(m => m.type === "text").size}**` +
           " TexT | VoicE  " +
           `**${message.guild.channels.filter(m => m.type === "voice").size}** `,
         true
       )
-      .addField(":earth_africa:✽** Region **", ` ${message.guild.region}`, true)
+      .addField(":earth_africa:✽** وڵات **", ` ${message.guild.region}`, true)
       .setImage("")
 
       .setColor("#000000");
@@ -176,20 +176,20 @@ client.on("message", pixelbot => {
         .setColor("#00000")
         .setTitle(" :beginner: :heartpulse:   | Use  r Info") // itzZa1D - Codes Team.
         .setAuthor(pixelbot.author.username, pixelbot.author.avatarURL)
-        .addField("**✽ Name :**   ", pixelbot.author.username, true)
-        .addField("**✽ Tag :**   ", pixelbot.author.discriminator, true)
-        .addField("**✽ ID :** ", pixelbot.author.id, true) // itzZa1D - Codes Team.
+        .addField("**✽ ناو :**   ", pixelbot.author.username, true)
+        .addField("**✽ تاگ :**   ", pixelbot.author.discriminator, true)
+        .addField("**✽ ئایدی :** ", pixelbot.author.id, true) // itzZa1D - Codes Team.
         .addField(
-          "**✽ Joined At :**   ",
+          "**✽ کاتی جۆین کردن :**   ",
           moment(pixelbot.joinedAt).format("D/M/YYYY h:mm a "),
           true
         )
         .addField(
-          "**✽ Created At :**    ",
+          "**✽ کاتی دروست کردن :**    ",
           moment(pixelbot.author.createdAt).format("D/M/YYYY h:mm a "),
           true
         )
-        .addField("**✽ Total invites :**    ", inviteCount, true)
+        .addField("**✽ ژمارە ئینڤایت کردن :**    ", inviteCount, true)
         .setTimestamp(); // itzZa1D - Codes Team.
 
       pixelbot.channel.sendEmbed(pixeluser).then(c => {}); // itzZa1D - Codes Team.
@@ -501,6 +501,8 @@ client.on("message", message => {
 **  ${prefix}invite**
   **${prefix}ban**
  ** ${prefix}unban**
+ ** ${prefix}server**
+ ** ${prefix}user**
 **  1botinfo**
 ---------------------
 @everyone and @here and Link server=mute
