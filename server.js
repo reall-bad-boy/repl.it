@@ -384,7 +384,7 @@ client.on("message", message => {
         SEND_MESSAGES: false
       })
       .then(() => {
-        message.reply("**__✅🔒 بە سەرکەوتوی داخرا __**");
+        message.reply("**🔒 Locked chat**");
       });
   }
   //FIRE BOT
@@ -399,7 +399,7 @@ client.on("message", message => {
         SEND_MESSAGES: true
       })
       .then(() => {
-        message.reply("**__✅🔓 بە سەرکەوتوی کرایەوە __**");
+        message.reply("**🔓 Unlock chat**");
       });
   }
 });
@@ -475,8 +475,8 @@ client.on("message", message => {
   if (message.content === prefix + "help") { 
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
-       .setThumbnail()
-      .setColor("#000000").setDescription(`   __  commands SECURITY __
+       .setThumbnail(message.author.avatarURL)
+      .setColor("RANDOM").setDescription(` 
       
   **${prefix}anti ban  [Number]**
 
@@ -515,85 +515,6 @@ client.on("message", message => {
   }
 });
 
-
-
-
-
-
-let vojson = JSON.parse(fs.readFileSync("vojson.json", "utf8")); 
- 
-client.on("message", message => {
-if (message.content.startsWith(prefix + "setVc")) {
-let channel = message.content
-.split(" ")
-.slice(1)
-.join(" ");
-if (!message.member.hasPermission("MANAGE_GUILD"))
-return message.channel.send(
-"**ADMINISTRATOR ليس لديك صلاحية :rolling_eyes: ** "
-);
-let channelfind = message.guild.channels.find(c => c.name == channel);
-if (!channel)
-return message.channel.send(
-"Please Type The Voice Channel Name Example: " +
-`${prefix}setVc <Channel name>`
-);
-if (!channelfind)
-return message.channel.send(`I can't find this channel \`${channel}\``);
-vojson[message.guild.id] = {
-stats: "enable",
-chid: channelfind.id,
-guild: message.guild.id
-};
-channelfind.setName(
-`Voice Online : ${message.guild.members.filter(m => m.voiceChannel).size}` 
-);
-message.channel.send("**Done The Voice Online Is Turned On**");
-}
-if (message.content.startsWith(prefix + "vc off")) {
-// ايقاف الفويس اونلاين
-if (!message.member.hasPermission("MANAGE_GUILD"))
-return message.channel.send(
-"ADMINISTRATOR ليس لديك صلاحية :rolling_eyes:"
-);
- 
-message.guild.channels
-.find(gg => gg.name === vojson[message.guild.id].chid)
-.delete();
-vojson[message.guild.id] = {
-stats: "disable",
-chid: "undefined",
-guild: message.guild.id
-};
-message.channel.send("**Done The Voice Online Is Turned Off**");
-}
-fs.writeFile("./vojson.json", JSON.stringify(vojson), err => {
-if (err) console.error(err);
-});
-});
- 
-client.on("voiceStateUpdate", (oldMember, newMember) => {
-if (!vojson[oldMember.guild.id])
-vojson[oldMember.guild.id] = {
-stats: "disable",
-chid: "undefined",
-guild: "undefined"
-};
-if (vojson[oldMember.guild.id].stats === "enable") {
-let ch = vojson[oldMember.guild.id].chid;
-let channel = oldMember.guild.channels.get(ch);
-if (!channel) return;
-let guildid = vojson[oldMember.guild.id].guild;
-channel.setName(
-`Voice Online : ${
-oldMember.guild.members.filter(m => m.voiceChannel).size
-}`
-);
-}
-if (vojson[oldMember.guild.id].stats === "disable") {
-return;
-}
-});
 let anti = JSON.parse(fs.readFileSync("./antigrefff.json", "UTF8"));
 let config = JSON.parse(fs.readFileSync("./server.json", "UTF8"));
 client.on("message", message => {
@@ -627,7 +548,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].banLimit = num;
       message.channel.send(
-        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].banLimit} **`
+        `**:lock: | CHANGED FOR: ${config[message.guild.id].banLimit} **`
       );
     }
     if (message.content.startsWith(prefix + "anti kick")) {
@@ -635,7 +556,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارر! **");
       config[message.guild.id].kickLimits = num;
       message.channel.send(
-        `**:lock: | کارەکە سەرکەوتو بوو : ${config[message.guild.id].kickLimits}**`
+        `**:lock: | CHANGED FOR: ${config[message.guild.id].kickLimits}**`
       );
     }
     if (message.content.startsWith(prefix + "anti roleD")) {
@@ -643,7 +564,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].roleDelLimit = num;
       message.channel.send(
-        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].roleDelLimit}**`
+        `**:lock: | CHANGED FOR: ${config[message.guild.id].roleDelLimit}**`
       );
 
     }
@@ -652,7 +573,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە ! **");
       config[message.guild.id].roleCrLimits = num;
       message.channel.send(
-        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].roleCrLimits}**`
+        `**:lock: | CHANGED FOR: ${config[message.guild.id].roleCrLimits}**`
       );
     }
     if (message.content.startsWith(prefix + "anti channelD")) {
@@ -660,7 +581,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].chaDelLimit = num;
       message.channel.send(
-        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].chaDelLimit}**`
+        `**:lock: | CHANGED FOR: ${config[message.guild.id].chaDelLimit}**`
       );
     }
     if (message.content.startsWith(prefix + "anti channelC")) {
@@ -668,7 +589,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].chaCrLimit = num;
       message.channel.send(
-        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].chaCrLimit}**`
+        `**:lock: | CHANGED FOR: ${config[message.guild.id].chaCrLimit}**`
       );
     }
     if (message.content.startsWith(prefix + "anti time")) {
@@ -676,7 +597,7 @@ client.on("message", message => {
       if (isNaN(num)) return message.channel.send("**:1234: | تەنھا ژمارە! **");
       config[message.guild.id].time = num;
       message.channel.send(
-        `**:lock: | کارەکە سەرکەوتو بوو: ${config[message.guild.id].time}**`
+        `**:lock: | CHANGED FOR : ${config[message.guild.id].time}**`
       );
     }
   }
@@ -1337,7 +1258,7 @@ client.on("message", async message => {
       .setAuthor(message.author.username, message.author.displayAvatarURL)
       .setThumbnail(message.author.avatarURL)
       .setTitle(
-        "کلیک لێرە بکە بۆ ئەوەی بۆت ئەکە ئینڤاتی سێرڤەری خۆت بکەی:sparkling_heart:"
+        "کلیک لێرە بکە بۆ ئەوەی بۆت ئەکە ئینڤاتی سێرڤەری خۆت بکەی"
       )
       .setURL(
         `https://discord.com/api/oauth2/authorize?client_id=761486131715506187&permissions=8&scope=bot`
