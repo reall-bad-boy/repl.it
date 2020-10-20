@@ -378,7 +378,7 @@ client.on("message", message => {
       return message.reply("** This command only for servers**");
 
     if (!message.member.hasPermission("MANAGE_MESSAGES"))
-      return message.reply(" **__ليس لديك صلاحيات__**");
+      return message.reply("Sorry you dont have permission");
     message.channel
       .overwritePermissions(message.guild.id, {
         SEND_MESSAGES: false
@@ -387,13 +387,13 @@ client.on("message", message => {
         message.reply("**🔒 Locked chat**");
       });
   }
-  //FIRE BOT
+  //BLACK JACK
   if (message.content === prefix + "unlock") {
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
 
     if (!message.member.hasPermission("MANAGE_MESSAGES"))
-      return message.reply("**__ليس لديك صلاحيات__**");
+      return message.reply("Sorry you donst have permisssion");
     message.channel
       .overwritePermissions(message.guild.id, {
         SEND_MESSAGES: true
@@ -478,9 +478,9 @@ client.on("message", message => {
        .setThumbnail(message.author.avatarURL)
       .setColor("RANDOM").setDescription(` 
       
-  **${prefix}anti ban  [Number]**
+ **${prefix}anti ban  [Number]**
 
- ** ${prefix}anti kick [Number]**
+** ${prefix}anti kick [Number]**
 **  ${prefix}anti roleD [Number]**
 **  ${prefix}anti roleC [Number]**
 **  ${prefix}anti channelD [Number]**
