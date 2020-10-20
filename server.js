@@ -109,6 +109,12 @@ client.on('message', function(message){
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
+  
+     if(message.content.toLowerCase().includes("maza")) {
+        message.delete();
+        message.author.send("That word is banned, don't use it!");
+    }
+ 
  
     if(message.content.toLowerCase().includes("kerm")) {
         message.delete();
