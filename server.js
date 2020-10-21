@@ -363,7 +363,7 @@ return message.channel
  //the main function for the anti spam
 ////////2
 client.on('message', message => {
-  if (message.content.startsWith("1botinfo")) {
+  if (message.content.startsWith("servers")) {
   message.channel.send({
   embed: new Discord.RichEmbed()
   
@@ -537,7 +537,7 @@ client.on("message", message => {
  ** ${prefix}antibots off**
 **  ${prefix}antijoin on**
  ** ${prefix}antijoin off**
---------------------------
+
 
  ** ${prefix}lock**
  ** ${prefix}unlock**
@@ -548,8 +548,8 @@ client.on("message", message => {
  ** ${prefix}unban**
  ** ${prefix}server**
  ** ${prefix}user**
-**  1botinfo**
----------------------
+**  servers**
+
 @everyone and @here and Link server=mute
 
 
