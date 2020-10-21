@@ -550,11 +550,11 @@ client.on("message", message => {
  ** ${prefix}user**
 **  servers**
 
-@everyone and @here and Link server=mute
+**@everyone and @here and Link server=mute**
 
 
 
- Created by ==> [BLACK JACK] 
+** Created by ==> [<@670647563627659306>] **
 `);
     message.channel.sendEmbed(embed);
   }
@@ -696,7 +696,7 @@ client.on("channelDelete", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} یەک لە رۆلدەرەکان ژور دەسرێتەوە**`
+            `**⇏ | ${entry.username}  Has been delete channel.`
           )
         );
 
@@ -721,8 +721,7 @@ client.on("channelDelete", async channel => {
     if (e) throw e;
   });
 });      
-
- client.on("channelCreate", async channel => {
+client.on("channelCreate", async channel => {
   if (!["text", "category", "voice"].includes(channel.type.toLowerCase()))
     return;
   if (!config[channel.guild.id])
@@ -733,7 +732,7 @@ client.on("channelDelete", async channel => {
       roleDelLimit: 3,
       kickLimits: 3,
       roleCrLimits: 3,
-      time: 30
+      time: 0.1
     };
   const entry1 = await channel.guild
     .fetchAuditLogs({
@@ -763,15 +762,15 @@ client.on("channelDelete", async channel => {
       config[channel.guild.id].chaCrLimit
     ) {
       channel.guild.members
-
-.get(entry.id)
+        .get(entry.id)
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} یەک لە رۆلدەرەکان ژوور دروست دەکات**`
+            `**❗️ | ${entry.username} Has \`Create\` Many Channels .**`
           )
         );
-      anti[channel.guild.id + entry.id].actions = "0";
+
+anti[channel.guild.id + entry.id].actions = "0";
       fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(
         e
       ) {
@@ -783,7 +782,7 @@ client.on("channelDelete", async channel => {
         if (e) throw e;
       });
     }
-
+    ////////////////mrfix
     fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(e) {
       if (e) throw e;
     });
@@ -793,7 +792,8 @@ client.on("channelDelete", async channel => {
       if (e) throw e;
     });
   }
-});           
+});
+     
 client.on("roleDelete", async channel => {
   const entry1 = await channel.guild
     .fetchAuditLogs({
@@ -836,7 +836,7 @@ client.on("roleDelete", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} یەک لە رۆلدەرەکان رۆل رەشدەکاتەوە **`
+            `**⇏ | ${entry.username} Has been delete role`
           )
         );
       anti[channel.guild.id + entry.id].actions = "0";
