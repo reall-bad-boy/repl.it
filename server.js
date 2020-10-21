@@ -80,7 +80,7 @@ client.on('message', function(message){
         message.author.send("That word is banned, don't use it!");
     }
   
-   if(message.content.toLowerCase().includes("Maza")) {
+   if(message.content.toLowerCase().includes("Qndar")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
@@ -110,7 +110,7 @@ client.on('message', function(message){
         message.author.send("That word is banned, don't use it!");
     }
   
-     if(message.content.toLowerCase().includes("maza")) {
+     if(message.content.toLowerCase().includes("qwndar")) {
         message.delete();
         message.author.send("That word is banned, don't use it!");
     }
