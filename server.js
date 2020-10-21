@@ -696,7 +696,7 @@ client.on("channelDelete", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username}  Has been delete channel.`
+            `**⇏ | ${entry.username}  ژوور دەسرێتەوە.`
           )
         );
 
@@ -766,7 +766,7 @@ client.on("channelCreate", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**❗️ | ${entry.username} Has \`Create\` Many Channels .**`
+            ` | ${entry.username} ژوور دروست دەکات`
           )
         );
 
@@ -836,7 +836,7 @@ client.on("roleDelete", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} Has been delete role`
+            `**⇏ | ${entry.username} رۆل دەسرێتەوە`
           )
         );
       anti[channel.guild.id + entry.id].actions = "0";
@@ -902,7 +902,7 @@ client.on("roleCreate", async channel => {
         .ban()
         .catch(e =>
           channel.guild.owner.send(
-            `**⇏ | ${entry.username} یەک لە رۆلدەرەکان رۆل دروست دەکات**`
+            `**⇏ | ${entry.username} رۆل دروست دەکات`
           )
         );
       anti[channel.guild.id + entry.id].actions = "0";
@@ -964,7 +964,7 @@ client.on("guildBanAdd", async (guild, user) => {
         .get(entry.id)
         .ban()
         .catch(e =>
-          guild.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەرەکان میمبەر باند دەکات**`)
+          guild.owner.send(`**⇏ | ${entry.username}  میمبەر باند دەکات**`)
         );
       anti[guild.id + entry.id].actions = 0;
       fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(
@@ -1025,7 +1025,7 @@ client.on("guildKickAdd", async (guild, user) => {
         .get(entry.id)
         .ban()
         .catch(e =>
-          guild.owner.send(`**⇏ | ${entry.username} یەک لە رۆلدەرەکان میمبەر کیک دەکات **`)
+          guild.owner.send(`**⇏ | ${entry.username}  میمبەر کیک دەکات **`)
         );
       anti[guild.id + entry.id].actions = 0;
       fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(
@@ -1094,7 +1094,7 @@ client.on("guildMemberRemove", async member => {
           .ban()
           .catch(e =>
             member.owner.send(
-              `**⇏ | ${entry.username} یەک لە رۆلدەرەکان میمبەر کیک دەکات **`
+              `**⇏ | ${entry.username}  میمبەر کیک دەکات **`
             )
           );
 anti[member.guild.id + entry.id].actions = 0;
