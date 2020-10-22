@@ -69,59 +69,6 @@ client.on("message", fantic => {
   }
 });
 //////
-client.on('message', function(message){
-    if(message.content.toLowerCase().includes("gawad")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("hiz")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
-  
-   if(message.content.toLowerCase().includes("Qndar")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("qwz")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("ker")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("qn")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("Qwn")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-    if(message.content.toLowerCase().includes("qa7pa")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
-  
-     if(message.content.toLowerCase().includes("qwndar")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
- 
-    if(message.content.toLowerCase().includes("kerm")) {
-        message.delete();
-        message.author.send("That word is banned, don't use it!");
-    }
- 
-});
 client.on("message", message => {
   if (message.content.startsWith(prefix + "server")) {
     if (!message.channel.guild)
@@ -241,7 +188,45 @@ client.on('message', async message => {
  
     }
 })
-
+client.on('message', async message => {
+            if(message.content.includes('maza','qn','qwn','Qwn','Qwz','Ker','Cher','Gawad','Tanta','Dakt','dakt','dakt dagem','xwshkt')){
+                if(message.member.hasPermission("MANAGE_GUILD")) return;
+        if(!message.channel.guild) return;
+        message.delete()
+          var command = message.content.split(" ")[0];
+    let muterole = message.guild.roles.find(`name`, "Muted");
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "Muted",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("Muted Ads")
+            .addField(`**  You Have Been Muted **` , `**Reason : Shairing link snapchat**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+        .setFooter(`${message.guild.name} `)
+     message.channel.send(embed500)
+     message.author.send('` تۆ میوتکرای بەھۆی دانانی لینک`');
+     message.react("🔒");
+ 
+    }
+})
 
 client.on('message', async message => {
             if(message.content.includes('@everyone')){
@@ -1301,7 +1286,7 @@ client.on("message", async message => {
     let invite = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(message.author.username, message.author.displayAvatarURL)
-      .setimage("")
+      .setimage("https://images-ext-1.discordapp.net/external/7BEdAHmfy5ThBrBlQ-KwWykoA5GNgz-FHMhHyGqyiOI/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/761486131715506187/d4486e4b6e02bfca6747686ae845afe9.png")
       .setThumbnail(message.author.avatarURL)
       .setTitle(
         "کلیک لێرە بکە بۆ ئەوەی بۆت ئەکە ئینڤاتی سێرڤەری خۆت بکەی"
