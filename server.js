@@ -1301,6 +1301,7 @@ client.on("message", async message => {
     let invite = new Discord.RichEmbed()
       .setColor("RANDOM")
       .setAuthor(message.author.username, message.author.displayAvatarURL)
+      .setimage("")
       .setThumbnail(message.author.avatarURL)
       .setTitle(
         "کلیک لێرە بکە بۆ ئەوەی بۆت ئەکە ئینڤاتی سێرڤەری خۆت بکەی"
