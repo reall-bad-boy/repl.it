@@ -237,7 +237,7 @@ client.on('message', async message => {
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
      message.author.send('` تۆ میوتکرای بەھۆی دانانی لینک`');
- 
+     message.react("🔒");
  
     }
 })
