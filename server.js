@@ -502,6 +502,8 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
+  var addserver = `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2080374975`;
+    var SUPPORT = `https://discord.gg/6ASrSeG`;
   if (message.content === prefix + "help") { 
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
