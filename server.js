@@ -69,45 +69,26 @@ client.on("message", fantic => {
   }
 });
 //////
-client.on("message", message => {
-  if (message.content.startsWith(prefix + "server")) {
-    if (!message.channel.guild)
-      return message.channel.send(` | This Command is used only in servers!`);
-    const millis = new Date().getTime() - message.guild.createdAt.getTime();
-    const now = new Date();
-    const verificationLevels = ["None", "Low", "Medium", "Insane", "Extreme"];
-    const days = millis / 1000 / 60 / 60 / 24;
-    var embed = new Discord.RichEmbed()
-      .setAuthor(message.guild.name, message.guild.iconURL)
-      .addField(":id:✽** ئایدی سێرڤەر:**", `» ${message.guild.id} `, true)
-      .addField(
-        ":calendar:✽** کاتی دروستکراو**",
-        `» ${message.guild.createdAt.toLocaleString()}`,
-        true
-      )
-      .addField(":crown: ✽**خاوەنی سێرڤەر**", `**${message.guild.owner}**`, true)
-      .addField(
-        `✽** Members ** [${message.guild.members.size}]`,
-        `**${
-          message.guild.members.filter(c => c.presence.status !== "offline")
-            .size
-        }** **Online**`,
-        true
-      )
-      .addField(
-        ":speech_balloon:✽** چەنالەکان**",
-        `» **${message.guild.channels.filter(m => m.type === "text").size}**` +
-          " TexT | VoicE  " +
-          `**${message.guild.channels.filter(m => m.type === "voice").size}** `,
-        true
-      )
-      .addField(":earth_africa:✽** وڵات **", ` ${message.guild.region}`, true)
-      .setImage("")
+client.on('message', function(msg) {
+    if(msg.content.startsWith (prefix  + 'server')) {
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(msg.guild.iconURL)
+      .setTitle(`داتای سێرڤەر  **__${msg.guild.name}__**`)
+      .addField(':globe_with_meridians:**__جۆری سێرڤەر__**',`[** __${msg.guild.region}__ **]`,true)
+      .addField(':medal:** __ڕۆڵ__**',`[** __${msg.guild.roles.size}__ **]`,true)
+      .addField(':red_circle:**__ژمارەی میمبەر__**',`[** __${msg.guild.memberCount}__ **]`,true)
+      .addField(':green_circle:**__ژمارەی ئۆنڵاینەکان__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+      .addField(':pencil:**__چەناڵی تێکست__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+      .addField(':microphone:**__چەناڵی ڤۆیس__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+      .addField(':crown:**__خاوەنی سێرڤەر__**',`**${msg.guild.owner}**`,true)
+      .addField(':id:**__ئایدی سێرڤەر__**',`**${msg.guild.id}**`,true)
+      .addField(':date:**__کاتی دروستکردنی سێرڤەر__**',msg.guild.createdAt.toLocaleString())
+      .setImage('https://cdn.discordapp.com/attachments/703243461079597138/708070790079184957/image0.gif')
+      msg.channel.send({embed:embed});
+    }
+  });
 
-      .setColor("#000000");
-    message.channel.sendEmbed(embed);
-  }
-});
 
 client.on("message", pixelbot => {
   // itzZa1D - Codes Team.
@@ -126,29 +107,23 @@ client.on("message", pixelbot => {
         .map(roles => `**__${roles.name}__ |**`)
         .join(` `);
       let pixeluser = new Discord.RichEmbed() // itzZa1D - Codes Team.
-        .setColor("#00000")
-        .setTitle(" :beginner: :heartpulse:   | Use  r Info") // itzZa1D - Codes Team.
+        .setColor("RANDOM")
+        .setTitle(" :beginner: | داتای سێرڤەر") // itzZa1D - Codes Team.
         .setAuthor(pixelbot.author.username, pixelbot.author.avatarURL)
         .addField("**✽ ناو :**   ", pixelbot.author.username, true)
-        .addField("**✽ تاگ :**   ", pixelbot.author.discriminator, true)
-        .addField("**✽ ئایدی :** ", pixelbot.author.id, true) // itzZa1D - Codes Team.
-        .addField(
-          "**✽ کاتی جۆین کردن :**   ",
-          moment(pixelbot.joinedAt).format("D/M/YYYY h:mm a "),
-          true
-        )
-        .addField(
-          "**✽ کاتی دروست کردن :**    ",
-          moment(pixelbot.author.createdAt).format("D/M/YYYY h:mm a "),
-          true
-        )
-        .addField("**✽ ژمارە ئینڤایت کردن :**    ", inviteCount, true)
+        .addField("**✽ تاگ  :**   ", pixelbot.author.discriminator, true)
+        .addField("**✽ ژمارەی ئایدی :** ", pixelbot.author.id, true) // itzZa1D - Codes Team.
+        .addField("**✽ ژمارەی اینڤایت :**    ", inviteCount, true)
+        .setImage("https://cdn.discordapp.com/attachments/682981598974574788/705859746502279260/icps02.gif")
         .setTimestamp(); // itzZa1D - Codes Team.
 
       pixelbot.channel.sendEmbed(pixeluser).then(c => {}); // itzZa1D - Codes Team.
     });
   }
 });
+
+
+
 client.on('message', async message => {
             if(message.content.includes('https://www.snapchat.com/')){
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
