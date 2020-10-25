@@ -1266,7 +1266,7 @@ client.on("message", async message => {
             .setTitle("کلیک لێرە بکە بۆ ئەوەی بۆتەکە ئینڤایت بکەیت")
             .setURL(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`);///link bot
             message.channel.sendEmbed(invite);
-            message.react("✅")
+            message.react("✅");
     }
 });
 
