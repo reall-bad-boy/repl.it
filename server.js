@@ -90,34 +90,34 @@ client.on('message', function(msg) {
   });
 
 
-client.on("message", pixelbot => {
-  // itzZa1D - Codes Team.
-  if (pixelbot.content.startsWith(prefix + "user")) {
-    // itzZa1D - Codes Team.
-    if (pixelbot.author.bot) return;
-    if (!pixelbot.guild)
-      return pixelbot.reply("**:x: - This Command is only done on Servers**");
-    pixelbot.guild.fetchInvites().then(invites => {
-      // itzZa1D - Codes Team.
+client.on("message", black => {
+  // black jack
+  if (black.content.startsWith(prefix + "user")) {
+    // black jack
+    if (black.author.bot) return;
+    if (!black.guild)
+      return black.reply("**:x: - This Command is only done on Servers**");
+    black.guild.fetchInvites().then(invites => {
+      // black jack
       let personalInvites = invites.filter(
-        i => i.inviter.id === pixelbot.author.id
+        i => i.inviter.id === black.author.id
       );
       let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-      var roles = pixelbot.member.roles
+      var roles = black.member.roles
         .map(roles => `**__${roles.name}__ |**`)
         .join(` `);
-      let pixeluser = new Discord.RichEmbed() // itzZa1D - Codes Team.
+      let pixeluser = new Discord.RichEmbed() // black jack
         .setColor("RANDOM")
-        .setTitle(" :beginner: | داتای سێرڤەر") // itzZa1D - Codes Team.
-        .setAuthor(pixelbot.author.username, pixelbot.author.avatarURL)
-        .addField("**✽ ناو :**   ", pixelbot.author.username, true)
-        .addField("**✽ تاگ  :**   ", pixelbot.author.discriminator, true)
-        .addField("**✽ ژمارەی ئایدی :** ", pixelbot.author.id, true) // itzZa1D - Codes Team.
+        .setTitle(" :beginner: | داتای سێرڤەر") // black jack
+        .setAuthor(black.author.username, black.author.avatarURL)
+        .addField("**✽ ناو :**   ", black.author.username, true)
+        .addField("**✽ تاگ  :**   ", black.author.discriminator, true)
+        .addField("**✽ ژمارەی ئایدی :** ", black.author.id, true) // black jack
         .addField("**✽ ژمارەی اینڤایت :**    ", inviteCount, true)
         .setImage("https://cdn.discordapp.com/attachments/682981598974574788/705859746502279260/icps02.gif")
-        .setTimestamp(); // itzZa1D - Codes Team.
+        .setTimestamp(); // black jack
 
-      pixelbot.channel.sendEmbed(pixeluser).then(c => {}); // itzZa1D - Codes Team.
+      black.channel.sendEmbed(black).then(c => {}); // black jack
     });
   }
 });
