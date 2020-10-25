@@ -1075,7 +1075,7 @@ message.channel.send(`**✅ The AntiJoin Is __𝐎𝐍__ !**`)
  
         })
  
- const AntiSpam = require("discord-anti-spam");
+const AntiSpam = require("discord-anti-spam");
 const antiSpam = new AntiSpam({
   warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
   kickThreshold: 7, // Amount of messages sent in a row that will cause a ban.
