@@ -90,38 +90,6 @@ client.on('message', function(msg) {
   });
 
 
-client.on("message", black => {
-  // black jack
-  if (black.content.startsWith(prefix + "user")) {
-    // black jack
-    if (black.author.bot) return;
-    if (!black.guild)
-      return black.reply("**:x: - This Command is only done on Servers**");
-    black.guild.fetchInvites().then(invites => {
-      // black jack
-      let personalInvites = invites.filter(
-        i => i.inviter.id === black.author.id
-      );
-      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-      var roles = black.member.roles
-        .map(roles => `**__${roles.name}__ |**`)
-        .join(` `);
-      let pixeluser = new Discord.RichEmbed() // black jack
-        .setColor("RANDOM")
-        .setTitle(" :beginner: | داتای سێرڤەر") // black jack
-        .setAuthor(black.author.username, black.author.avatarURL)
-        .addField("**✽ ناو :**   ", black.author.username, true)
-        .addField("**✽ تاگ  :**   ", black.author.discriminator, true)
-        .addField("**✽ ژمارەی ئایدی :** ", black.author.id, true) // black jack
-        .addField("**✽ ژمارەی اینڤایت :**    ", inviteCount, true)
-        .setImage("https://cdn.discordapp.com/attachments/682981598974574788/705859746502279260/icps02.gif")
-        .setTimestamp(); // black jack
-
-      black.channel.sendEmbed(black).then(c => {}); // black jack
-    });
-  }
-});
-
 
 
 client.on('message', async message => {
