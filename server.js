@@ -250,6 +250,13 @@ client.on('message', async message => {
 })
 
 
+client.on("message", msg => {
+if(msg.author.bot) return;
+if(msg.content.startsWith(prefix + "support")) {
+msg.author.send(`**https://discord.gg/N7AC2Wm**`)
+msg.react("✅")
+}
+})
 
 
 
@@ -478,6 +485,7 @@ client.on("message", message => {
  ** ${prefix}unban**
  ** ${prefix}server**
  ** ${prefix}user**
+ **${prefix}support**
 **  servers**
 
 **@everyone and @here and Link server=mute**
