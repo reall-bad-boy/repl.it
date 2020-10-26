@@ -1062,6 +1062,98 @@ anti[member.guild.id + entry.id].actions = 0;
   }
 });
 ////////////////
+const log = JSON.parse(fs.readFileSync("./log.json", "utf8"));
+ 
+client.on("message", message => {
+  if (!message.channel.guild) return;
+  let room = message.content.split(" ").slice(1);
+  let findroom = message.guild.channels.find(r => r.name == room);
+  if (message.content.startsWith(prefix + "setLog")) {
+    if (!message.channel.guild)
+      return message.reply("**This Command Only For Servers**");
+    if (!message.member.hasPermission("MANAGE_GUILD"))
+      return message.channel.send(
+        "**Sorry But You Dont Have Permission** `MANAGE_GUILD`"
+      );
+    if (!room) return message.channel.send("Please Type The Channel Name");
+    if (!findroom)
+      return message.channel.send("Please Type The Log Channel Name");
+    let embed = new Discord.RichEmbed()
+      .setTitle("**Done The Log Code Has Been Setup**")
+      .addField("Channel:", `${room}`)
+      .addField("Requested By:", `${message.author}`)
+      .setThumbnail(message.author.avatarURL)
+      .setFooter(`${client.user.username}`);
+    message.channel.sendEmbed(embed);
+    log[message.guild.id] = {
+      channel: room,
+      onoff: "On"
+    };
+    fs.writeFile("./log.json", JSON.stringify(log), err => {
+      if (err) console.error(err);
+    });
+  }
+});
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "toggleLog")) {
+    if (!message.channel.guild)
+      return message.reply("**This Command Only For Servers**");
+    if (!message.member.hasPermission("MANAGE_GUILD"))
+      return message.channel.send(
+        "**Sorry But You Dont Have Permission** `MANAGE_GUILD`"
+      );
+    if (!log[message.guild.id])
+      log[message.guild.id] = {
+        onoff: "Off"
+      };
+    if (log[message.guild.id].onoff === "Off")
+      return [
+        message.channel.send(`**The log Is __𝐎𝐍__ !**`),
+        (log[message.guild.id].onoff = "On")
+      ];
+    if (log[message.guild.id].onoff === "On")
+      return [
+        message.channel.send(`**The log Is __𝐎𝐅𝐅__ !**`),
+        (log[message.guild.id].onoff = "Off")
+      ];
+    fs.writeFile("./log.json", JSON.stringify(log), err => {
+      if (err)
+        console.error(err).catch(err => {
+          console.error(err);
+        });
+    });
+  }
+});
+client.on("messageDelete", message => {
+  if (message.author.bot) return;
+  if (message.channel.type === "dm") return;
+  if (!message.guild.member(client.user).hasPermission("EMBED_LINKS")) return;
+  if (!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES"))
+    return;
+  if (!log[message.guild.id])
+    log[message.guild.id] = {
+      onoff: "Off"
+    };
+  if (log[message.guild.id].onoff === "Off") return;
+  var logChannel = message.guild.channels.find(
+    c => c.name === `${log[message.guild.id].channel}`
+  );
+  if (!logChannel) return;
+ 
+  let messageDelete = new Discord.RichEmbed()
+    .setTitle("**[MESSAGE DELETE]**")
+    .setColor("RED")
+    .setThumbnail(message.author.avatarURL)
+    .setDescription(
+      `**\n**:wastebasket: Successfully \`\`DELETE\`\` **MESSAGE** In ${message.channel}\n\n**Channel:** \`\`${message.channel.name}\`\` (ID: ${message.channel.id})\n**Message ID:** ${message.id}\n**Sent By:** <@${message.author.id}> (ID: ${message.author.id})\n**Message:**\n\`\`\`${message}\`\`\``
+    )
+    .setTimestamp()
+    .setFooter(message.guild.name, message.guild.iconURL);
+ 
+  logChannel.send(messageDelete);
+});
+
+
 
 let antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8'));
  
