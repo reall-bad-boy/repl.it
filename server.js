@@ -430,6 +430,8 @@ client.on("ready", () => {
     });
   }, 1000);
 });
+ 
+
 
 client.on("message", message => {
   var addserver = `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2080374975`;
@@ -688,7 +690,7 @@ client.on("channelCreate", async channel => {
             ` | ${entry.username} ژوور دروست دەکات`
           )
         );
-
+        
 anti[channel.guild.id + entry.id].actions = "0";
       fs.writeFile("./config.json", JSON.stringify(config, null, 2), function(
         e
