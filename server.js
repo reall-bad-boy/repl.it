@@ -505,7 +505,7 @@ client.on("message", message => {
   if (message.content.startsWith(prefix + "anti")) {
     if (message.author.id !== message.guild.owner.user.id)
       return message.channel.send(
-        "**:closed_lock_with_key: SORRY YOU DONT HAVE PERMISSION**"
+        "**:closed_lock_with_key: SORRY YOU DONT HAVE OWNERSHIP**"
       );
     if (message.content.startsWith(prefix + "anti ban")) {
       if (!num) return message.channel.send("**:1234: | ژمارە دانێ! **");
