@@ -485,6 +485,7 @@ client.on("message", message => {
  ** ${prefix}unban**
  ** ${prefix}server**
  ** ${prefix}user**
+ ** ${prefix}setLog <channel name>**
  **${prefix}support**
 **  servers**
 
@@ -1722,6 +1723,7 @@ let embed = new Discord.RichEmbed()
 .addField("**BY:**", '**[ ' + `${message.author.tag}` + ' ]**')
 .addField("**REASON:**", '**[ ' + `${reason}` + ' ]**')
      .setTimestamp()
+   .setFooter("By black Jack")
       let channel = message.guild.channels
           .find("name", "ban-log")
         channel.send(embed)
