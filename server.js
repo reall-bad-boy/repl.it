@@ -46,28 +46,7 @@ client.on('ready', () => {
   console.log(`Iam Ready My Owner ${client.user.tag}!`);
 });
 //private krdni channel
-client.on("message", fantic => {
-  if (fantic.content === "Qfl bda") {
-    if (!fantic.member.hasPermission("ADMINISTRATOR"))
-      return fantic.react("❌");
-    fantic.channel.overwritePermissions(fantic.guild.id, {
-      VIEW_CHANNEL: false
-    });
-    fantic.react("🔒");
-  }
-});
 
-//public krdni channel
-client.on("message", fantic => {
-  if (fantic.content === "Bkawa") {
-    if (!fantic.member.hasPermission("ADMINISTRATOR"))
-      return fantic.react("❌");
-    fantic.channel.overwritePermissions(fantic.guild.id, {
-      VIEW_CHANNEL: true
-    });
-    fantic.react("🔓");
-  }
-});
 //////
 client.on('message', function(msg) {
     if(msg.content.startsWith (prefix  + 'server')) {
@@ -85,6 +64,7 @@ client.on('message', function(msg) {
       .addField(':id:**__ئایدی سێرڤەر__**',`**${msg.guild.id}**`,true)
       .addField(':date:**__کاتی دروستکردنی سێرڤەر__**',msg.guild.createdAt.toLocaleString())
       .setImage('https://cdn.discordapp.com/attachments/703243461079597138/708070790079184957/image0.gif')
+      .setFooter("BY BLACK JACK")
       msg.channel.send({embed:embed});
     }
   });
@@ -305,7 +285,7 @@ client.on('message', message => {
      .setColor('BLACK')
      .addField('``Servers``', [client.guilds.size], true)
      .addField('``Users``' ,`[ ${client.users.size} ]` , true)
-           
+     .setFooter("Creadet by Black Jack")       
   })
   }
   });
