@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://protect-bot-for-philippe.glitch.me/`);
+  http.get(`https://gossamer-ambiguous-globeflower.glitch.me`);
 }, 280000);
  
 
@@ -425,21 +425,17 @@ client.on("message", message => {
       .setColor("RANDOM").setDescription(` 
       
  **${prefix}anti ban  [Number]**
-
 ** ${prefix}anti kick [Number]**
 **  ${prefix}anti roleD [Number]**
 **  ${prefix}anti roleC [Number]**
 **  ${prefix}anti channelD [Number]**
  ** ${prefix}anti channelC  [Number]**
-
 **  ${prefix}anti time   [Number]**
-
  ** ${prefix}antibots on **
  ** ${prefix}antibots off**
 **  ${prefix}antijoin on**
  ** ${prefix}antijoin off**
-
-
+------------------------------
  ** ${prefix}lock**
  ** ${prefix}unlock**
 **  ${prefix}move all**
