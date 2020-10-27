@@ -234,6 +234,7 @@ client.on("message", msg => {
 if(msg.author.bot) return;
 if(msg.content.startsWith(prefix + "support")) {
 msg.author.send(`**https://discord.gg/WeRskEZ**`)
+msg.channel.send(`لە تایبەت نێردرا`)
 msg.react("✅")
 }
 })
@@ -392,26 +393,7 @@ client.on("message", message => {
 
 //////////
 
-client.on('typingStart', (ch, user) => {
-      if(user.presence.status === 'offline') {
- 
-          ch.send(`${user}(:    کا خۆت ۆنلاین کەوە با بە ۆونێر نەلێم  hhhhhhh`)    //lera chiw pe xosha bele
-          .then(msg => {
-              msg.delete(10000)
-          })
-      }
-  })
 
-////
-         
-
-
-
-////
-                         
-
-
-////
 
 client.on("ready", () => {
   console.log(
