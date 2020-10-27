@@ -1647,6 +1647,7 @@ client.on("message", async message => {
             .setAuthor(message.author.username, message.author.displayAvatarURL)
             .setThumbnail(message.author.avatarURL)
             .setTitle("کلیک لێرە بکە بۆ ئەوەی بۆتەکە ئینڤایت بکەیت")
+            .setFooter("BY BLACK JACK")
             .setURL(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`);///link bot
             message.channel.sendEmbed(invite);
             message.react("✅");
