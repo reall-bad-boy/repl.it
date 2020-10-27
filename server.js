@@ -422,19 +422,29 @@ client.on("message", message => {
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
        .setThumbnail(message.author.avatarURL)
+       .setFooter("CREATED BY BLACK JACK")
       .setColor("RANDOM").setDescription(` 
       
  **${prefix}anti ban  [Number]**
 ** ${prefix}anti kick [Number]**
 **  ${prefix}anti roleD [Number]**
+<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
 **  ${prefix}anti roleC [Number]**
+<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
 **  ${prefix}anti channelD [Number]**
+<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
  ** ${prefix}anti channelC  [Number]**
+<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
 **  ${prefix}anti time   [Number]**
+<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
  ** ${prefix}antibots on **
+<a:CCB88860915A4B7886DA5728C3292DDF:759386728296611891>
  ** ${prefix}antibots off**
+<a:AE2E03CC62B042789DCA86477134D77E:759386727881113610> 
 **  ${prefix}antijoin on**
+<a:AE2E03CC62B042789DCA86477134D77E:759386727881113610> 
  ** ${prefix}antijoin off**
+<:0748FF57E1044EBCAEE7A8D2412C21F1:767348725088911391>
 ------------------------------
  ** ${prefix}lock**
  ** ${prefix}unlock**
@@ -448,6 +458,7 @@ client.on("message", message => {
  ** ${prefix}setLog <channel name>**
  **${prefix}support**
 **  servers**
+<a:30BFE5FEEC8C4C6CB9E2923F7373A69F:759386730557341706>
 
 **@everyone and @here and Link server=mute**
 
