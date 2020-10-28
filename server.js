@@ -1839,10 +1839,9 @@ client.on("guildMemberAdd", async member => {
 
 let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
    client.on('message', message => {
-     if (message.author.id !== message.guild.owner.user.id)
     if(message.content.startsWith(prefix + "antibots on")) {
           if(!message.channel.guild) return;
-          if(!message.member.hasPermission('ADMINISTRATOR')) return;
+          if (message.author.id !== message.guild.owner.user.id)
   antibots[message.guild.id] = {
   onoff: 'On',
   }
@@ -1861,7 +1860,7 @@ let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
       if (message.author.id !== message.guild.owner.user.id)
     if(message.content.startsWith(prefix + "antibots off")) {
           if(!message.channel.guild) return;
-          if(!message.member.hasPermission('ADMINISTRATOR')) return;
+          if (message.author.id !== message.guild.owner.user.id)
   antibots[message.guild.id] = {
   onoff: 'Off',
   }
