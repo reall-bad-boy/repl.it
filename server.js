@@ -254,6 +254,7 @@ client.on("message", msg => {
 if(msg.author.bot) return;
 if(msg.content.startsWith(prefix + "support")) {
 msg.author.send(`**https://discord.gg/WeRskEZ**`)
+msg.author.send(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`)
 msg.channel.send(`لە تایبەت نێردرا`)
 msg.react("✅")
 }
@@ -1836,59 +1837,57 @@ client.on("guildMemberAdd", async member => {
     }
   });
 
-
-let antibots = JSON.parse(fs.readFileSync('./antibots.json'  , 'utf8'));
-   client.on('message', message => {
-    if(message.content.startsWith(prefix + "antibots on")) {
-          if(!message.channel.guild) return;
-          if (message.author.id !== message.guild.owner.user.id)
-  antibots[message.guild.id] = {
-  onoff: 'On',
+let antibots = JSON.parse(fs.readFileSync("./antibots.json", "utf8")); //require antihack.json file
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "antibots on")) {
+    if (!message.channel.guild) return;
+    if (!message.member.hasPermission("Ownership")) return;
+    antibots[message.guild.id] = {
+      onoff: "On"
+    };
+    message.channel.send(`**➕ | The antibots is \`ON\`.**`);
+    fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
+      if (err)
+        console.error(err).catch(err => {
+          console.error(err);
+        });
+    });
   }
-  message.channel.send(`**antibots is on✅**`)
-            fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
-              if (err) console.error(err)
-              .catch(err => {
-                console.error(err);
-            });
-              });
-            }
-  
-          })
-
-    client.on('message', message => {
-      if (message.author.id !== message.guild.owner.user.id)
-    if(message.content.startsWith(prefix + "antibots off")) {
-          if(!message.channel.guild) return;
-          if (message.author.id !== message.guild.owner.user.id)
-  antibots[message.guild.id] = {
-  onoff: 'Off',
+});
+////////////////mrfix////////////////mrfix
+client.on("message", message => {
+  if (message.content.startsWith(prefix + "antibots off")) {
+    if (!message.channel.guild) return;
+    if (!message.member.hasPermission("Ownership")) return;
+    antibots[message.guild.id] = {
+      onoff: "Off"
+    };
+    message.channel.send(`**➖ | The antibots is \`OFF\`.**`);
+    fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
+      if (err)
+        console.error(err).catch(err => {
+          console.error(err);
+        });
+    });
   }
-  message.channel.send(`**antibots is off ⛔**`)
-            fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
-              if (err) console.error(err)
-              .catch(err => {
-                console.error(err);
-            });
-              });
-            }
+});
+////////////////mrfix
+client.on("guildMemberAdd", member => {
+  if (!antibots[member.guild.id])
+    antibots[member.guild.id] = {
+      onoff: "on"
+    };
+  if (antibots[member.guild.id].onoff === "Off") return;
+  if (member.user.bot) return member.kick();
+});
+////////////////mrfix
+fs.writeFile("./antibots.json", JSON.stringify(antibots), err => {
+  if (err)
+    console.error(err).catch(err => {
+      console.error(err);
+    });
+});
   
-          })
-   client.on("guildMemberAdd", member => {
-    if(!antibots[member.guild.id]) antibots[member.guild.id] = {
-  onoff: 'Off'
-  }
-    if(antibots[member.guild.id].onoff === 'Off') return;
-  if(member.user.bot) return member.kick()
-  })
-  
-  fs.writeFile("./antibots.json", JSON.stringify(antibots), (err) => {
-  if (err) console.error(err)
-  .catch(err => {
-  console.error(err);
-  });
-  
-  })
 client.on("message", message => {
   if (message.content === prefix + "about") {
     const bot = new Discord.RichEmbed()
