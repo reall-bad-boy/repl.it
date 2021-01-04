@@ -77,12 +77,12 @@ client.on('message', async message => {
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
         message.delete()
-          var command = message.content.split(" ")[0];
-    let muterole = message.guild.roles.find(`name`, "Muted");
+          var command = message.content.split("")[0];
+    let muterole = message.guild.roles.find(`name`, "");
     if(!muterole){
       try{
         muterole = await message.guild.createRole({
-          name: "Muted",
+          name: "",
           color: "#000000",
           permissions:[]
         })
@@ -99,7 +99,7 @@ client.on('message', async message => {
            if(!message.channel.guild) return message.reply('** This command only for servers**');
      message.member.addRole(muterole);
     const embed500 = new Discord.RichEmbed()
-      .setTitle("Muted Ads")
+      .setTitle("")
             .addField(`**  You Have Been Muted **` , `**Reason : Shairing link snapchat**`)
             .setColor("c91616")
             .setThumbnail(`${message.author.avatarURL}`)
