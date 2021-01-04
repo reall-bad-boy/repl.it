@@ -323,7 +323,7 @@ client.on('message', message => {
     if(!muterole){
       try{
         muterole = await message.guild.createRole({
-          name: "Muted",
+          name: "",
           color: "#000000",
           permissions:[]
         })
@@ -340,7 +340,7 @@ client.on('message', message => {
            if(!message.channel.guild) return message.reply('** This command only for servers**');
      message.member.addRole(muterole);
     const embed500 = new Discord.RichEmbed()
-      .setTitle("Muted Ads")
+      .setTitle("")
             .addField(`**  You Have Been Muted **` , `**Reason : Sharing Another Discord Link**`)
             .setColor("c91616")
             .setThumbnail(`${message.author.avatarURL}`)
