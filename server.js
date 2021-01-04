@@ -182,7 +182,7 @@ client.on('message', async message => {
       try{
         muterole = await message.guild.createRole({
           name: "Muted",
-          color: "#000000",
+          color: "#c91616",
           permissions:[]
         })
         message.guild.channels.forEach(async (channel, id) => {
@@ -206,7 +206,7 @@ client.on('message', async message => {
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
      message.author.send('` تۆ میوتکرای بەھۆی لێدانی ئێڤریوەن`');
- 
+     message.channel.send('` ھیوادارم دوبارە نەبیتەوە دللم   `')
  
     }
 })
@@ -244,7 +244,7 @@ client.on('message', async message => {
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.channel.send('`   `')
+     message.channel.send('` ھیوادارم دوبارە نەبیتەوە دللم   `')
      message.author.send('`here تۆ میوت کرای بەھۆی لێدانی  `')          
  
     }
