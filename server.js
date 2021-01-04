@@ -244,7 +244,8 @@ client.on('message', async message => {
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
      message.channel.send(embed500)
-     message.author.send('`here تۆ میوت کرای بەھۆی لێدانی  `')
+     message.channel.send('`   `')
+     message.author.send('`here تۆ میوت کرای بەھۆی لێدانی  `')          
  
     }
 })
@@ -329,8 +330,8 @@ client.on('message', message => {
         })
         message.guild.channels.forEach(async (channel, id) => {
           await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
-            ADD_REACTIONS: false
+            SEND_MESSAGES: true,
+            ADD_REACTIONS: true
           });
         });
       }catch(e){
@@ -355,7 +356,7 @@ client.on('message', message => {
 
 
 client.on("message", message => {
-  if (message.content === prefix + "lock") {
+  if (message.content === prefix + "qwfl ba") {
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
 
@@ -370,7 +371,7 @@ client.on("message", message => {
       });
   }
   //BLACK JACK
-  if (message.content === prefix + "unlock") {
+  if (message.content === prefix + "qwfl maba") {
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
 
