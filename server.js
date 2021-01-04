@@ -73,7 +73,7 @@ client.on('message', function(msg) {
 
 
 client.on('message', async message => {
-            if(message.content.includes('https://www.snapchat.com/')){
+            if(message.content.includes('')){
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
         message.delete()
@@ -83,13 +83,13 @@ client.on('message', async message => {
       try{
         muterole = await message.guild.createRole({
           name: "",
-          color: "#000000",
+          color: "#",
           permissions:[]
         })
         message.guild.channels.forEach(async (channel, id) => {
           await channel.overwritePermissions(muterole, {
-            SEND_MESSAGES: false,
-            ADD_REACTIONS: false
+            SEND_MESSAGES: true,
+            ADD_REACTIONS: true
           });
         });
       }catch(e){
@@ -101,7 +101,7 @@ client.on('message', async message => {
     const embed500 = new Discord.RichEmbed()
       .setTitle("")
             .addField(`**  You Have Been Muted **` , `**Reason : Shairing link snapchat**`)
-            .setColor("c91616")
+            .setColor("")
             .setThumbnail(`${message.author.avatarURL}`)
             .setAuthor(message.author.username, message.author.avatarURL)
         .setFooter(`${message.guild.name} `)
@@ -170,8 +170,7 @@ client.on('message', function(message){
  
 });
 
-
-client.on('message', async message => {
+        client.on('message', async message => {
             if(message.content.includes('@everyone')){
                 if(message.member.hasPermission("MANAGE_GUILD")) return;
         if(!message.channel.guild) return;
@@ -196,6 +195,19 @@ client.on('message', async message => {
       }
     }
            if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(muterole);
+    const embed500 = new Discord.RichEmbed()
+      .setTitle("Muted Ads")
+            .addField(`**  You Have Been Muted **` , `**Reason : Type everyone**`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL)
+        .setFooter(`${message.guild.name} `)
+     message.channel.send(embed500)
+     message.author.send('` تۆ میوتکرای بەھۆی لێدانی ئێڤریوەن`');
+     message.channel.send('` ھیوادارم دوبارە نەبیتەوە دللم   `')
+ 
+          if(!message.channel.guild) return message.reply('** This command only for servers**');
      message.member.addRole(muterole);
     const embed500 = new Discord.RichEmbed()
       .setTitle("Muted Ads")
