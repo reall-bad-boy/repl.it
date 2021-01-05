@@ -1948,16 +1948,7 @@ client.on("message", message => {
 
 ///by BLACK JACK
 
-aaaa**___devloped.by BOT SECURITY___**`);
-    message.author.sendEmbed(embed);
-    message.reply(`Sending you a DM with information.
-__**ڕیـــاکـــشنــــەکــــە داگـــرە بـــــۆ وەرگـــرتنــــی زانــــیاریــــەکــــان**__
-`);
-    message.react("✅");
-  }
-});
 
-//////////
 
 
 
