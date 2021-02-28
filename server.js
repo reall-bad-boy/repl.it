@@ -391,33 +391,29 @@ client.on("message", message => {
       .setColor("BLACK").setDescription(` 
 __**Info Commands**__ 
 \`${prefix}userinfo\`
-\`t.serverinfo\`
-\`t.ping\`
-\`t.bot\`
+\`${prefix}serverinfo\`
+\`${prefix}ping\`
+\`${prefix}bot\`
 
 __**Moderation Commands**__ 
-\`t.lock\` 
-\`t.unlock\` 
-\`t.clear\`
-\`t.ban\` : @User
-\`t.kick\`: @User
-\`t.unban\`: Id / all
-\`t.mute\`: @User / Id
-\`t.unmute\`: @User / Id
-\`t.bans\`,
+\`${prefix}lock\` 
+\`${prefix}unlock\` 
+\`${prefix}clear\`
+\`${prefix}ban\` : @User
+\`${prefix}unban\`: @User
 
 __**Security Commands**__ 
-\`t.anti kick\` [Number]
-\`t.anti ban\` [Number]
-\`t.anti roleC\` [Number]
-\`t.anti roleD\` [Number]
-\`t.anti channelC\` [Number]
-\`t.anti channelD\` [Number]
-\`t.anti bot\` on/off]
-\`t.problem\` on/off]
-\`t.setting \`
+\`${prefix}anti kick\` [Number]
+\`${prefix}anti ban\` [Number]
+\`${prefix}anti roleC\` [Number]
+\`${prefix}anti roleD\` [Number]
+\`${prefix}anti channelC\` [Number]
+\`${prefix}anti channelD\` [Number]
+\`${prefix}anti bot\` on/off]
+\`${prefix}antijoin\` on/off]
+\`${prefix}setting \`
 
-**@everyone @here and Link server mute**
+**member send everyone here and Link server mute**
 ** Created by > Mr.BAD**
 `);
     message.channel.sendEmbed(embed);
