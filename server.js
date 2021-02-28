@@ -396,13 +396,8 @@ client.on("message", message => {
 **  ${prefix}anti channelD [Number]**
 ** ${prefix}anti channelC  [Number]**
 **  ${prefix}anti time   [Number]**
-** ${prefix}antibots on **
-<a:CCB88860915A4B7886DA5728C3292DDF:759386728296611891
- ** ${prefix}antibots off**
-<a:AE2E03CC62B042789DCA86477134D77E:759386727881113610> 
-**  ${prefix}antijoin on**
-<a:AE2E03CC62B042789DCA86477134D77E:759386727881113610> 
- ** ${prefix}antijoin off**
+** ${prefix}antibots on/off**
+ ** ${prefix}antijoin on/off**
 <:0748FF57E1044EBCAEE7A8D2412C21F1:767348725088911391>
 
  ** ${prefix}lock**
