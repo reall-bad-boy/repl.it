@@ -196,7 +196,7 @@ client.on("message", async message => {
       .setFooter(`${message.guild.name} `);
     message.channel.send(embed500);
     message.author.send("` You're shut up.`");
-    message.channel.send("` ھیوادارم دوبارە نەبیتەوە دللم   `");
+    message.channel.send("` I hope it will not happen again   `");
 
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
@@ -210,7 +210,7 @@ client.on("message", async message => {
       .setFooter(`${message.guild.name} `);
     message.channel.send(embed500);
     message.author.send("` You're shut up.`");
-    message.channel.send("` ھیوادارم دوبارە نەبیتەوە دللم   `");
+    message.channel.send("` I hope it will not happen again   `");
   }
 });
 client.on("message", async message => {
@@ -248,19 +248,16 @@ client.on("message", async message => {
       .setAuthor(message.author.username, message.author.avatarURL)
       .setFooter(`${message.guild.name} `);
     message.channel.send(embed500);
-    message.channel.send("` ھیوادارم دوبارە نەبیتەوە دللم   `");
-    message.author.send("`here تۆ میوت کرای بەھۆی لێدانی  `");
+    message.channel.send("` I hope it will not happen again   `");
+    message.author.send("`You're shut up.`");
   }
 });
 
 client.on("message", msg => {
   if (msg.author.bot) return;
   if (msg.content.startsWith(prefix + "support")) {
-    msg.author.send(`**https://discord.gg/WeRskEZ**`);
-    msg.author.send(
-      `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`
-    );
-    msg.channel.send(`لە تایبەت نێردرا`);
+    msg.author.send(`|| https://discord.gg/MQs2Wc74 ||`);
+    msg.channel.send(`Sent in private DM`);
     msg.react("✅");
   }
 });
@@ -272,12 +269,10 @@ client.on("message", message => {
     const number = word.slice(7, word.length);
     const int = Number(number);
     if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-      return message.channel.send(
-        "تۆ ناتوانیت ئەم فرمانە ئەنجەم بدەیت `MANAGE_MESSAGE`چونکە ڕۆڵەکەی تۆ ئەمەی پێ نیە "
-      );
+      return message.channel.send("You can't do this command.");
     }
     if (int >= 101) {
-      return message.channel.send("بۆتەکە توانایی نیەلە 100چات زیاتر بسڕێتەوە");
+      return message.channel.send("supply A Number to Delete");
     }
     if (!message.member.hasPermission("MANAGE_MESSAGES")) {
       return message.channel.send(
@@ -307,13 +302,13 @@ client.on("message", message => {
         .setColor("BLACK")
         .addField("``Servers``", [client.guilds.size], true)
         .addField("``Users``", `[ ${client.users.size} ]`, true)
-        .setFooter("Creadet by Black Jack")
+        .setFooter("Creadet by Mr.BAD")
     });
   }
 });
 
 client.on("message", message => {
-  if (message.content === prefix + "qwfl ba") {
+  if (message.content === prefix + "lock") {
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
 
@@ -328,7 +323,7 @@ client.on("message", message => {
       });
   }
   //BLACK JACK
-  if (message.content === prefix + "qwfl maba") {
+  if (message.content === prefix + "unlock") {
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
 
