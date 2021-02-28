@@ -389,28 +389,35 @@ client.on("message", message => {
       .setThumbnail(message.author.avatarURL)
       .setFooter("")
       .setColor("BLACK").setDescription(` 
-** ${prefix}anti ban  [Number]**
-** ${prefix}anti kick [Number]**
-** ${prefix}anti roleD [Number]**
-** ${prefix}anti roleC [Number]**
-** ${prefix}anti channelD [Number]**
-** ${prefix}anti channelC  [Number]**
-** ${prefix}anti time   [Number]**
-** ${prefix}antibots on/off**
-** ${prefix}antijoin on/off**
-** ${prefix}lock**
-** ${prefix}unlock**
-\`${prefix}move all\`
-** ${prefix}about**
-** ${prefix}invite**
-** ${prefix}ban**
-** ${prefix}unban**
-** ${prefix}server**
-** ${prefix}setLog <channel name>**
-** ${prefix}support**
-** ${prefix}servers**
+__**Info Commands**__ 
+\`${prefix}userinfo\`
+\`t.serverinfo\`
+\`t.ping\`
+\`t.bot\`
 
-**@everyone and @here and Link server=mute**
+__**Moderation Commands**__ 
+\`t.lock\` 
+\`t.unlock\` 
+\`t.clear\`
+\`t.ban\` : @User
+\`t.kick\`: @User
+\`t.unban\`: Id / all
+\`t.mute\`: @User / Id
+\`t.unmute\`: @User / Id
+\`t.bans\`,
+
+__**Security Commands**__ 
+\`t.anti kick\` [Number]
+\`t.anti ban\` [Number]
+\`t.anti roleC\` [Number]
+\`t.anti roleD\` [Number]
+\`t.anti channelC\` [Number]
+\`t.anti channelD\` [Number]
+\`t.anti bot\` on/off]
+\`t.problem\` on/off]
+\`t.setting \`
+
+**@everyone @here and Link server mute**
 ** Created by > Mr.BAD**
 `);
     message.channel.sendEmbed(embed);
