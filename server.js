@@ -389,45 +389,29 @@ client.on("message", message => {
       .setThumbnail(message.author.avatarURL)
       .setFooter("")
       .setColor("BLACK").setDescription(` 
-**${prefix}anti ban  [Number]**
+** ${prefix}anti ban  [Number]**
 ** ${prefix}anti kick [Number]**
-**  ${prefix}anti roleD [Number]**
-**  ${prefix}anti roleC [Number]**
-**  ${prefix}anti channelD [Number]**
+** ${prefix}anti roleD [Number]**
+** ${prefix}anti roleC [Number]**
+** ${prefix}anti channelD [Number]**
 ** ${prefix}anti channelC  [Number]**
-**  ${prefix}anti time   [Number]**
+** ${prefix}anti time   [Number]**
 ** ${prefix}antibots on/off**
- ** ${prefix}antijoin on/off**
-<:0748FF57E1044EBCAEE7A8D2412C21F1:767348725088911391>
-
- ** ${prefix}lock**
-<a:CE86A855718C452085E3AD65628F8A66:759386730637426708>
- ** ${prefix}unlock**
-<a:CE86A855718C452085E3AD65628F8A66:759386730637426708>
-**  ${prefix}move all**
-<a:CE86A855718C452085E3AD65628F8A66:759386730637426708>
- ** ${prefix}about**
-<a:CE86A855718C452085E3AD65628F8A66:759386730637426708>
-**  ${prefix}invite**
-<a:CE86A855718C452085E3AD65628F8A66:759386730637426708>
-  **${prefix}ban**
-<a:AE2E03CC62B042789DCA86477134D77E:759386727881113610>
- ** ${prefix}unban**
-<a:AE2E03CC62B042789DCA86477134D77E:759386727881113610>
- ** ${prefix}server**
-<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
- ** ${prefix}setLog <channel name>**
-<a:30BFE5FEEC8C4C6CB9E2923F7373A69F:759386730557341706>
- **${prefix}support**
-<a:30BFE5FEEC8C4C6CB9E2923F7373A69F:759386730557341706>
-**  servers**
-<a:30BFE5FEEC8C4C6CB9E2923F7373A69F:759386730557341706>
+** ${prefix}antijoin on/off**
+** ${prefix}lock**
+** ${prefix}unlock**
+\`${prefix}move all\`
+** ${prefix}about**
+** ${prefix}invite**
+** ${prefix}ban**
+** ${prefix}unban**
+** ${prefix}server**
+** ${prefix}setLog <channel name>**
+** ${prefix}support**
+** ${prefix}servers**
 
 **@everyone and @here and Link server=mute**
-
-
-
-** Created by ==> [<@670647563627659306>] **
+** Created by > Mr.BAD**
 `);
     message.channel.sendEmbed(embed);
   }
