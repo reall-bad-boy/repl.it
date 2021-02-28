@@ -50,45 +50,45 @@ client.on("ready", () => {
 client.on("message", function(msg) {
   if (msg.content.startsWith(prefix + "server")) {
     let embed = new Discord.RichEmbed()
-      .setColor("RANDOM")
+      .setColor("BLACK")
       .setThumbnail(msg.guild.iconURL)
-      .setTitle(`داتای سێرڤەر  **__${msg.guild.name}__**`)
+      .setTitle(`server data  **__${msg.guild.name}__**`)
       .addField(
-        ":globe_with_meridians:**__جۆری سێرڤەر__**",
+        ":globe_with_meridians:**__region__**",
         `[** __${msg.guild.region}__ **]`,
         true
       )
       .addField(
-        ":medal:** __ڕۆڵ__**",
+        ":medal:** __Role__**",
         `[** __${msg.guild.roles.size}__ **]`,
         true
       )
       .addField(
-        ":red_circle:**__ژمارەی میمبەر__**",
+        ":red_circle:**__Number of mimber__**",
         `[** __${msg.guild.memberCount}__ **]`,
         true
       )
       .addField(
-        ":green_circle:**__ژمارەی ئۆنڵاینەکان__**",
+        ":green_circle:**__Online Numbers__**",
         `[** __${
           msg.guild.members.filter(m => m.presence.status == "online").size
         }__ **]`,
         true
       )
       .addField(
-        ":pencil:**__چەناڵی تێکست__**",
+        ":pencil:**__text chanel__**",
         `[** __${msg.guild.channels.filter(m => m.type === "text").size}__** ]`,
         true
       )
       .addField(
-        ":microphone:**__چەناڵی ڤۆیس__**",
+        ":microphone:**__voice chanel__**",
         `[** __${
           msg.guild.channels.filter(m => m.type === "voice").size
         }__ **]`,
         true
       )
-      .addField(":crown:**__خاوەنی سێرڤەر__**", `**${msg.guild.owner}**`, true)
-      .addField(":id:**__ئایدی سێرڤەر__**", `**${msg.guild.id}**`, true)
+      .addField(":crown:**__Owner server__**", `**${msg.guild.owner}**`, true)
+      .addField(":id:**__ID server__**", `**${msg.guild.id}**`, true)
       .addField(
         ":date:**__کاتی دروستکردنی سێرڤەر__**",
         msg.guild.createdAt.toLocaleString()
