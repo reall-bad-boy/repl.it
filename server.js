@@ -162,7 +162,7 @@ client.on("message", function(message) {
 
 client.on("message", async message => {
   if (message.content.includes("@everyone")) {
-    if (message.member.hasPermission("MANAGE_GUILD")) return;
+    if (message.member.hasPermission("MENTION_EVREYONE")) return;
     if (!message.channel.guild) return;
     message.delete();
     var command = message.content.split(" ")[0];
@@ -190,12 +190,12 @@ client.on("message", async message => {
     const embed500 = new Discord.RichEmbed()
       .setTitle("Muted Ads")
       .addField(`**  You Have Been Muted **`, `**Reason : Type everyone**`)
-      .setColor("c91616")
+      .setColor("BLACK")
       .setThumbnail(`${message.author.avatarURL}`)
       .setAuthor(message.author.username, message.author.avatarURL)
       .setFooter(`${message.guild.name} `);
     message.channel.send(embed500);
-    message.author.send("` تۆ میوتکرای بەھۆی لێدانی ئێڤریوەن`");
+    message.author.send("` You're shut up.`");
     message.channel.send("` ھیوادارم دوبارە نەبیتەوە دللم   `");
 
     if (!message.channel.guild)
@@ -204,18 +204,18 @@ client.on("message", async message => {
     const Embed500 = new Discord.RichEmbed()
       .setTitle("Muted Ads")
       .addField(`**  You Have Been Muted **`, `**Reason : Type everyone**`)
-      .setColor("c91616")
+      .setColor("BLACK")
       .setThumbnail(`${message.author.avatarURL}`)
       .setAuthor(message.author.username, message.author.avatarURL)
       .setFooter(`${message.guild.name} `);
     message.channel.send(embed500);
-    message.author.send("` تۆ میوتکرای بەھۆی لێدانی ئێڤریوەن`");
+    message.author.send("` You're shut up.`");
     message.channel.send("` ھیوادارم دوبارە نەبیتەوە دللم   `");
   }
 });
 client.on("message", async message => {
   if (message.content.includes("@here")) {
-    if (message.member.hasPermission("MANAGE_GUILD")) return;
+    if (message.member.hasPermission("MENTION_EVREYONE")) return;
     if (!message.channel.guild) return;
     message.delete();
     var command = message.content.split(" ")[0];
@@ -224,7 +224,7 @@ client.on("message", async message => {
       try {
         muterole = await message.guild.createRole({
           name: "Muted",
-          color: "#000000",
+          color: "#000001",
           permissions: []
         });
         message.guild.channels.forEach(async (channel, id) => {
@@ -243,7 +243,7 @@ client.on("message", async message => {
     const embed500 = new Discord.RichEmbed()
       .setTitle("Muted Ads")
       .addField(`**  You Have Been Muted **`, `**Reason : Types here**`)
-      .setColor("c91616")
+      .setColor("BLACK")
       .setThumbnail(`${message.author.avatarURL}`)
       .setAuthor(message.author.username, message.author.avatarURL)
       .setFooter(`${message.guild.name} `);
