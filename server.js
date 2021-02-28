@@ -342,12 +342,12 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.content.startsWith(prefix + "move all")) {
     if (!message.member.hasPermission("MOVE_MEMBERS"))
-      return message.channel.send("**لايوجد لديك صلاحية سحب الأعضاء**");
+      return message.channel.send("**You don't have the power to withdraw organs.**");
     if (!message.guild.member(client.user).hasPermission("MOVE_MEMBERS"))
-      return message.reply("**__ببورە رۆڵەکەی تۆ ناتوانێ ێەم کارە بکات__**");
+      return message.reply("**__Sorry, you can't do this command.__**");
     if (message.member.voiceChannel == null)
       return message.channel.send(
-        `**__ تکایە برۆ ڤۆیس ئەک ئینجا کۆماندەکە بنوسە__**`
+        `**__Please go voice and do this.__**`
       );
     var author = message.member.voiceChannelID;
     var m = message.guild.members.filter(m => m.voiceChannel);
@@ -357,7 +357,7 @@ client.on("message", message => {
         m.setVoiceChannel(author);
       });
     message.channel.send(
-      `✅ **بە سەرکەوتوی هەموو ئەوانەی لە ڤۆیس بون  موڤ کرانە لای خۆت **`
+      `✅ **Done**`
     );
   }
 });
@@ -370,7 +370,7 @@ client.on("ready", () => {
   console.log(
     `Online In Servers : ${client.guilds.size} | Users : ${client.users.size}`
   );
-  let statuses = [`b/help security is here `];
+  let statuses = [`${prefix}help | security is here `];
   setInterval(function() {
     let PLAYING = statuses[Math.floor(Math.random() * statuses.length)];
     client.user.setActivity(PLAYING, {
@@ -387,25 +387,17 @@ client.on("message", message => {
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
       .setThumbnail(message.author.avatarURL)
-      .setFooter("CREATED BY BLACK JACK")
-      .setColor("RANDOM").setDescription(` 
-      
- **${prefix}anti ban  [Number]**
-<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
+      .setFooter("")
+      .setColor("BLACK").setDescription(` 
+**${prefix}anti ban  [Number]**
 ** ${prefix}anti kick [Number]**
-<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
 **  ${prefix}anti roleD [Number]**
-<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
 **  ${prefix}anti roleC [Number]**
-<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
 **  ${prefix}anti channelD [Number]**
-<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
- ** ${prefix}anti channelC  [Number]**
-<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
+** ${prefix}anti channelC  [Number]**
 **  ${prefix}anti time   [Number]**
-<a:4AC4416A79A24118B9CFA688239AB4E2:759386728989065238>
- ** ${prefix}antibots on **
-<a:CCB88860915A4B7886DA5728C3292DDF:759386728296611891>
+** ${prefix}antibots on **
+<a:CCB88860915A4B7886DA5728C3292DDF:759386728296611891
  ** ${prefix}antibots off**
 <a:AE2E03CC62B042789DCA86477134D77E:759386727881113610> 
 **  ${prefix}antijoin on**
