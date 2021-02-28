@@ -382,7 +382,7 @@ client.on("ready", () => {
 
 client.on("message", message => {
   var addserver = `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2080374975`;
-  var SUPPORT = `https://discord.gg/6ASrSeG`;
+  var SUPPORT = `https://discord.gg/5328k8Rr`;
   if (message.content === prefix + "help") {
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
@@ -414,10 +414,12 @@ __**Security Commands**__
 \`${prefix}anti bot\` on/off]
 \`${prefix}antijoin\` on/off]
 \`${prefix}setting \`
+
 __~~**####################**~~__
-*member send everyone here and Link* __**add role server mute**__
+
+> **[Discord Server](${SUPPORT})** | **[invite bot](${addserver})**
 `);
-    []
+   
     message.channel.sendEmbed(embed);
   }
 });
