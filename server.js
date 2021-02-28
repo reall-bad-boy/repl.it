@@ -1445,7 +1445,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
       let updateNickname = new Discord.RichEmbed()
         .setTitle("**[UPDATE MEMBER NICKNAME]**")
         .setThumbnail(userAvatar)
-        .setColor("BLUE")
+        .setColor("BLACK")
         .setDescription(
           `**\n**:spy: Successfully \`\`CHANGE\`\` Member Nickname.\n\n**User:** ${oldMember} (ID: ${oldMember.id})\n**Old Nickname:** ${oldNM}\n**New Nickname:** ${newNM}\n**By:** <@${userID}> (ID: ${userID})`
         )
@@ -1466,7 +1466,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
       let roleAdded = new Discord.RichEmbed()
         .setTitle("**[ADDED ROLE TO MEMBER]**")
         .setThumbnail(oldMember.guild.iconURL)
-        .setColor("GREEN")
+        .setColor("BLACK")
         .setDescription(
           `**\n**:white_check_mark: Successfully \`\`ADDED\`\` Role to **${oldMember.user.username}**\n\n**User:** <@${oldMember.id}> (ID: ${oldMember.user.id})\n**Role:** \`\`${role.name}\`\` (ID: ${role.id})\n**By:** <@${userID}> (ID: ${userID})`
         )
@@ -1488,7 +1488,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
       let roleRemoved = new Discord.RichEmbed()
         .setTitle("**[REMOVED ROLE FROM MEMBER]**")
         .setThumbnail(oldMember.guild.iconURL)
-        .setColor("RED")
+        .setColor("BLACK")
         .setDescription(
           `**\n**:negative_squared_cross_mark: Successfully \`\`REMOVED\`\` Role from **${oldMember.user.username}**\n\n**User:** <@${oldMember.user.id}> (ID: ${oldMember.id})\n**Role:** \`\`${role.name}\`\` (ID: ${role.id})\n**By:** <@${userID}> (ID: ${userID})`
         )
@@ -1507,7 +1507,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
     let newOwner = new Discord.RichEmbed()
       .setTitle("**[UPDATE GUILD OWNER]**")
       .setThumbnail(oldMember.guild.iconURL)
-      .setColor("GREEN")
+      .setColor("BLACK")
       .setDescription(
         `**\n**:white_check_mark: Successfully \`\`TRANSFER\`\` The Owner Ship.\n\n**Old Owner:** <@${oldMember.user.id}> (ID: ${oldMember.user.id})\n**New Owner:** <@${newMember.user.id}> (ID: ${newMember.user.id})`
       )
@@ -1543,7 +1543,7 @@ client.on("voiceStateUpdate", (voiceOld, voiceNew) => {
         .setThumbnail(
           "https://images-ext-1.discordapp.net/external/pWQaw076OHwVIFZyeFoLXvweo0T_fDz6U5C9RBlw_fQ/https/cdn.pg.sa/UosmjqDNgS.png"
         )
-        .setColor("RED")
+        .setColor("BLACK")
         .setDescription(
           `**User:** ${voiceOld} (ID: ${voiceOld.id})\n**By:** <@${userID}> (ID: ${userID})\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`
         )
@@ -1563,7 +1563,7 @@ client.on("voiceStateUpdate", (voiceOld, voiceNew) => {
         .setThumbnail(
           "https://images-ext-1.discordapp.net/external/u2JNOTOc1IVJGEb1uCKRdQHXIj5-r8aHa3tSap6SjqM/https/cdn.pg.sa/Iy4t8H4T7n.png"
         )
-        .setColor("GREEN")
+        .setColor("BLACK")
         .setDescription(
           `**User:** ${voiceOld} (ID: ${voiceOld.id})\n**By:** <@${userID}> (ID: ${userID})\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`
         )
@@ -1583,7 +1583,7 @@ client.on("voiceStateUpdate", (voiceOld, voiceNew) => {
         .setThumbnail(
           "https://images-ext-1.discordapp.net/external/7ENt2ldbD-3L3wRoDBhKHb9FfImkjFxYR6DbLYRjhjA/https/cdn.pg.sa/auWd5b95AV.png"
         )
-        .setColor("RED")
+        .setColor("BLACK")
         .setDescription(
           `**User:** ${voiceOld} (ID: ${voiceOld.id})\n**By:** <@${userID}> (ID: ${userID})\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`
         )
@@ -1603,7 +1603,7 @@ client.on("voiceStateUpdate", (voiceOld, voiceNew) => {
         .setThumbnail(
           "https://images-ext-2.discordapp.net/external/s_abcfAlNdxl3uYVXnA2evSKBTpU6Ou3oimkejx3fiQ/https/cdn.pg.sa/i7fC8qnbRF.png"
         )
-        .setColor("GREEN")
+        .setColor("BLACK")
         .setDescription(
           `**User:** ${voiceOld} (ID: ${voiceOld.id})\n**By:** <@${userID}> (ID: ${userID})\n**Channel:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannel.id})`
         )
@@ -1626,7 +1626,7 @@ client.on("voiceStateUpdate", (voiceOld, voiceNew) => {
     if (log[(voiceOld, voiceOld.guild.id)].onoff === "Off") return;
     let voiceLeave = new Discord.RichEmbed()
       .setTitle("**[CHANGED VOICE ROOM]**")
-      .setColor("GREEN")
+      .setColor("BLACK")
       .setThumbnail(voiceOld.user.avatarURL)
       .setDescription(
         `**\n**:repeat: Successfully \`\`CHANGED\`\` The Voice Channel.\n\n**From:** \`\`${voiceOld.voiceChannel.name}\`\` (ID: ${voiceOld.voiceChannelID})\n**To:** \`\`${voiceNew.voiceChannel.name}\`\` (ID: ${voiceNew.voiceChannelID})\n**User:** ${voiceOld} (ID: ${voiceOld.id})`
@@ -1699,23 +1699,23 @@ client.on("message", message => {
 client.on("message", message => {
   if (!message.channel.guild) return;
 
-  if (message.content.startsWith(prefix + "setJoin")) {
+  if (message.content.startsWith(prefix + "setjoin")) {
     let time = message.content
       .split(" ")
       .slice(1)
       .join(" ");
     if (!message.channel.guild)
-      return message.reply("**هذا الامر للسيرفرات فقط**");
+      return message.reply("**This is only for servers**");
     if (!message.member.hasPermission("MANAGE_GUILD"))
-      return message.channel.send("**يجب ان يكون معك صلاحية** `MANAGE_GUILD`");
+      return message.channel.send("**You must have authority** `MANAGE_GUILD`");
     if (!time)
       return message.channel.send(
-        "برجاء كتابهة مدة الحساب الممنوع دخولة للسيرفر [Days]"
+        "Please write the duration of the blocked account from entering the server [Days]"
       );
     let embed = new Discord.RichEmbed()
-      .setTitle("**تم خاصية من دخول الحسبات الوهمية**")
-      .addField("تريخ عمل الحساب:", `${time}.`)
-      .addField("بطلب من :", `${message.author}`)
+      .setTitle("**A feature of entering dummy accounts**")
+      .addField("The date the account was made:", `${time}.`)
+      .addField("Requested from :", `${message.author}`)
       .setThumbnail(message.author.avatarURL)
       .setFooter(`${client.user.username}`);
     message.channel.sendEmbed(embed);
@@ -1743,7 +1743,7 @@ client.on("guildMemberAdd", async member => {
 
   if (date < accounttime) {
     member.ban(
-      `يجب ان يكون عمر الحسبات اقل من  ${antijoin[member.guild.id].created} days.`
+      `Accounts must be less than old  ${antijoin[member.guild.id].created} days.`
     );
   }
 });
@@ -1803,7 +1803,7 @@ client.on("message", message => {
   if (message.content === prefix + "about") {
     const bot = new Discord.RichEmbed()
       .setAuthor(client.user.username, client.user.avatarURL)
-      .setColor("#00000")
+      .setColor("#00001")
       .addField(
         "✽ **Bot Ping** : ",
         `» ${Date.now() - client.createdTimestamp}` + " ms",
@@ -1813,7 +1813,7 @@ client.on("message", message => {
       .addField("**Channels** : ", `» ${client.channels.size} `, true)
       .addField("**Users** : ", `» ${client.users.size} `, true)
       .addField("**Bot Name** :  ", `» ${client.user.tag} `, true)
-      .addField("**Bot Owner** :  ", `» <@!670647563627659306> `, true) // تعديل اساسي غير الايدي لايدي حسابك
+      .addField("**Bot Owner** :  ", `» <@596060641740193856> `, true) // تعديل اساسي غير الايدي لايدي حسابك
       .setImage("")
       .setFooter(message.author.username, message.client.avatarURL);
     message.channel.send(bot);
