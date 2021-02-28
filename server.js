@@ -52,51 +52,51 @@ client.on("message", function(msg) {
     let embed = new Discord.RichEmbed()
       .setColor("BLACK")
       .setThumbnail(msg.guild.iconURL)
-      .setTitle(`server data  **__${msg.guild.name}__**`)
+      .setTitle(`sᴇʀᴠᴇʀ ᴅᴀᴛᴀ  **${msg.guild.name}**`)
       .addField(
-        ":globe_with_meridians:**__region__**",
-        `[** __${msg.guild.region}__ **]`,
+        "**region**",
+        `[ __${msg.guild.region}__ ]`,
         true
       )
       .addField(
-        ":medal:** __Role__**",
-        `[** __${msg.guild.roles.size}__ **]`,
+        "**Role**",
+        `[ __${msg.guild.roles.size}__ ]`,
         true
       )
       .addField(
-        ":red_circle:**__Number of mimber__**",
-        `[** __${msg.guild.memberCount}__ **]`,
+        "**Number of mimber**",
+        `[ __${msg.guild.memberCount}__ ]`,
         true
       )
       .addField(
-        ":green_circle:**__Online Numbers__**",
-        `[** __${
+        "**Online Numbers**",
+        `[ __${
           msg.guild.members.filter(m => m.presence.status == "online").size
-        }__ **]`,
+        }__ ]`,
         true
       )
       .addField(
-        ":pencil:**__text chanel__**",
-        `[** __${msg.guild.channels.filter(m => m.type === "text").size}__** ]`,
+        "**text chanel**",
+        `[__${msg.guild.channels.filter(m => m.type === "text").size}__]`,
         true
       )
       .addField(
-        ":microphone:**__voice chanel__**",
-        `[** __${
+        "**voice chanel**",
+        `[ __${
           msg.guild.channels.filter(m => m.type === "voice").size
-        }__ **]`,
+        }__ ]`,
         true
       )
-      .addField(":crown:**__Owner server__**", `**${msg.guild.owner}**`, true)
-      .addField(":id:**__ID server__**", `**${msg.guild.id}**`, true)
+      .addField("**Owner server**", `__${msg.guild.owner}__`, true)
+      .addField("**ID server**", `__${msg.guild.id}__`, true)
       .addField(
-        ":date:**__کاتی دروستکردنی سێرڤەر__**",
+        "**Created on**",
         msg.guild.createdAt.toLocaleString()
       )
       .setImage(
-        "https://cdn.discordapp.com/attachments/703243461079597138/708070790079184957/image0.gif"
+        ""
       )
-      .setFooter("BY BLACK JACK");
+      .setFooter("");
     msg.channel.send({ embed: embed });
   }
 });
@@ -171,7 +171,7 @@ client.on("message", async message => {
       try {
         muterole = await message.guild.createRole({
           name: "Muted",
-          color: "#c91616",
+          color: "BLACK",
           permissions: []
         });
         message.guild.channels.forEach(async (channel, id) => {
