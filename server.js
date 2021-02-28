@@ -387,8 +387,9 @@ client.on("message", message => {
     let embed = new Discord.RichEmbed()
       .setAuthor(message.author.username)
       .setThumbnail(message.author.avatarURL)
-      .setFooter("")
-      .setColor("BLACK").setDescription(` 
+      .setFooter("create by > Mr.BAD")
+      .setColor("BLACK")
+      .setDescription(` 
 __**Info Commands**__ 
 \`${prefix}user\`
 \`${prefix}server\`
@@ -401,7 +402,7 @@ __**Moderation Commands**__
 \`${prefix}clear\`
 \`${prefix}ban\` : @User
 \`${prefix}unban\`: @User
-\`${prefix}setlog
+\`${prefix}setlog\`
 
 __**Security Commands**__ 
 \`${prefix}anti kick\` [Number]
@@ -415,8 +416,8 @@ __**Security Commands**__
 \`${prefix}setting \`
 __~~**####################**~~__
 *member send everyone here and Link* __**add role server mute**__
-*Created by* > __**Mr.BAD**__
 `);
+    []
     message.channel.sendEmbed(embed);
   }
 });
@@ -1643,9 +1644,9 @@ let antijoin = JSON.parse(fs.readFileSync("./antijoin.json", "utf8"));
 client.on("message", message => {
   if (message.content.startsWith(prefix + "antijoin on")) {
     if (!message.channel.guild)
-      return message.reply("**هذا الامر للسيرفرات فقط**");
+      return message.reply("**This is only for servers**");
     if (!message.member.hasPermission("MANAGE_GUILD"))
-      return message.channel.send("**يجب ان يكون معك صلاحية*** `MANAGE_GUILD`");
+      return message.channel.send("**You must have authority*** `MANAGE_GUILD`");
     antijoin[message.guild.id] = {
       onoff: "On"
     };
@@ -1681,9 +1682,9 @@ const antiSpam = new AntiSpam({
 client.on("message", message => {
   if (message.content.startsWith(prefix + "antijoin off")) {
     if (!message.channel.guild)
-      return message.reply("**هذا الامر للسيرفرات فقط**");
+      return message.reply("**This is only for servers**");
     if (!message.member.hasPermission("MANAGE_GUILD"))
-      return message.channel.send("**يجب ان يكون معك صلاحية** `MANAGE_GUILD`");
+      return message.channel.send("**You must have authority** `MANAGE_GUILD`");
     antijoin[message.guild.id] = {
       onoff: "Off"
     };
@@ -1822,13 +1823,13 @@ client.on("message", message => {
 client.on("message", async message => {
   if (message.content.startsWith(prefix + "invite")) {
     let invite = new Discord.RichEmbed()
-      .setColor("RANDOM")
+      .setColor("BLACK")
       .setAuthor(message.author.username, message.author.displayAvatarURL)
       .setThumbnail(message.author.avatarURL)
-      .setTitle("کلیک لێرە بکە بۆ ئەوەی بۆتەکە ئینڤایت بکەیت")
-      .setFooter("BY BLACK JACK")
+      .setTitle("click here to invite bot")
+      .setFooter("")
       .setURL(
-        `https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`
+        `https://discord.com/api/oauth2/authorize?client_id=764487416748310570&permissions=8&scope=bot`
       ); ///link bot
     message.channel.sendEmbed(invite);
     message.react("✅");
@@ -1846,12 +1847,12 @@ client.on("message", message => {
 
   if (command == "ban") {
     if (!message.channel.guild)
-      return message.reply("** هذا الأمر شغال فقط في السيرفرات**");
+      return message.reply("** This command only works on servers**");
 
     if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS"))
       return;
     if (!message.guild.member(client.user).hasPermission("BAN_MEMBERS"))
-      return message.reply("** `BAN_MEMBERS` البوت لا يملك خاصية**");
+      return message.reply("** `BAN_MEMBERS` The bot does not have a feature**");
     let user = message.mentions.users.first();
     let reason = message.content
       .split(" ")
@@ -1862,7 +1863,7 @@ client.on("message", message => {
         ":rolling_eyes: - **I can't find this member**"
       );
     if (!message.guild.member(user).bannable)
-      return message.reply("**رتبه العضو اعلي من البوت لا يمكن طرده**");
+      return message.reply("**The member's rank is higher than the bot and cannot be expelled**");
     message.channel
       .send(
         " :white_check_mark: **" +
