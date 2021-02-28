@@ -390,10 +390,10 @@ client.on("message", message => {
       .setFooter("")
       .setColor("BLACK").setDescription(` 
 __**Info Commands**__ 
-\`${prefix}userinfo\`
-\`${prefix}serverinfo\`
-\`${prefix}ping\`
-\`${prefix}bot\`
+\`${prefix}user\`
+\`${prefix}server\`
+\`${prefix}support\`
+\`${prefix}about\`
 
 __**Moderation Commands**__ 
 \`${prefix}lock\` 
@@ -401,6 +401,7 @@ __**Moderation Commands**__
 \`${prefix}clear\`
 \`${prefix}ban\` : @User
 \`${prefix}unban\`: @User
+\`${prefix}setlog
 
 __**Security Commands**__ 
 \`${prefix}anti kick\` [Number]
@@ -412,9 +413,9 @@ __**Security Commands**__
 \`${prefix}anti bot\` on/off]
 \`${prefix}antijoin\` on/off]
 \`${prefix}setting \`
-
-**member send everyone here and Link server mute**
-** Created by > Mr.BAD**
+__~~**####################**~~__
+*member send everyone here and Link* __**add role server mute**__
+*Created by* > __**Mr.BAD**__
 `);
     message.channel.sendEmbed(embed);
   }
@@ -979,7 +980,7 @@ client.on("message", message => {
   if (!message.channel.guild) return;
   let room = message.content.split(" ").slice(1);
   let findroom = message.guild.channels.find(r => r.name == room);
-  if (message.content.startsWith(prefix + "setLog")) {
+  if (message.content.startsWith(prefix + "setlog")) {
     if (!message.channel.guild)
       return message.reply("**This Command Only For Servers**");
     if (!message.member.hasPermission("MANAGE_GUILD"))
@@ -1053,7 +1054,7 @@ client.on("messageDelete", message => {
 
   let messageDelete = new Discord.RichEmbed()
     .setTitle("**[MESSAGE DELETE]**")
-    .setColor("RED")
+    .setColor("BLACK")
     .setThumbnail(message.author.avatarURL)
     .setDescription(
       `**\n**:wastebasket: Successfully \`\`DELETE\`\` **MESSAGE** In ${message.channel}\n\n**Channel:** \`\`${message.channel.name}\`\` (ID: ${message.channel.id})\n**Message ID:** ${message.id}\n**Sent By:** <@${message.author.id}> (ID: ${message.author.id})\n**Message:**\n\`\`\`${message}\`\`\``
@@ -1084,7 +1085,7 @@ client.on("messageUpdate", (oldMessage, newMessage) => {
   let messageUpdate = new Discord.RichEmbed()
     .setTitle("**[MESSAGE EDIT]**")
     .setThumbnail(oldMessage.author.avatarURL)
-    .setColor("BLUE")
+    .setColor("BLACK")
     .setDescription(
       `**\n**:wrench: Successfully \`\`EDIT\`\` **MESSAGE** In ${oldMessage.channel}\n\n**Channel:** \`\`${oldMessage.channel.name}\`\` (ID: ${oldMessage.channel.id})\n**Message ID:** ${oldMessage.id}\n**Sent By:** <@${oldMessage.author.id}> (ID: ${oldMessage.author.id})\n\n**Old Message:**\`\`\`${oldMessage}\`\`\`\n**New Message:**\`\`\`${newMessage}\`\`\``
     )
@@ -1116,7 +1117,7 @@ client.on("roleCreate", role => {
       .setDescription(
         `**\n**:white_check_mark: Successfully \`\`CREATE\`\` Role.\n\n**Role Name:** \`\`${role.name}\`\` (ID: ${role.id})\n**By:** <@${userID}> (ID: ${userID})`
       )
-      .setColor("GREEN")
+      .setColor("BLACK")
       .setTimestamp()
       .setFooter(role.guild.name, role.guild.iconURL);
 
@@ -1146,7 +1147,7 @@ client.on("roleDelete", role => {
       .setDescription(
         `**\n**:white_check_mark: Successfully \`\`DELETE\`\` Role.\n\n**Role Name:** \`\`${role.name}\`\` (ID: ${role.id})\n**By:** <@${userID}> (ID: ${userID})`
       )
-      .setColor("RED")
+      .setColor("BLACK")
       .setTimestamp()
       .setFooter(role.guild.name, role.guild.iconURL);
 
@@ -1176,7 +1177,7 @@ client.on("roleUpdate", (oldRole, newRole) => {
       let roleUpdateName = new Discord.RichEmbed()
         .setTitle("**[ROLE NAME UPDATE]**")
         .setThumbnail(userAvatar)
-        .setColor("BLUE")
+        .setColor("BLACK")
         .setDescription(
           `**\n**:white_check_mark: Successfully \`\`EDITED\`\` Role Name.\n\n**Old Name:** \`\`${oldRole.name}\`\`\n**New Name:** \`\`${newRole.name}\`\`\n**Role ID:** ${oldRole.id}\n**By:** <@${userID}> (ID: ${userID})`
         )
@@ -1200,7 +1201,7 @@ client.on("roleUpdate", (oldRole, newRole) => {
       let roleUpdateColor = new Discord.RichEmbed()
         .setTitle("**[ROLE COLOR UPDATE]**")
         .setThumbnail(userAvatar)
-        .setColor("BLUE")
+        .setColor("BLACK")
         .setDescription(
           `**\n**:white_check_mark: Successfully \`\`EDITED\`\` **${oldRole.name}** Role Color.\n\n**Old Color:** ${oldColor}\n**New Color:** ${newColor}\n**Role ID:** ${oldRole.id}\n**By:** <@${userID}> (ID: ${userID})`
         )
@@ -1244,7 +1245,7 @@ client.on("channelCreate", channel => {
       .setDescription(
         `**\n**:white_check_mark: Successfully \`\`CREATE\`\` **${roomType}** channel.\n\n**Channel Name:** \`\`${channel.name}\`\` (ID: ${channel.id})\n**By:** <@${userID}> (ID: ${userID})`
       )
-      .setColor("GREEN")
+      .setColor("BLACK")
       .setTimestamp()
       .setFooter(channel.guild.name, channel.guild.iconURL);
 
@@ -1284,7 +1285,7 @@ client.on("channelDelete", channel => {
       .setDescription(
         `**\n**:white_check_mark: Successfully \`\`DELETE\`\` **${roomType}** channel.\n\n**Channel Name:** \`\`${channel.name}\`\` (ID: ${channel.id})\n**By:** <@${userID}> (ID: ${userID})`
       )
-      .setColor("RED")
+      .setColor("BLACK")
       .setTimestamp()
       .setFooter(channel.guild.name, channel.guild.iconURL);
 
@@ -1319,7 +1320,7 @@ client.on("channelUpdate", (oldChannel, newChannel) => {
       let newName = new Discord.RichEmbed()
         .setTitle("**[CHANNEL EDIT]**")
         .setThumbnail(userAvatar)
-        .setColor("BLUE")
+        .setColor("BLACK")
         .setDescription(
           `**\n**:wrench: Successfully Edited **${channelType}** Channel Name\n\n**Old Name:** \`\`${oldChannel.name}\`\`\n**New Name:** \`\`${newChannel.name}\`\`\n**Channel ID:** ${oldChannel.id}\n**By:** <@${userID}> (ID: ${userID})`
         )
@@ -1333,7 +1334,7 @@ client.on("channelUpdate", (oldChannel, newChannel) => {
       let newTopic = new Discord.RichEmbed()
         .setTitle("**[CHANNEL EDIT]**")
         .setThumbnail(userAvatar)
-        .setColor("BLUE")
+        .setColor("BLACK")
         .setDescription(
           `**\n**:wrench: Successfully Edited **${channelType}** Channel Topic\n\n**Old Topic:**\n\`\`\`${oldChannel.topic ||
             "NULL"}\`\`\`\n**New Topic:**\n\`\`\`${newChannel.topic ||
@@ -1370,7 +1371,7 @@ client.on("guildBanAdd", (guild, user) => {
     let banInfo = new Discord.RichEmbed()
       .setTitle("**[BANNED]**")
       .setThumbnail(userAvatar)
-      .setColor("DARK_RED")
+      .setColor("BLACK")
       .setDescription(
         `**\n**:airplane: Successfully \`\`BANNED\`\` **${user.username}** From the server!\n\n**User:** <@${user.id}> (ID: ${user.id})\n**By:** <@${userID}> (ID: ${userID})`
       )
@@ -1402,7 +1403,7 @@ client.on("guildBanRemove", (guild, user) => {
     let unBanInfo = new Discord.RichEmbed()
       .setTitle("**[UNBANNED]**")
       .setThumbnail(userAvatar)
-      .setColor("GREEN")
+      .setColor("BLACK")
       .setDescription(
         `**\n**:unlock: Successfully \`\`UNBANNED\`\` **${user.username}** From the server\n\n**User:** <@${user.id}> (ID: ${user.id})\n**By:** <@${userID}> (ID: ${userID})`
       )
